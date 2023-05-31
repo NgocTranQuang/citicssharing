@@ -1,5 +1,6 @@
 package com.citics.valuation.ui.fragment.main.thongke
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,47 +13,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.citics.valuation.ui.base.BaseFragment
 import com.citics.cbank.databinding.FragmentMainThongKeBinding
+import com.citics.valuation.ui.activity.thongke.ThongKeActivity
 
-class ThongKeFragment : BaseFragment<FragmentMainThongKeBinding, ThongKeViewModel>(FragmentMainThongKeBinding::inflate) {
-    //
-//    private var _binding: FragmentMainThongKeBinding? = null
-//
-//    // This property is only valid between onCreateView and
-//    // onDestroyView.
-//    private val binding get() = _binding!!
-//
-//
-//
-//
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        val homeViewModel =
-//            ViewModelProvider(this).get(ThongKeViewModel::class.java)
-//
-//        _binding = FragmentMainThongKeBinding.inflate(inflater, container, false)
-//        val root: View = binding.root
-//
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-//        return root
-//    }
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        view.setOnApplyWindowInsetsListener { v, insets ->
-//            v.updatePadding(top = insets.systemWindowInsetTop)
-//            insets
-//        }
-//    }
-//
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
+class ThongKeFragment :
+    BaseFragment<FragmentMainThongKeBinding, ThongKeViewModel>(FragmentMainThongKeBinding::inflate) {
+
     override val viewModel: ThongKeViewModel by viewModels()
+    override fun onClickListener() {
+        super.onClickListener()
+        binding.root.setOnClickListener {
+            val itent = Intent(requireContext(), ThongKeActivity::class.java)
+            startActivity(itent)
+        }
+    }
 }

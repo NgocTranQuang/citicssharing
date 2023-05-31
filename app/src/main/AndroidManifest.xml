@@ -34,6 +34,11 @@
 
         <activity android:name="com.citics.valuation.ui.activity.phuongthucnhancpoint.PhuongThucNhanCpointActivity" />
         <activity android:name="com.citics.valuation.ui.activity.login.LoginActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.hopthoai.HopThoaiActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.hoso.HoSoActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.taikhoan.TaiKhoanActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.thongke.ThongKeActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.tracuu.TraCuuActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
