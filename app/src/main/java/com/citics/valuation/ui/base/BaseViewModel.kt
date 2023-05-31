@@ -1,0 +1,120 @@
+package com.citics.valuation.ui.base
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import com.citics.valuation.data.datasource.local.PreferenceManager
+import com.citics.valuation.data.model.response.ErrorResponse
+import com.citics.valuation.data.repository.GeneralRepository
+import com.citics.valuation.data.repository.Resource
+import com.citics.valuation.utils.CLIENT_CODE_NETWORK_ERROR
+import com.citics.valuation.utils.SERVER_CODE_INVALID_C_POINT_408
+import com.citics.valuation.utils.SERVER_CODE_INVALID_C_POINT_409
+import com.citics.valuation.utils.SERVER_CODE_LOGIN_IN_NEW_DEVICE
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import timber.log.Timber
+import javax.inject.Inject
+
+/**
+ * Created by ChinhQT on 09/10/2022.
+ */
+@HiltViewModel
+open class BaseViewModel @Inject constructor() : ViewModel() {
+
+    @Inject
+    lateinit var generalRepository: GeneralRepository
+
+    @Inject
+    lateinit var preferenceManager: PreferenceManager
+
+    // Show normal error (error api...)
+    private val _showErrorStateFull: MutableStateFlow<ErrorResponse?> =
+        MutableStateFlow(null)
+    val showErrorStateFull: StateFlow<ErrorResponse?> get() = _showErrorStateFull
+
+    // Show het cpoint error (error api...)
+    private val _showErrorLoginInNewDevice: MutableStateFlow<ErrorResponse?> =
+        MutableStateFlow(null)
+    val showErrorLoginInNewDevice: StateFlow<ErrorResponse?> get() = _showErrorLoginInNewDevice
+
+
+    // Show het cpoint error (error api...)
+    private val _showErrorHetCPoint: MutableStateFlow<ErrorResponse?> =
+        MutableStateFlow(null)
+    val showErrorHetCPoint: StateFlow<ErrorResponse?> get() = _showErrorHetCPoint
+
+    // Show normal error (error api...)
+    private val _showErrorDialog: MutableStateFlow<ErrorResponse?> =
+        MutableStateFlow(null)
+    val showErrorDialog: StateFlow<ErrorResponse?> get() = _showErrorDialog
+
+    private val _showLoading: MutableStateFlow<Boolean> =
+        MutableStateFlow(false)
+    val showLoading: StateFlow<Boolean> get() = _showLoading
+
+
+    override fun onCleared() {
+        super.onCleared()
+        Timber.d("onCleared")
+    }
+
+    private fun showErrorDialog(error: ErrorResponse?) {
+        viewModelScope.launch(Dispatchers.Main) {
+            _showErrorDialog.value = error
+        }
+    }
+
+    private fun showLoading() {
+        viewModelScope.launch(Dispatchers.Main) {
+            _showLoading.value = true
+        }
+    }
+
+    private fun hideLoading() {
+        viewModelScope.launch(Dispatchers.Main) {
+            _showLoading.value = false
+        }
+    }
+
+
+
+
+    fun <T : Any> NetworkResponse<T, ErrorResponse>.handleResponse(): Resource<T> {
+        when (this) {
+            is NetworkResponse.Success -> {
+                Timber.d("NetworkResponse.Success")
+                return Resource.Success(body)
+            }
+
+            is NetworkResponse.ApiError -> {
+                Timber.d("NetworkResponse.NetworkError ${body.message}")
+                return Resource.Failure(dataFail = body)
+            }
+
+            is NetworkResponse.NetworkError -> {
+                Timber.d("NetworkResponse.NetworkError ${error.message}")
+                return Resource.Failure(
+                    dataFail = ErrorResponse(
+                        message = error.message ?: "",
+                        code = CLIENT_CODE_NETWORK_ERROR
+                    )
+                )
+            }
+
+            is NetworkResponse.UnknownError -> {
+                Timber.d("NetworkResponse.NetworkError ${error?.message}")
+
+                return Resource.Failure(
+                    dataFail = ErrorResponse(
+                        message = error?.message ?: "",
+                        code = CLIENT_CODE_NETWORK_ERROR
+                    )
+                )
+            }
+        }
+    }
+}

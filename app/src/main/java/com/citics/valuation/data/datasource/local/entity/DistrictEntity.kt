@@ -1,0 +1,14 @@
+package com.citics.cagent.data.local.entity
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+/**
+ * Created by ChinhQT on 12/10/2022.
+ */
+@Entity(tableName = "District")
+data class DistrictEntity(
+    @PrimaryKey @ColumnInfo(name = "code") val code: String = "",
+    @ColumnInfo(name = "name") val name: String = ""
+)

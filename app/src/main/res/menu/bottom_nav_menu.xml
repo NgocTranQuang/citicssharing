@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_thong_ke"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_thong_ke" />
+
+    <item
+        android:id="@+id/navigation_tra_cuu"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_tra_cuu" />
+
+    <item
+        android:id="@+id/navigation_ho_so"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_ho_so" />
+    <item
+        android:id="@+id/navigation_hop_thoai"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_hop_thoai" />
+    <item
+        android:id="@+id/navigation_tai_khoan"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_tai_khoan" />
+
+</menu>

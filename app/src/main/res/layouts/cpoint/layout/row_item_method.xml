@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingStart="@dimen/activity_margin_large"
+    android:paddingEnd="@dimen/activity_margin_large"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvCondition"
+        android:layout_marginTop="@dimen/activity_margin_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Condition" />
+
+    <TextView
+        android:id="@+id/tvDepositCP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
+        android:textFontWeight="700"
+        tools:text="deposit_cp list" />
+
+    <TextView
+        android:id="@+id/tvSubText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="sub_text" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin_medium" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

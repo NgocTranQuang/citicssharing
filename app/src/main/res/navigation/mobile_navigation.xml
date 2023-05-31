@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_thong_ke">
+
+    <fragment
+        android:id="@+id/navigation_thong_ke"
+        android:name="com.citics.valuation.ui.fragment.main.thongke.ThongKeFragment"
+        android:label="@string/title_thong_ke"
+        tools:layout="@layout/fragment_main_thong_ke" />
+
+    <fragment
+        android:id="@+id/navigation_tra_cuu"
+        android:name="com.citics.valuation.ui.fragment.main.tracuu.TraCuuFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_main_tra_cuu" />
+
+    <fragment
+        android:id="@+id/navigation_ho_so"
+        android:name="com.citics.valuation.ui.fragment.main.hoso.HoSoFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_main_hoso" />
+    <fragment
+        android:id="@+id/navigation_hop_thoai"
+        android:name="com.citics.valuation.ui.fragment.main.hopthoai.HopThoaiFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_main_hop_thoai" />
+    <fragment
+        android:id="@+id/navigation_tai_khoan"
+        android:name="com.citics.valuation.ui.fragment.main.taikhoan.TaiKhoanFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_main_tai_khoan" />
+</navigation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">68.183.176.77</domain>
+        <domain includeSubdomains="true">dev-api-photo.citics.vn</domain>
+        <domain includeSubdomains="true">dev-api-search.citics.vn</domain>
+        <domain includeSubdomains="true">dev-api-agent.citics.vn</domain>
+        <domain includeSubdomains="true">dev-api-value.citics.vn</domain>
+    </domain-config>
+    <base-config cleartextTrafficPermitted="true"/>
+</network-security-config>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "246352520504",
+    "firebase_url": "https://c-bank-e4fe7.firebaseio.com",
+    "project_id": "c-bank-e4fe7",
+    "storage_bucket": "c-bank-e4fe7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246352520504:android:3c9cb014dc25efe9e9cdcd",
+        "android_client_info": {
+          "package_name": "com.citics.cbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246352520504-7of5ia9fagvgj4llenbp9aeede0gqmqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDpf57-FRcL_HvnX8NEd8f538j9PJl1Hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246352520504-7of5ia9fagvgj4llenbp9aeede0gqmqh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "246352520504-rloc33h6o9ojlsu711805reqd56a4011.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vn.citics.cbank"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

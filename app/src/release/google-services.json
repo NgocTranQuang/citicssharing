@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "611330293784",
+    "project_id": "c-bank-test",
+    "storage_bucket": "c-bank-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611330293784:android:8afa311f97cd807db3036d",
+        "android_client_info": {
+          "package_name": "com.citics.cbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611330293784-j5n7h2fcgemragk2r6u72t4d0eip08fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsZXxFOGwoFccHPbNTexjPfBd19Mk7WyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611330293784-j5n7h2fcgemragk2r6u72t4d0eip08fs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "611330293784-ktcr3nlhpordmau23t9f7pm1d37mj86h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vn.citics.cbank"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,235 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    // Add the Crashlytics Gradle plugin
+    id 'com.google.firebase.crashlytics'
+
+}
+
+android {
+    namespace 'com.citics.cbank'
+    compileSdk 33
+//    signingConfigs {
+//        debug {
+//            storeFile file('cbank24_dev_stag_keystore')
+//            keyAlias 'cvaluation'
+//            storePassword 'Cvaluation@2023'
+//            keyPassword 'Cvaluation@2023'
+//        }
+//        stag {
+//            storeFile file('cbank24_dev_stag_keystore')
+//            keyAlias 'cvaluation'
+//            storePassword 'Cvaluation@2023'
+//            keyPassword 'Cvaluation@2023'
+//        }
+//        release {
+//            storeFile file('cvaluer_keystore')
+//            keyAlias 'cvaluer'
+//            storePassword 'Cvaluer@2021'
+//            keyPassword 'Cvaluer@2021'
+//        }
+//    }
+
+    defaultConfig {
+        applicationId "com.citics.cbank"
+        minSdk 28
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (variant.buildType.name == 'release') {
+                output.versionCodeOverride = 86
+                output.versionNameOverride = "2.3.31"
+            }
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable true
+            buildConfigField "String", "API_URL_UPLOADER", "\"${project.findProperty("CITICS_API_UPLOAD_DEV") ?: ""}\""
+            buildConfigField "String", "API_URL_C_BANK", "\"${project.findProperty("CITICS_API_DEV") ?: ""}\""
+            buildConfigField "String", "API_URL_SEARCH", "\"${project.findProperty("CITICS_API_DEV_SEARCH") ?: ""}\""
+            buildConfigField "String", "KEY_LOGIN", "\"${project.findProperty("CITICS_PUBLIC_KEY_LOGIN") ?: ""}\""
+            buildConfigField "String", "KEY_BIO", "\"${project.findProperty("CITICS_PUBLIC_KEY_BIO") ?: ""}\""
+            buildConfigField "String", "CITICS_WEBSITE", "\"${project.findProperty("CITICS_WEBSITE") ?: ""}\""
+            resValue "string", "map_api_key", (project.findProperty("GOOGLE_SERVICES_API_KEY_DEV") ?: "")
+
+            buildConfigField "String", "messenger_api", "\"${project.findProperty("CITICS_MESSENGER_API_DEV") ?: ""}\""
+            buildConfigField "String", "google_maps_api", "\"${project.findProperty("GOOGLE_MAPS_API") ?: ""}\""
+            buildConfigField "String", "endpoint_mqtt", "\"${project.findProperty("CITICS_MQTT_DEV") ?: ""}\""
+            buildConfigField "String", "default_login", "\"tp.tindung@citics.vn\""
+            buildConfigField "String", "default_password", "\"Citics.vn@1233\""
+            buildConfigField "String", "default_lat", "\"10.769274232058889\""
+            buildConfigField "String", "default_lng", "\"106.67871196977671\""
+            buildConfigField "String", "play_store_url", "\"${project.findProperty("PLAY_STORE_URL") ?: ""}\""
+
+            buildConfigField "String", "endpoint_api_valuer", "\"${project.findProperty("CITICS_API_DEV_VALUER") ?: ""}\""
+            buildConfigField "String", "endpoint_mqtt_valuer", "\"${project.findProperty("CITICS_MQTT_DEV_VALUER") ?: ""}\""
+            buildConfigField "String", "endpoint_upload_valuer", "\"${project.findProperty("CITICS_API_UPLOAD_DEV_VALUER") ?: ""}\""
+
+            buildConfigField "String", "endpoint_new_login", "\"${project.findProperty("CITICS_API_NEW_LOGIN_DEV") ?: ""}\""
+            buildConfigField "String", "endpoint_new_bio", "\"${project.findProperty("CITICS_API_NEW_BIO_DEV") ?: ""}\""
+
+        }
+
+        stag {
+            initWith debug
+
+            buildConfigField "String", "API_URL_UPLOADER", "\"${project.findProperty("CITICS_API_UPLOAD_STAG") ?: ""}\""
+            buildConfigField "String", "API_URL_C_BANK", "\"${project.findProperty("CITICS_API_STAG") ?: ""}\""
+            buildConfigField "String", "API_URL_SEARCH", "\"${project.findProperty("CITICS_API_STAG_SEARCH") ?: ""}\""
+            buildConfigField "String", "KEY_LOGIN", "\"${project.findProperty("CITICS_PUBLIC_KEY_LOGIN") ?: ""}\""
+            buildConfigField "String", "KEY_BIO", "\"${project.findProperty("CITICS_PUBLIC_KEY_BIO") ?: ""}\""
+            buildConfigField "String", "CITICS_WEBSITE", "\"${project.findProperty("CITICS_WEBSITE") ?: ""}\""
+            resValue "string", "map_api_key", (project.findProperty("GOOGLE_SERVICES_API_KEY_STAG") ?: "")
+
+            buildConfigField "String", "messenger_api", "\"${project.findProperty("CITICS_MESSENGER_API_STAG") ?: ""}\""
+            buildConfigField "String", "endpoint_mqtt", "\"${project.findProperty("CITICS_MQTT_STAG") ?: ""}\""
+            buildConfigField "String", "default_login", "\"\""
+            buildConfigField "String", "default_password", "\"\""
+            buildConfigField "String", "default_lat", "\"\""
+            buildConfigField "String", "default_lng", "\"\""
+
+            buildConfigField "String", "endpoint_new_login", "\"${project.findProperty("CITICS_API_NEW_LOGIN_STAG") ?: ""}\""
+            buildConfigField "String", "endpoint_new_bio", "\"${project.findProperty("CITICS_API_NEW_BIO_STAG") ?: ""}\""
+
+
+        }
+
+        release {
+            initWith debug
+            debuggable false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+
+            buildConfigField "String", "API_URL_UPLOADER", "\"${project.findProperty("CITICS_API_UPLOAD_PROD") ?: ""}\""
+            buildConfigField "String", "API_URL_C_BANK", "\"${project.findProperty("CITICS_API_PROD") ?: ""}\""
+            buildConfigField "String", "API_URL_SEARCH", "\"${project.findProperty("CITICS_API_PROD_SEARCH") ?: ""}\""
+            buildConfigField "String", "KEY_LOGIN", "\"${project.findProperty("CITICS_PUBLIC_KEY_LOGIN") ?: ""}\""
+            buildConfigField "String", "KEY_BIO", "\"${project.findProperty("CITICS_PUBLIC_KEY_BIO") ?: ""}\""
+            buildConfigField "String", "CITICS_WEBSITE", "\"${project.findProperty("CITICS_WEBSITE") ?: ""}\""
+            resValue "string", "map_api_key", (project.findProperty("GOOGLE_SERVICES_API_KEY_PROD") ?: "")
+
+
+            buildConfigField "String", "messenger_api", "\"${project.findProperty("CITICS_MESSENGER_API_PROD") ?: ""}\""
+            buildConfigField "String", "endpoint_mqtt", "\"${project.findProperty("CITICS_MQTT_PROD") ?: ""}\""
+            buildConfigField "String", "default_login", "\"\""
+            buildConfigField "String", "default_password", "\"\""
+            buildConfigField "String", "default_lat", "\"\""
+            buildConfigField "String", "default_lng", "\"\""
+
+            buildConfigField "String", "endpoint_api_valuer", "\"${project.findProperty("CITICS_API_PROD_VALUER") ?: ""}\""
+            buildConfigField "String", "endpoint_mqtt_valuer", "\"${project.findProperty("CITICS_MQTT_PROD_VALUER") ?: ""}\""
+            buildConfigField "String", "endpoint_upload_valuer", "\"${project.findProperty("CITICS_API_UPLOAD_PROD_VALUER") ?: ""}\""
+
+            buildConfigField "String", "endpoint_new_login", "\"${project.findProperty("CITICS_API_NEW_LOGIN_PROD") ?: ""}\""
+            buildConfigField "String", "endpoint_new_bio", "\"${project.findProperty("CITICS_API_NEW_BIO_PROD") ?: ""}\""
+
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+
+    }
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res/layouts/activity',
+                           'src/main/res/layouts/fragment',
+                           "src/main/res/layouts",
+                           "src/main/res", 'src/main/res/layouts/a', 'src/main/res/layouts/dialog', 'src/main/res/layouts/phuongthucnhandiem', 'src/main/res/layouts/customview', 'src/main/res/layouts/cpoint', 'src/main/res/layouts/main',]
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    // This is a logger
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    // Dependency Injection
+    implementation 'com.google.dagger:hilt-android:2.45'
+    kapt 'com.google.dagger:hilt-android-compiler:2.45'
+
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+    implementation 'com.squareup.moshi:moshi-kotlin:1.14.0'
+    implementation 'com.squareup.moshi:moshi-kotlin-codegen:1.14.0'
+
+
+    //Toasty
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    kapt 'com.github.bumptech.glide:compiler:4.14.2'
+
+    // StateFull layout
+    implementation 'com.github.gturedi:StatefulLayout:1.2.2'
+
+    //Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:3.1.1"
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Google map
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.maps.android:android-maps-utils:3.4.0'
+
+    // Room DB
+    implementation "androidx.room:room-ktx:2.5.1"
+    implementation "androidx.room:room-runtime:2.5.1"
+    kapt "androidx.room:room-compiler:2.5.1"
+
+
+}

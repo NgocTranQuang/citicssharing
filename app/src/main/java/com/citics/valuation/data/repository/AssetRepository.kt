@@ -1,0 +1,408 @@
+package com.citics.valuation.data.repository
+
+import com.citics.cagent.data.model.request.EstimationAssetCHRequest
+import com.citics.cagent.data.model.request.EstimationAssetRequest
+import com.citics.cagent.data.model.request.TSSSMyAssetRequest
+import com.citics.cagent.data.model.request.legal.LegalCreateOrUpdateRequest
+import com.citics.cagent.data.model.request.legal.LegalDeleteDocumentRequest
+import com.citics.cagent.data.model.request.legal.LegalDeleteTagRequest
+import com.citics.cagent.data.model.request.legal.LegalUpdateNameDocumentRequest
+import com.citics.cagent.data.model.response.*
+import com.citics.cagent.data.model.response.base.BaseResponse
+import com.citics.cagent.data.model.response.tham_dinh.AssetLabelRequest
+import com.citics.cagent.data.model.response.tham_dinh.AssetLevelRequest
+import com.citics.cagent.data.model.response.tham_dinh.Properties
+import com.citics.cagent.data.model.response.tudinhgia.DeleteTSSSTSCTRequest
+import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import com.citics.valuation.data.model.response.ErrorResponse
+import com.citics.valuation.data.repository.base.BaseRepository
+import com.citics.valuation.di.ApiAgent
+import com.citics.valuation.di.ApiAgentSearch
+import com.citics.valuation.service.APIService
+import okhttp3.RequestBody
+import javax.inject.Inject
+import javax.inject.Singleton
+
+/**
+ * Created by ChinhQT on 24/10/2022.
+ */
+
+@Singleton
+class AssetRepository @Inject constructor(
+    @ApiAgentSearch private val apiServiceSearch: APIService,
+    @ApiAgent private val apiServiceAgent: APIService,
+) : BaseRepository() {
+
+//    suspend fun getLandDetailByLatLng(
+//        lat: Double, lng: Double, truCP: Boolean
+//    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+//        var cp = ""
+//        if (StaticDataUtils.isTruCPoint) {
+//            cp = "cp"
+//        }
+//        return apiServiceSearch.getLandDetailByLatLng(
+//            cp,
+//            lat, lng
+//        )
+//    }
+//
+//    suspend fun getLandDetailsByVN2000City(
+//        request: RequestBody,
+//    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+//        var cp = ""
+//        if (StaticDataUtils.isTruCPoint) {
+//            cp = "cp"
+//        }
+//        return apiServiceSearch.getLandDetailsByVN2000City(
+//            cp,
+//            request
+//        )
+//    }
+//
+//    suspend fun getLandDetailBySoToSoThua(
+//        ma_thanh_pho: String, ma_quan: String, ward: String, soto: String, sothua: String
+//    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+//        var cp = ""
+//        if (StaticDataUtils.isTruCPoint) {
+//            cp = "cp"
+//        }
+//        return apiServiceSearch.getLandDetailBySoToSoThua(
+//            cp,
+//            ma_thanh_pho, ma_quan, ward, soto, sothua
+//        )
+//    }
+
+    suspend fun getLandSuggestion(
+        term: String, size: Int = 20
+    ): NetworkResponse<LandSuggestionResponse, ErrorResponse> {
+        return apiServiceSearch.getLandSuggestion(term, size)
+    }
+
+    suspend fun estimationAsset(
+        asset_id: String,
+        loai_tai_san: String,
+        properties: Properties,
+        using_purpose: List<DetailUsingPurpose>
+    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        val estimationAssetRequest =
+            EstimationAssetRequest(asset_id, loai_tai_san, properties, using_purpose)
+        return apiServiceSearch.estimationAsset(
+            estimationAssetRequest
+        )
+    }
+
+    suspend fun estimationAssetCH(
+        asset_id: String, loai_tai_san: String, properties: Properties
+    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        val estimationAssetCHRequest = EstimationAssetCHRequest(asset_id, loai_tai_san, properties)
+        return apiServiceSearch.estimationAssetCH(
+            estimationAssetCHRequest
+        )
+    }
+
+    suspend fun getCanHoSuggestion(
+        term: String, size: Int = 20
+    ): NetworkResponse<LandSuggestionResponse, ErrorResponse> {
+        return apiServiceSearch.getCanHoSuggestion(term, size)
+    }
+
+    suspend fun getProjectDetail(id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.getProjectDetail(id)
+    }
+
+    suspend fun getProjectDetail2(id: String): NetworkResponse<ProjectDetailResponse, ErrorResponse> {
+        return apiServiceSearch.getProjectDetail2(id)
+    }
+
+    suspend fun getCanHoAdvanced(
+        query: String, page: Int = 20, shapes: String
+    ): NetworkResponse<CanHoAdvancedResponse, ErrorResponse> {
+        return apiServiceSearch.getCanHoAdvanced(
+            query, page, shapes
+        )
+    }
+
+//    fun getCanHoAdvanced(
+//        term: String, shapes: String = ""
+//    ): Flow<PagingData<CanHoAdvancedResponse.Content>> {
+//        return Pager(config = PagingConfig(
+//            enablePlaceholders = false, initialLoadSize = PAGE_SIZE, pageSize = PAGE_SIZE
+//        ), pagingSourceFactory = {
+//            AssetPagingSource(
+//                apiServiceSearch, term, shapes, headers
+//            )
+//        }).flow
+//    }
+
+    suspend fun getCanHoSuggestion(
+        project_id: String, term: String
+    ): NetworkResponse<CanHoSuggestionResponse, ErrorResponse> {
+        return apiServiceSearch.getCanHoSuggestion(
+            project_id, term
+        )
+    }
+
+    suspend fun getAllCanHoByProjectId(
+        project_id: String?
+    ): NetworkResponse<BaseResponse<MutableList<String>, Any>, ErrorResponse> {
+        return apiServiceSearch.getAllCanHoByProjectId(
+            project_id ?: ""
+        )
+    }
+
+    suspend fun getCanHoFilterAdvance(
+        project_id: String,
+        loaiCanHo: String,
+        thap: String,
+        tang: String,
+        dien_tich_thong_thuy: String,
+        huong: String
+    ): NetworkResponse<CanHoFilterAdvanceResponse, ErrorResponse> {
+        return apiServiceSearch.getCanHoFilterAdvance(
+            project_id,
+            loaiCanHo,
+            thap,
+            tang,
+            dien_tich_thong_thuy,
+            huong,
+           
+        )
+    }
+
+    suspend fun getOptionsSuggestion(
+        project_id: String
+    ): NetworkResponse<OptionsSuggestionResponse, ErrorResponse> {
+        return apiServiceSearch.getOptionsSuggestion(
+            project_id
+        )
+    }
+
+    suspend fun getCiticsPriceChart(
+        asset_id: String
+    ): NetworkResponse<CiticsPriceChartResponse, ErrorResponse> {
+        return apiServiceSearch.getCiticsPriceChart(
+            asset_id
+        )
+    }
+
+//    suspend fun getApartmentAsset(
+//        project_id: String, ma_can: String
+//    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+//        var cp = ""
+//        if (StaticDataUtils.isTruCPoint) {
+//            cp = "cp"
+//        }
+//        return apiServiceSearch.getApartmentAsset(
+//            cp,
+//            project_id, ma_can
+//        )
+//    }
+
+    suspend fun selfAssetRequest(
+        body: RequestBody
+    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.selfAssetRequest(
+            body
+        )
+    }
+
+    suspend fun selfAssetComparedAdd(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.selfAssetComparedAdd(
+            body
+        )
+    }
+
+    suspend fun addTSSSTSCT(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.addTSSSTSCT(
+            body
+        )
+    }
+
+    suspend fun mineUpsert(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.mineUpsert(
+            body
+        )
+    }
+
+    suspend fun getLichSuThamDinhGia(id: String): NetworkResponse<BaseResponse<List<ListLichSuThamDinhGiaDTO>, Any>, ErrorResponse> {
+        return apiServiceSearch.getLichSuThamDinhGia(id)
+    }
+
+    suspend fun updateComparedAsset(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.updateComparedAsset(
+            body
+        )
+    }
+
+    suspend fun updateComparedAssetTSCT(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.updateComparedAssetTSCT(
+            body
+        )
+    }
+
+    suspend fun getSelfAssetCalculate(): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.getSelfAssetCalculate()
+    }
+
+    suspend fun getSelfAssetCalculateTSCT(my_asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.getSelfAssetCalculateTSCT(
+            my_asset_id
+        )
+    }
+
+    suspend fun deleteComparedAsset(asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.deleteComparedAsset(asset_id)
+    }
+
+    suspend fun deleteComparedAssetTSCT(asset_id: DeleteTSSSTSCTRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.deleteComparedAssetTSCT(asset_id)
+    }
+
+    suspend fun getDonGiaUBND(ma_quan: String): NetworkResponse<BaseResponse<DonGiaUBNDResponse, Any>, ErrorResponse> {
+        return apiServiceSearch.getDonGiaUBND(ma_quan)
+    }
+
+    //region My Asset
+
+    suspend fun getMineFilterMap(
+        filters: HashMap<String, Any?>?
+    ): NetworkResponse<MineFilterMapResponse, ErrorResponse> {
+        return apiServiceAgent.getMineFilterMap(
+            filters
+        )
+    }
+
+//    fun getMineFilterCard(
+//        filters: HashMap<String, Any?>?
+//    ): Flow<PagingData<MineFilterCardResponse.Content>> {
+//        return Pager(config = PagingConfig(
+//            enablePlaceholders = false, initialLoadSize = PAGE_SIZE, pageSize = PAGE_SIZE
+//        ), pagingSourceFactory = {
+//            MyAssetPagingSource(
+//                apiServiceAgent, filters, headers
+//            )
+//        }).flow
+//    }
+
+    suspend fun getMineFilterSummary(): NetworkResponse<MineFilterSummaryResponse, ErrorResponse> {
+        return apiServiceAgent.getMineFilterSummary(
+           
+        )
+    }
+
+    suspend fun getAssetVote(
+        asset_id: String, isChange: Boolean?
+    ): NetworkResponse<AssetVoteResponse, ErrorResponse> {
+        return apiServiceAgent.getAssetVote(
+            asset_id, isChange
+        )
+    }
+
+    suspend fun getMineDeleteByID(myAssetID: String): NetworkResponse<AssetDeleteResponse, ErrorResponse> {
+        return apiServiceAgent.getMineDeleteByID(
+            myAssetID
+        )
+    }
+
+    suspend fun getMineById(my_asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.getMineById(
+            my_asset_id
+        )
+    }
+
+    suspend fun getCValueOfAssetById(my_asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.getCValueOfAsset(
+            my_asset_id
+        )
+    }
+
+    suspend fun addTSSSFromMyAsset(request: TSSSMyAssetRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.addTSSSFromMyAsset(
+            request
+        )
+    }
+
+    suspend fun updateTSSSFromMyAsset(request: TSSSMyAssetRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.updateTSSSFromMyAsset(
+            request
+        )
+    }
+
+    suspend fun updatePhapLy(pl: LegalCreateOrUpdateRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.updatePhapLy(pl)
+    }
+
+    suspend fun updatePhapLyTSCTSCT(pl: LegalCreateOrUpdateRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.updatePhapLyTSCTSCT(pl)
+    }
+
+    suspend fun deletePhapLy(pl: LegalDeleteTagRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.deletePhapLy(pl)
+    }
+
+    suspend fun deletePhapLyTagTSCTSCT(pl: LegalDeleteTagRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.deletePhapLyTSCTSCT(pl)
+    }
+
+    suspend fun deleteImagePhapLy(pl: LegalDeleteDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.deleteImagesPhapLy(pl)
+    }
+
+    suspend fun deleteImagesPhapLyTSCTSCT(pl: LegalDeleteDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.deleteImagesPhapLyTSCTSCT(pl)
+    }
+
+    suspend fun getStaticLegalProperty(type: Int): NetworkResponse<BaseResponse<LegalPropertyResponse, Any>, ErrorResponse> {
+        return apiServiceSearch.legalProperty(type)
+    }
+
+    suspend fun legalUpdateNameDocument(rq: LegalUpdateNameDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.legalDocumentNameUpdate(rq)
+    }
+
+    suspend fun legalDocumentNameUpdateTSCTSCT(rq: LegalUpdateNameDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.legalDocumentNameUpdateTSCTSCT(rq)
+    }
+
+    suspend fun genHTML(
+        my_asset_id: String
+    ): NetworkResponse<HTMLResponse, ErrorResponse> {
+        return apiServiceAgent.genHTML(
+            my_asset_id
+        )
+    }
+
+    suspend fun genPDF(
+        my_asset_id: String
+    ): NetworkResponse<PDFResponse, ErrorResponse> {
+        return apiServiceAgent.genPDF(
+            my_asset_id
+        )
+    }
+
+    suspend fun labelUpdate(
+        reqest: AssetLabelRequest?
+    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.labelUpdate(
+            reqest
+        )
+    }
+
+    suspend fun levelUpgrade(
+        reqest: AssetLevelRequest?
+    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceAgent.levelUpgrade(
+            reqest
+        )
+    }
+
+    //endregion
+
+    suspend fun getRanhThuaBoundaries(
+        maxLng: Double, minLng: Double, maxLat: Double, minLat: Double, tiny: Boolean
+    ): NetworkResponse<RanhThuaResponse, ErrorResponse> {
+        return apiServiceSearch.getRanhThuaBoundaries(
+            maxLng, minLng, maxLat, minLat, tiny
+        )
+    }
+}
