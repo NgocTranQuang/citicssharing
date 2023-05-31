@@ -19,23 +19,26 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import com.citics.cbank.R
+import com.citics.valuation.extension.showBalloonPopup
 
-abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel> : Fragment() {
+abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> V) :
+    Fragment() {
 
     private var _binding: V? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    private val binding get() = _binding!!
+    val binding get() = _binding!!
     abstract val viewModel: VM
 
 
-    abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> V
+//    abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> V
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,6 +53,11 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         onConfigUI()
         onObserverData()
+        onClickListener()
+    }
+
+    open fun onClickListener() {
+
     }
 
     open fun onObserverData() {
@@ -90,6 +98,9 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    fun showBalloonPopup(content: String, view: View, xOff: Int = 0) {
+        view.showBalloonPopup(content, xOff)
     }
 
     open fun dataListenerScope(listenerData: suspend CoroutineScope.() -> Unit) {

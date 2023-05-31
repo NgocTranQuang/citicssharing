@@ -1,6 +1,7 @@
 package com.citics.valuation.extension
 
 import android.icu.text.NumberFormat
+import com.citics.valuation.utils.Utils
 import java.math.BigDecimal
 import java.util.Locale
 import java.util.concurrent.TimeUnit

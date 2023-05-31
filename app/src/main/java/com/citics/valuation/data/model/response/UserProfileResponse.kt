@@ -25,7 +25,7 @@ data class UserProfileResponse(
         val off_receive_record: Boolean? = null,
         val on_receive_record_date: Long? = null,
         val notificationCount: String? = "2380",
-        val chuc_vu: String? = null,
+        val chuc_vu: KeyTitleDTO? = null,
         val cap_do_xu_ly_ho_so_title: String? = null,
         val cap_do_moi_gioi_title: String? = null,
         val ngay_thang_nam_sinh: String? = null,

@@ -37,7 +37,7 @@ class ApiHeadersProvider @Inject constructor(private val preferenceManager: Pref
         HEADER_ACCEPT to "application/json",
         USER_AGENT to userAgent,
         DEVICE_NAME to getDeviceName(),
-        CTC_PROVIDER to "agent",
+        CTC_PROVIDER to "bank",
         DEVICE_ID to preferenceManager.deviceID
     )
 

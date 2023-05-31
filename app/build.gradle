@@ -164,7 +164,7 @@ android {
             res.srcDirs = ['src/main/res/layouts/activity',
                            'src/main/res/layouts/fragment',
                            "src/main/res/layouts",
-                           "src/main/res", 'src/main/res/layouts/a', 'src/main/res/layouts/dialog', 'src/main/res/layouts/phuongthucnhandiem', 'src/main/res/layouts/customview', 'src/main/res/layouts/cpoint', 'src/main/res/layouts/main',]
+                           "src/main/res", 'src/main/res/layouts/a', 'src/main/res/layouts/dialog', 'src/main/res/layouts/phuongthucnhandiem', 'src/main/res/layouts/customview', 'src/main/res/layouts/cpoint', 'src/main/res/layouts/main', 'src/main/res/layouts/biometric', 'src/main/res/layouts/authen',]
         }
     }
 }
@@ -230,6 +230,17 @@ dependencies {
     implementation "androidx.room:room-ktx:2.5.1"
     implementation "androidx.room:room-runtime:2.5.1"
     kapt "androidx.room:room-compiler:2.5.1"
+
+    // Biometric
+    implementation("androidx.biometric:biometric:1.2.0-alpha05")
+
+    //Balon
+    implementation 'com.github.skydoves:balloon:1.5.2'
+
+    //Firebase message
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
+
+
 
 
 }

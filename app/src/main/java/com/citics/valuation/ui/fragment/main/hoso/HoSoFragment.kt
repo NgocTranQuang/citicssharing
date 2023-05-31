@@ -6,9 +6,7 @@ import androidx.fragment.app.viewModels
 import com.citics.cbank.databinding.FragmentMainHosoBinding
 import com.citics.valuation.ui.base.BaseFragment
 
-class HoSoFragment : BaseFragment<FragmentMainHosoBinding, HoSoViewModel>() {
+class HoSoFragment : BaseFragment<FragmentMainHosoBinding, HoSoViewModel>(FragmentMainHosoBinding::inflate) {
 
     override val viewModel: HoSoViewModel by viewModels()
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMainHosoBinding
-        get() = FragmentMainHosoBinding::inflate
 }

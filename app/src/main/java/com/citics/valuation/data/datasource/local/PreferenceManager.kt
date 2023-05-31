@@ -178,4 +178,7 @@ class PreferenceManager @Inject constructor(context: Context) {
         )
         set(value) = pref.edit().putBoolean(PREF_KEY_IGNORE_LOOUP_INSTRUCTION_DIALOG, value).apply()
 
+    fun clearAll(){
+        pref.edit().clear().commit()
+    }
 }

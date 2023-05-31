@@ -17,6 +17,7 @@ import com.citics.cagent.data.model.response.hoahong.HoaHongResponse
 import com.citics.cagent.data.model.response.tham_dinh.*
 import com.citics.cagent.data.model.response.tudinhgia.DeleteTSSSTSCTRequest
 import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import com.citics.cbank.BuildConfig
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.service.header.AuthenticatedHeaders
 import okhttp3.MultipartBody
@@ -30,7 +31,7 @@ interface APIService {
 
     //region AUTHORIZE
 
-    @POST("v2.4/authorize/auth.login/v2")
+    @POST(BuildConfig.endpoint_new_login)
     suspend fun loginAccount(
         @Body userRequest: UserRequest
     ): NetworkResponse<UserResponse, ErrorResponse>
@@ -72,7 +73,7 @@ interface APIService {
 
     //region USER
 
-    @GET("v2.4/account/detail.get")
+    @GET("v2/account/detail.get")
     suspend fun getUserProfile(): NetworkResponse<UserProfileResponse, ErrorResponse>
 
     @Multipart
@@ -853,7 +854,7 @@ interface APIService {
 
     //region Notification
 
-    @POST("v2.4/notification/device.register")
+    @POST("v2/notification/device.register")
     suspend fun registerNotification(
         @Body notificationRequest: NotificationRequest,
 
@@ -980,7 +981,7 @@ interface APIService {
 
     //region Biometric
 
-    @POST("v2.4/bio/login")
+    @POST(BuildConfig.endpoint_new_bio)
     suspend fun loginBiometric(
         @Body biometricRequest: BiometricRequest
     ): NetworkResponse<UserResponse, ErrorResponse>

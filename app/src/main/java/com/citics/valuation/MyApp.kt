@@ -28,8 +28,6 @@ class MyApp : Application() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         val id = getDeviceId(this)
         preferenceManager.deviceID = id ?: ""
-        preferenceManager.jwtToken =
-            "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzMjAyMjEwMjExMTE2MDgwMDMwMDEiLCJhdXRoIjoiUk9MRV9BR0VOQ1lfTDEsUk9MRV9BR0VOQ1lfUFJPQ19SRUNPUkRfTDEsUk9MRV9BR0VOVCIsInVzZXJfaWQiOiIzMjAyMjEwMjExMTE2MDgwMDMwMDEiLCJ1c2VyX25hbWUiOiJjdW9uZ3Z4QGNpdGljcy52biIsImxvbmdpdHVkZSI6MTA2LjcwNjI2MzcsImxhdGl0dWRlIjoxMC43NjAzMTU0LCJDVEMtUGxhdGZvcm0iOiJXZWIiLCJVc2VyLUFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy4zMi4yIiwiRGV2aWNlLU5hbWUiOiI0NTQ1NjQ1NiIsIkRldmljZS1JRCI6IjEyMzE0NDQ0IiwiZXhwIjoxNjg1NTg2NjEyfQ.ZLeb1HRSPzBk41rgFqEQsx6KQc5XF-5JWVKQ7_oaBwGwM5gknsjwXWUEpz78rxzv5q5dKkU2k_bf0dfa4wi1Yw"
     }
 
     @SuppressLint("HardwareIds")

@@ -12,10 +12,9 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import com.citics.cbank.databinding.FragmentMainTaiKhoanBinding
 
 @AndroidEntryPoint
-class TaiKhoanFragment : BaseFragment<FragmentMainTaiKhoanBinding, TaiKhoanViewModel>() {
-    override val viewModel: TaiKhoanViewModel by viewModels()
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMainTaiKhoanBinding
-        get() = FragmentMainTaiKhoanBinding::inflate
+class TaiKhoanFragment :
+    BaseFragment<FragmentMainTaiKhoanBinding, ProfileViewModel>(FragmentMainTaiKhoanBinding::inflate) {
+    override val viewModel: ProfileViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,6 +26,7 @@ class TaiKhoanFragment : BaseFragment<FragmentMainTaiKhoanBinding, TaiKhoanViewM
             viewModel.userprofileResponse.handleResponse(onLoading = {
                 viewModel.getUserProfile()
             }) {
+                viewModel.saveInfo(it)
                 it?.let {
                     showInfo("${it.data?.name}")
                 }

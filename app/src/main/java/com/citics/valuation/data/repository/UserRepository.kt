@@ -15,6 +15,8 @@ import com.citics.valuation.di.ApiAgent
 import com.citics.valuation.di.ApiAgentSearch
 import com.citics.valuation.service.APIService
 import com.citics.valuation.service.header.ApiHeadersProvider
+import com.citics.valuation.utils.RSA
+import com.citics.valuation.utils.Utils
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -23,7 +25,8 @@ import javax.inject.Singleton
  * Created by ChinhQT on 25/09/2022.
  */
 @Singleton
-class UserRepository @Inject constructor(@ApiAgent private val apiService: APIService,
+class UserRepository @Inject constructor(
+    @ApiAgent private val apiService: APIService,
     @ApiAgentSearch private val apiServiceSearch: APIService
 ) : BaseRepository() {
 
@@ -45,22 +48,18 @@ class UserRepository @Inject constructor(@ApiAgent private val apiService: APISe
         return apiService.logout()
     }
 
-//    fun saveUserDetail(username: String, userResponse: UserResponse) {
-//        userResponse.data?.let { user ->
-////            preferenceManager.userId = user.user_id
-////            preferenceManager.jwtToken = user.token
-////            preferenceManager.isLogined = true
-//
-//            Utils.saveUserAccount(preferenceManager, username, user)
-//        }
-//    }
+    fun saveUserDetail(username: String, userResponse: UserResponse) {
+        userResponse.data?.let { user ->
+            Utils.saveUserAccount(preferenceManager, username, user)
+        }
+    }
 
     suspend fun getHoaHongOverview(): NetworkResponse<BaseResponse<HoaHongOverviewResponse, Any>, ErrorResponse> {
         return apiService.getHoaHongOverview()
     }
 
     suspend fun getHoaHongDetail(id: String?): NetworkResponse<BaseResponse<ContentHoaHongDTO, Any>, ErrorResponse> {
-        return apiService.getHoaHongDetail(id, )
+        return apiService.getHoaHongDetail(id)
     }
 
     suspend fun getCPointCuaBan(): NetworkResponse<BaseResponse<Long?, Any>, ErrorResponse> {
@@ -121,7 +120,7 @@ class UserRepository @Inject constructor(@ApiAgent private val apiService: APISe
     }
 
     suspend fun ngungTiepNhanHoSo(ngung: Boolean): NetworkResponse<UserProfileResponse, ErrorResponse> {
-        return apiService.ngungTiepNhanHoSo(ngung, )
+        return apiService.ngungTiepNhanHoSo(ngung)
     }
 
     suspend fun registerUser(
@@ -144,26 +143,26 @@ class UserRepository @Inject constructor(@ApiAgent private val apiService: APISe
     }
 
     suspend fun changePassword(changePassRequest: ChangePassRequest): NetworkResponse<ResultResponse, ErrorResponse> {
-        return apiService.changePassword(changePassRequest, )
+        return apiService.changePassword(changePassRequest)
     }
 
-//    suspend fun registerBiometric(password: String?): NetworkResponse<BaseResponse<RegisterResponseDTO, Any>, ErrorResponse> {
-//        val rq = password?.let {
-//            val encryptedAuth = RSA.encrypt("$password", RSA.getBioPublicKey())
-//            RegisterBiometricRequest(encryptedAuth)
-//        } ?: kotlin.run {
-//            RegisterBiometricRequest(null)
-//        }
-//        return apiService.registerBiometric(rq, )
-//    }
+    suspend fun registerBiometric(password: String?): NetworkResponse<BaseResponse<RegisterResponseDTO, Any>, ErrorResponse> {
+        val rq = password?.let {
+            val encryptedAuth = RSA.encrypt("$password", RSA.getBioPublicKey())
+            RegisterBiometricRequest(encryptedAuth)
+        } ?: kotlin.run {
+            RegisterBiometricRequest(null)
+        }
+        return apiService.registerBiometric(rq)
+    }
 
     suspend fun loginBiometric(rq: BiometricRequest): NetworkResponse<UserResponse, ErrorResponse> {
-        return apiService.loginBiometric(rq, )
+        return apiService.loginBiometric(rq)
     }
 
-//    fun saveFingerId(fingerID: String?) {
-//        Utils.saveFingerID(preferenceManager, fingerID ?: "")
-//    }
+    fun saveFingerId(fingerID: String?) {
+        Utils.saveFingerID(preferenceManager, fingerID ?: "")
+    }
 
     fun getFingerID(): String {
         return preferenceManager.fingerID
@@ -181,9 +180,14 @@ class UserRepository @Inject constructor(@ApiAgent private val apiService: APISe
         return Pair(preferenceManager.userName, preferenceManager.user_login)
     }
 
+    fun isLogined(): Boolean {
+        return preferenceManager.isLogined
+    }
+
     fun clearUsername() {
         preferenceManager.userName = ""
         preferenceManager.user_login = ""
+        preferenceManager.isLogined = false
     }
 
 }

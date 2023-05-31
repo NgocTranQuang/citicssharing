@@ -6,6 +6,7 @@
         <domain includeSubdomains="true">dev-api-search.citics.vn</domain>
         <domain includeSubdomains="true">dev-api-agent.citics.vn</domain>
         <domain includeSubdomains="true">dev-api-value.citics.vn</domain>
+        <domain includeSubdomains="true">dev-api-authorize.citics.vn</domain>
     </domain-config>
     <base-config cleartextTrafficPermitted="true"/>
 </network-security-config>

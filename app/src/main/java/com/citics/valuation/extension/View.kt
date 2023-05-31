@@ -9,8 +9,10 @@ import android.content.res.Resources.NotFoundException
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.os.Parcelable
 import android.os.SystemClock
 import android.text.TextUtils
+import android.util.SparseArray
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
@@ -21,14 +23,13 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatRadioButton
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
+import androidx.core.view.children
 import androidx.core.view.forEach
 import androidx.core.view.updateMargins
 import androidx.core.widget.ImageViewCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.*
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -38,6 +39,7 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.*
 import timber.log.Timber
 import com.citics.cbank.R
+import com.skydoves.balloon.*
 
 
 /**
@@ -217,33 +219,53 @@ fun RadioButton.applyCiticsStyle() {
 }
 
 //
-//fun View.showBalloonPopup(
-//    content: String,
-//    xOff: Int = 0,
-//    resLayout: Int? = null
-//): Balloon? {
-//    if (content.isEmpty()) return null
-//
-//    val balloon = context?.let {
-//        createBalloon(it) {
-//            setWidth(BalloonSizeSpec.WRAP)
-//            setHeight(BalloonSizeSpec.WRAP)
-//            setText(content)
-//            setTextColorResource(R.color.white)
-//            setTextSize(15f)
-//            setArrowPositionRules(ArrowPositionRules.ALIGN_ANCHOR)
-//            setPadding(12)
-//            setCornerRadius(8f)
-//            setIsVisibleArrow(false)
-//            setBackgroundColorResource(R.color.black)
-//            setBalloonAnimation(BalloonAnimation.FADE)
-//            setLifecycleOwner(lifecycleOwner)
-//            if (resLayout != null) {
-//                setLayout(resLayout)
-//            }
-//            build()
-//        }
-//    }
-//    balloon?.showAlignBottom(this, xOff)
-//    return balloon
-//}
+fun View.showBalloonPopup(
+    content: String,
+    xOff: Int = 0,
+    resLayout: Int? = null
+): Balloon? {
+    if (content.isEmpty()) return null
+
+    val balloon = context?.let {
+        createBalloon(it) {
+            setWidth(BalloonSizeSpec.WRAP)
+            setHeight(BalloonSizeSpec.WRAP)
+            setText(content)
+            setTextColorResource(R.color.white)
+            setTextSize(15f)
+            setArrowPositionRules(ArrowPositionRules.ALIGN_ANCHOR)
+            setPadding(12)
+            setCornerRadius(8f)
+            setIsVisibleArrow(false)
+            setBackgroundColorResource(R.color.black)
+            setBalloonAnimation(BalloonAnimation.FADE)
+            setLifecycleOwner(lifecycleOwner)
+            if (resLayout != null) {
+                setLayout(resLayout)
+            }
+            build()
+        }
+    }
+    balloon?.showAlignBottom(this, xOff)
+    return balloon
+}
+
+fun View.delayOnLifecycle(
+    durationInMillis: Long, dispatcher: CoroutineDispatcher = Dispatchers.Main, block: () -> Unit
+): Job? = findViewTreeLifecycleOwner()?.let { lifecycleOwner ->
+    lifecycleOwner.lifecycle.coroutineScope.launch(dispatcher) {
+        delay(durationInMillis)
+        block()
+    }
+}
+
+
+fun ViewGroup.saveChildViewStates(): SparseArray<Parcelable> {
+    val childViewStates = SparseArray<Parcelable>()
+    children.forEach { child -> child.saveHierarchyState(childViewStates) }
+    return childViewStates
+}
+
+fun ViewGroup.restoreChildViewStates(childViewStates: SparseArray<Parcelable>) {
+    children.forEach { child -> child.restoreHierarchyState(childViewStates) }
+}

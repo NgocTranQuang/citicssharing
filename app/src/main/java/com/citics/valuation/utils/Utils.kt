@@ -1,4 +1,4 @@
-package com.citics.valuation.extension
+package com.citics.valuation.utils
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -6,6 +6,7 @@ import android.icu.text.NumberFormat
 import com.citics.cagent.data.model.response.UserResponse
 import com.citics.cagent.data.model.response.tham_dinh.RecordResponse
 import com.citics.valuation.data.datasource.local.PreferenceManager
+import com.citics.valuation.extension.getDrawableFromName
 import java.util.*
 
 

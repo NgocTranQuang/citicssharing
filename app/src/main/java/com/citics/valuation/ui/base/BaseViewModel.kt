@@ -83,10 +83,11 @@ open class BaseViewModel @Inject constructor() : ViewModel() {
 
 
 
-    fun <T : Any> NetworkResponse<T, ErrorResponse>.handleResponse(): Resource<T> {
+    fun <T : Any> NetworkResponse<T, ErrorResponse>.handleResponse(onSuccess:((T)->Unit)?=null): Resource<T> {
         when (this) {
             is NetworkResponse.Success -> {
                 Timber.d("NetworkResponse.Success")
+                onSuccess?.invoke(body)
                 return Resource.Success(body)
             }
 

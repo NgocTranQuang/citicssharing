@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    All fragments between the last fragment and the fragment defined
+in popUpTo will be removed.-->
+<!--    And if we add app:popUpToInclusive="true", then the fragment defined
+in popUpTo will also be removed.-->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_authentication"
+    app:startDestination="@id/loginFragment">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.citics.valuation.ui.fragment.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+    </fragment>
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/oTPConfirmInNewDeviceFragment"-->
+    <!--        android:name="com.citics.cagent.ui.fragments.authentication.forgetpass.phone.OTPConfirmInNewDeviceFragment"-->
+    <!--        android:label="OTPConfirmInNewDeviceFragment"-->
+    <!--        tools:layout="@layout/fragment_otp">-->
+
+    <!--    </fragment>-->
+
+
+</navigation>

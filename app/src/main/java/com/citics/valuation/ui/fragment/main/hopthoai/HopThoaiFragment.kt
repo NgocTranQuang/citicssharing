@@ -7,9 +7,7 @@ import com.citics.valuation.ui.base.BaseFragment
 import com.citics.valuation.ui.fragment.hoso.HopThoaiViewModel
 import com.citics.cbank.databinding.FragmentMainHopThoaiBinding
 
-class HopThoaiFragment : BaseFragment<FragmentMainHopThoaiBinding, HopThoaiViewModel>() {
+class HopThoaiFragment : BaseFragment<FragmentMainHopThoaiBinding, HopThoaiViewModel>(FragmentMainHopThoaiBinding::inflate) {
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMainHopThoaiBinding
-        get() = FragmentMainHopThoaiBinding::inflate
     override val viewModel: HopThoaiViewModel by viewModels()
 }

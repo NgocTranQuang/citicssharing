@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.citics.valuation.ui.base.BaseFragment
 import com.citics.cbank.databinding.FragmentMainThongKeBinding
 
-class ThongKeFragment : BaseFragment<FragmentMainThongKeBinding, ThongKeViewModel>() {
+class ThongKeFragment : BaseFragment<FragmentMainThongKeBinding, ThongKeViewModel>(FragmentMainThongKeBinding::inflate) {
     //
 //    private var _binding: FragmentMainThongKeBinding? = null
 //
@@ -54,7 +54,5 @@ class ThongKeFragment : BaseFragment<FragmentMainThongKeBinding, ThongKeViewMode
 //        super.onDestroyView()
 //        _binding = null
 //    }
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMainThongKeBinding
-        get() = FragmentMainThongKeBinding::inflate
     override val viewModel: ThongKeViewModel by viewModels()
 }

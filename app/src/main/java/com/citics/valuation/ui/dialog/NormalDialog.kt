@@ -54,16 +54,13 @@ class NormalDialog : BaseDialog<LayoutDialogCiticsBinding>(LayoutDialogCiticsBin
         setPositiveButton(mPositive.toString())
         setNegativeButton(mNegative.toString())
         setStart(gravity)
-
         isCancelable = false
-
-        binding?.positiveBtn?.setOnClickListener {
-            mPositiveButtonListener?.onClick(this.dialog, DialogInterface.BUTTON_POSITIVE)
+        binding?.root?.negativeButtonListener = {
+            mPositiveButtonListener?.onClick(this.dialog, DialogInterface.BUTTON_NEGATIVE)
             dismiss()
         }
-
-        binding?.negativeBtn?.setOnClickListener {
-            mNegativeButtonListener?.onClick(this.dialog, DialogInterface.BUTTON_NEGATIVE)
+        binding?.root?.positiveButtonListener = {
+            mPositiveButtonListener?.onClick(this.dialog, DialogInterface.BUTTON_POSITIVE)
             dismiss()
         }
     }
@@ -72,38 +69,15 @@ class NormalDialog : BaseDialog<LayoutDialogCiticsBinding>(LayoutDialogCiticsBin
 
     private fun setTitle(msg: String) {
         title = msg
-        binding?.titleTxt?.text = title
+        binding?.root?.setTitle(msg)
     }
 
     private fun setImage(resourceID: Int, isType: DialogType = DialogType.NORMAL) {
         this.iconResource = resourceID
         this.isType = isType
 
-        binding?.iconImg?.setImageResource(resourceID)
-        when (isType) {
-            DialogType.NORMAL -> {
-                binding?.iconImg?.imageTintList = ColorStateList.valueOf(
-                    ResourcesCompat.getColor(
-                        resources, R.color.icon_normal, binding?.iconImg?.context?.theme
-                    )
-                )
-            }
-            DialogType.CONFIRM -> {
-                binding?.iconImg?.imageTintList = ColorStateList.valueOf(
-                    ResourcesCompat.getColor(
-                        resources, R.color.color_red, binding?.iconImg?.context?.theme
-                    )
-                )
-            }
-            DialogType.ERROR -> {
-                binding?.iconImg?.imageTintList = ColorStateList.valueOf(
-                    ResourcesCompat.getColor(
-                        resources, R.color.icon_error, binding?.iconImg?.context?.theme
-                    )
-                )
-            }
-            else -> {}
-        }
+        binding?.root?.setImage(resourceID, isType)
+
     }
 
     private fun setStart(gravity: Int) {
@@ -122,22 +96,13 @@ class NormalDialog : BaseDialog<LayoutDialogCiticsBinding>(LayoutDialogCiticsBin
 
     private fun setPositiveButton(msg: String) {
         mPositive = msg
-        if (msg.isEmpty()) {
-            binding?.positiveBtn?.visibility = View.GONE
-        } else {
-            binding?.positiveBtn?.text = msg
-            binding?.positiveBtn?.visibility = View.VISIBLE
-        }
+        binding?.root?.setPositiveButton(msg)
     }
 
     private fun setNegativeButton(msg: String) {
         mNegative = msg
-        if (msg.isEmpty()) {
-            binding?.negativeBtn?.visibility = View.GONE
-        } else {
-            binding?.negativeBtn?.text = msg
-            binding?.negativeBtn?.visibility = View.VISIBLE
-        }
+        binding?.root?.setNegativeButton(msg)
+
     }
 
     class Builder(val context: Context) {

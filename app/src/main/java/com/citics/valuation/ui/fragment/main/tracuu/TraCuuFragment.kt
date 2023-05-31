@@ -11,10 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.citics.valuation.ui.base.BaseFragment
 import com.citics.cbank.databinding.FragmentMainTraCuuBinding
 
-class TraCuuFragment : BaseFragment<FragmentMainTraCuuBinding, TraCuuViewModel>() {
+class TraCuuFragment : BaseFragment<FragmentMainTraCuuBinding, TraCuuViewModel>(FragmentMainTraCuuBinding::inflate) {
     override val viewModel: TraCuuViewModel by viewModels()
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMainTraCuuBinding
-        get() = FragmentMainTraCuuBinding::inflate
 
 
 }
