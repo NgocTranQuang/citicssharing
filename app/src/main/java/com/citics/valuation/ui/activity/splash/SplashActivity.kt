@@ -2,7 +2,10 @@ package com.citics.valuation.ui.activity.splash
 
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
+import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivitySplashBinding
 import com.citics.valuation.extension.delayOnLifecycle
 import com.citics.valuation.ui.activity.login.LoginActivity
@@ -10,14 +13,19 @@ import com.citics.valuation.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+
 @AndroidEntryPoint
 class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
     override val viewModel: SplashViewModel by viewModels()
     override val bindingInflater: (LayoutInflater) -> ActivitySplashBinding
         get() = ActivitySplashBinding::inflate
     private var action: String? = ""
+    var fade_in_anim: Animation? = null
+
 
     override fun onConfigUI() {
+        fade_in_anim = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        binding.root.startAnimation(fade_in_anim)
         super.onConfigUI()
         val bundle = intent.extras
         if (bundle != null) {
@@ -31,10 +39,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
             Timber.e("onCreate - nPin = $nPin")
             Timber.e("onCreate - contentId = $contentId")
         }
-        binding.root.delayOnLifecycle(1000L) {
+        binding.root.delayOnLifecycle(2000L) {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
     }
-
 }
