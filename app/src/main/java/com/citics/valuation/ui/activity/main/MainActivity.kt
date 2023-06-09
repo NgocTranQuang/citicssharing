@@ -9,6 +9,7 @@ import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivityMainBinding
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel
+import com.citics.valuation.utils.LoaiTaiSan
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,6 +36,13 @@ class MainActivity : BaseActivity<ActivityMainBinding, BaseViewModel>() {
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.getOrCreateBadge(R.id.navigation_ho_so).number = 10
+        navView.getOrCreateBadge(R.id.navigation_hop_thoai).number = 100
+    }
+
+
+    override fun onBackPressed() {
+        finish()
     }
 
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding

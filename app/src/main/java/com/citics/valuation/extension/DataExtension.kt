@@ -9,8 +9,16 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.citics.cagent.data.model.response.Document
+import com.citics.cagent.data.model.response.LandDTO
+import com.citics.cbank.R
 import com.citics.valuation.data.model.others.ChooserItem
 import com.citics.valuation.data.model.others.SelectorItem
+import com.citics.valuation.ui.activity.webview.WebViewActivity
+import com.citics.valuation.ui.base.BaseFragment
+import com.citics.valuation.utils.FileUtils
+import com.citics.valuation.utils.FileUtils.getFileType
+import com.citics.valuation.utils.FileUtils.getIntentToOpenFile
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import es.dmoral.toasty.Toasty
@@ -23,7 +31,6 @@ import java.io.File
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 
 fun List<String?>?.toListChooser(): MutableList<ChooserItem> {
@@ -92,13 +99,13 @@ fun String.toShowTime(format: String = "dd MMM yyyy"): String {
             e.printStackTrace()
             return ""
         }
-    }else{
+    } else {
         return longValue.toShowTime(format) ?: ""
     }
 }
 
 @SuppressLint("SimpleDateFormat")
-fun String.toShowDate(format : String = "'ngày' dd 'tháng' MM, yyyy"): String {
+fun String.toShowDate(format: String = "'ngày' dd 'tháng' MM, yyyy"): String {
     return toShowTime(format)
 }
 
@@ -114,15 +121,15 @@ fun Long.toDate(format: String = "'ngày' dd 'tháng' MM, yyyy"): String {
     return pattern.format(temporary)
 }
 
-//fun Uri.isDocument(context: Context): String? {
-//    val fileType = FileUtils.getFileType(context, this)
-//    if (fileType?.lowercase()?.contains("png") == true || fileType?.lowercase()
-//            ?.contains("jpeg") == true || fileType?.lowercase()?.contains("jpg") == true
-//    ) {
-//        return null
-//    }
-//    return fileType
-//}
+fun Uri.isDocument(context: Context): String? {
+    val fileType = FileUtils.getFileType(context, this)
+    if (fileType?.lowercase()?.contains("png") == true || fileType?.lowercase()
+            ?.contains("jpeg") == true || fileType?.lowercase()?.contains("jpg") == true
+    ) {
+        return null
+    }
+    return fileType
+}
 
 fun String?.isDocument(): String? {
     if (this?.lowercase()?.contains("png") == true || this?.lowercase()
@@ -155,24 +162,24 @@ fun String?.isDocument(): String? {
 //    )
 //}
 //
-//@Suppress("CAST_NEVER_SUCCEEDS")
-//fun Document.open(fm: BaseFragment<*>) {
-//    url?.let {
-//        try {
-//            val uri = Uri.parse(it)
-//            fm.startActivity(FileUtils.getIntentToOpenFile(fm.requireContext(), uri))
-//        } catch (e: ActivityNotFoundException) {
-//            fm.findNavController().navigate(R.id.fragment_webView, WebViewFragment.getArgument(it))
-//        }
-//    } ?: run {
-//        Toasty.error(
-//            fm.requireContext(),
-//            fm.getString(R.string.url_must_not_be_null),
-//            Toast.LENGTH_SHORT,
-//            true
-//        ).show()
-//    }
-//}
+@Suppress("CAST_NEVER_SUCCEEDS")
+fun Document.open(context: Context) {
+    url?.let {
+        try {
+            val uri = Uri.parse(it)
+            context.startActivity(FileUtils.getIntentToOpenFile(context, uri))
+        } catch (e: ActivityNotFoundException) {
+            context.startActivity(WebViewActivity.newIntent(context, url = it))
+        }
+    } ?: run {
+        Toasty.error(
+            context,
+            context.getString(R.string.url_must_not_be_null),
+            Toast.LENGTH_SHORT,
+            true
+        ).show()
+    }
+}
 //
 //@Suppress("CAST_NEVER_SUCCEEDS")
 //fun Document.open(fm: Context) {
@@ -302,13 +309,13 @@ fun Bundle.getListString(key: String): MutableList<String>? {
 //    return mapLagel.values.toMutableList()
 //}
 //
-//fun MutableList<LandDTO>?.addListChooser(result: MutableList<SelectorItem>): MutableList<LandDTO> {
-//    val newList = result.map { selectorItem ->
-//        this?.firstOrNull { landItem ->
-//            selectorItem.name == landItem.name
-//        } ?: LandDTO(name = selectorItem.name, kind = selectorItem.id)
-//    }.toMutableList()
-//    this?.clear()
-//    this?.addAll(newList)
-//    return newList
-//}
+fun MutableList<LandDTO>?.addListChooser(result: MutableList<SelectorItem>): MutableList<LandDTO> {
+    val newList = result.map { selectorItem ->
+        this?.firstOrNull { landItem ->
+            selectorItem.name == landItem.name
+        } ?: LandDTO(name = selectorItem.name, kind = selectorItem.id)
+    }.toMutableList()
+    this?.clear()
+    this?.addAll(newList)
+    return newList
+}

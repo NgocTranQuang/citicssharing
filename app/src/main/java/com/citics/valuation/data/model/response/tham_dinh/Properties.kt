@@ -17,8 +17,8 @@ import kotlinx.parcelize.Parcelize
 open class Properties(
     var id: String? = "",
     var loai_tai_san: String? = "",
-    var kinh_do: Double = 0.0,
-    var vi_do: Double = 0.0,
+    var kinh_do: Double? = null,
+    var vi_do: Double? = null,
     var gia_rao_ban: Long? = 0,
     var gia_tri_sau_noi_that: Long? = 0,
     var thoi_diem_mo_ban: Long? = null,

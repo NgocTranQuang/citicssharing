@@ -23,7 +23,7 @@ data class AssetDetailData(
     @Json(name = "properties_preliminary") val propertiesPreliminary: RecordResponse.RecordData.PropertiesPreliminary? = null,
     @Json(name = "properties_warehouse") val propertiesWarehouse: RecordResponse.RecordData.PropertiesPreliminary? = null,
     @Json(name = "adjustment_rates_citics") val adjustment_rates_citics: DetailAdjustmentRates? = null,
-    @Json(name = "using_purpose") var usingPurpose: List<DetailUsingPurpose>? = null,
+    @Json(name = "using_purpose") var usingPurpose: MutableList<DetailUsingPurpose>? = null,
     @Json(name = "compared_assets") var comparedAssets: MutableList<AssetDetailData>? = null,
     @Json(name = "list_base_pricing") var listBasePricing: List<Map<String, String>>? = null,
     @Json(name = "vi_pham_tsss") val vi_pham_tsss: Boolean? = false,

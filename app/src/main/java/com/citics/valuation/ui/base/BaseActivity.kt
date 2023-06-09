@@ -2,6 +2,7 @@ package com.citics.valuation.ui.base
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -10,15 +11,14 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
+import com.citics.cbank.R
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.data.repository.Resource
+import com.citics.valuation.ui.activity.login.LoginActivity
 import com.citics.valuation.ui.dialog.LoadingDialog
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.utils.*
@@ -29,13 +29,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import com.citics.cbank.R
 
-abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActivity() {
+abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AnalyticActivity() {
     lateinit var binding: V
     abstract val viewModel: VM
     private var loadingDialog: LoadingDialog? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,13 +41,18 @@ abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActi
         setContentView(binding.root)
         onConfigUI()
         onObserverData()
+        onClickListener()
+    }
+
+    open fun onClickListener() {
+
     }
 
     open fun onObserverData() {
         dataListenerScope {
             viewModel.showErrorDialog.collect {
                 it?.let {
-                    showErrorDialog(it?.message, it?.title)
+                    showErrorDialog(it.message, it.title)
                 }
             }
         }
@@ -144,7 +147,7 @@ abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActi
                         DialogUtils.showDialogHetCPoint(this@BaseActivity, supportFragmentManager)
                     } else if (it.error?.code == SERVER_CODE_LOGIN_IN_NEW_DEVICE) {
                         (this as MutableStateFlow<Resource<T>>).emit(Resource.None())
-                        onLoginInNewDevice()
+                        onLoginInNewDevice(it.error)
                     } else {
                         if (onFail != null) {
                             onFail.invoke(it.error)
@@ -164,19 +167,19 @@ abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActi
         }
     }
 
-    private fun onLoginInNewDevice() {
-//                        val mIntent = Intent(this@BaseActivity, LoginActivity::class.java)
-//                        mIntent.putExtra(
-//                            LoginActivity.KEY_LOGIN_IN_NEW_DEVICE_MESSAGE,
-//                            it.dataFail?.message
-//                        )
-//                        mIntent.putExtra(
-//                            LoginActivity.KEY_LOGIN_IN_NEW_DEVICE_TITLE,
-//                            it.dataFail?.title
-//                        )
-//                        mIntent.flags =
-//                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//                        startActivity(mIntent)
+    private fun onLoginInNewDevice(errorResponse: ErrorResponse?) {
+        val mIntent = Intent(this@BaseActivity, LoginActivity::class.java)
+        mIntent.putExtra(
+            LoginActivity.KEY_LOGIN_IN_NEW_DEVICE_MESSAGE,
+            errorResponse?.message
+        )
+        mIntent.putExtra(
+            LoginActivity.KEY_LOGIN_IN_NEW_DEVICE_TITLE,
+            errorResponse?.title
+        )
+        mIntent.flags =
+            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(mIntent)
     }
 
     suspend fun <T> StateFlow<Resource<T>>.handleResponseOnce(
@@ -233,6 +236,12 @@ abstract class BaseActivity<V : ViewBinding, VM : BaseViewModel> : AppCompatActi
                 0
             )
         }
+    }
+
+    fun setDataResult(bundle: Bundle) {
+        val intent = Intent()
+        intent.putExtra(KEY_BUNDLE_DATA, bundle)
+        setResult(RESULT_OK, intent);
     }
 
     abstract val bindingInflater: (LayoutInflater) -> V

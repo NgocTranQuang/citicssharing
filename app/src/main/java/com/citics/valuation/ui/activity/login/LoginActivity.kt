@@ -8,12 +8,14 @@ import android.view.LayoutInflater
 import androidx.activity.viewModels
 import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivityLoginBinding
+import com.citics.valuation.ui.activity.main.StaticViewModel
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.ui.fragment.main.taikhoan.ProfileViewModel
 import com.citics.valuation.utils.DialogType
 import com.citics.valuation.utils.PHONE_SUPPORT_CITICS
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 /**
  * Created by ChinhQT on 04/10/2022.
@@ -22,6 +24,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginBinding, ProfileViewModel>() {
 
     override val viewModel: ProfileViewModel by viewModels()
+    private val staticViewModel: StaticViewModel by viewModels()
+
     override fun onConfigUI() {
         super.onConfigUI()
         val mesageError = intent?.getStringExtra(KEY_LOGIN_IN_NEW_DEVICE_MESSAGE)
@@ -38,6 +42,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, ProfileViewModel>() {
                 }.setNegativeButton(R.string.close) { dialog, int ->
                     dialog.dismiss()
                 }.show(supportFragmentManager)
+        }
+        getDataStatic()
+    }
+
+    private fun getDataStatic() {
+        staticViewModel.getAllStaticApp {
+            Timber.d("Get Static thành cmn công")
         }
     }
 

@@ -295,7 +295,11 @@ class CiticsTextField @JvmOverloads constructor(
         if (value == null) {
             binding.textInput.setText("")
         } else {
-            binding.textInput.setText(value.toRound())
+            if (kdvdType) {
+                binding.textInput.setText(value.toString())
+            } else {
+                binding.textInput.setText(value.toRound())
+            }
         }
         onChange?.let { change ->
             onChangeTextField = {

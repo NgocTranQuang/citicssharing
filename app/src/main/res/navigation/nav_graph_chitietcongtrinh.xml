@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    All fragments between the last fragment and the fragment defined
+in popUpTo will be removed.-->
+<!--    And if we add app:popUpToInclusive="true", then the fragment defined
+in popUpTo will also be removed.-->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_authentication"
+    app:startDestination="@id/lstCongTrinh">
+
+    <fragment
+        android:id="@+id/lstCongTrinh"
+        android:name="com.citics.valuation.ui.fragment.sharing.ListCongTrinhFragment"
+        android:label="@string/chi_tiet_thua_dat">
+    </fragment>
+
+    <fragment
+        android:id="@+id/bosungCongTrinh"
+        android:name="com.citics.valuation.ui.fragment.sharing.BoSungCongTrinhFragment"
+        android:label="@string/bo_sung_cong_trinh_xay_dung">
+    </fragment>
+
+
+<!--    <fragment-->
+    <!--        android:id="@+id/editNhaDat"-->
+    <!--        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.nhatdat.EditNhaDatTraCuuFragment"-->
+    <!--        android:label="@string/chi_tiet_thua_dat">-->
+
+    <!--    </fragment>-->
+
+</navigation>

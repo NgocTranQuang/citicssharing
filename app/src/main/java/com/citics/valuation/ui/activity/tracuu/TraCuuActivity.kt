@@ -1,5 +1,6 @@
 package com.citics.valuation.ui.activity.tracuu
 
+import android.content.Intent
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.paging.PagingData
@@ -26,7 +27,10 @@ class TraCuuActivity :
             finish()
         }
         binding.vStateFul.showEmpty()
+
+        startActivity(Intent(this, ChiTietNhaDatActivity::class.java))
     }
+
 
     override fun onObserverData() {
         super.onObserverData()

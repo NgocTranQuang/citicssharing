@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.citics.cbank.R
 import com.citics.cbank.databinding.DialogLoadingBinding
+import com.citics.valuation.extension.setDefaultWindowTheme
 
 /**
  * Created by ChinhQT on 07/11/2022.
@@ -25,7 +26,7 @@ open class LoadingDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-//        dialog?.setDefaultWindowTheme()
+        dialog?.setDefaultWindowTheme()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

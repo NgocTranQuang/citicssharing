@@ -40,7 +40,7 @@ android {
         applicationId "com.citics.cbank"
         minSdk 28
         targetSdk 33
-        versionCode 1
+        versionCode 86
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -164,7 +164,7 @@ android {
             res.srcDirs = ['src/main/res/layouts/activity',
                            'src/main/res/layouts/fragment',
                            "src/main/res/layouts",
-                           "src/main/res", 'src/main/res/layouts/a', 'src/main/res/layouts/dialog', 'src/main/res/layouts/phuongthucnhandiem', 'src/main/res/layouts/customview', 'src/main/res/layouts/cpoint', 'src/main/res/layouts/main', 'src/main/res/layouts/biometric', 'src/main/res/layouts/authen',]
+                           "src/main/res", 'src/main/res/layouts/a', 'src/main/res/layouts/dialog', 'src/main/res/layouts/phuongthucnhandiem', 'src/main/res/layouts/customview', 'src/main/res/layouts/cpoint', 'src/main/res/layouts/main', 'src/main/res/layouts/biometric', 'src/main/res/layouts/authen', 'src/main/res/layouts/tracuu', 'src/main/res/layouts/choice', 'src/main/res/layouts/defind', 'src/main/res/layouts/sharing',]
         }
     }
 }
@@ -240,7 +240,17 @@ dependencies {
     //Firebase message
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
 
+    // Firebase remote config
+    implementation 'com.google.firebase:firebase-config-ktx:21.3.0'
 
+    // Slider image by glide
+    implementation "com.github.firdausmaulan:GlideSlider:1.5.2"
+
+    // Textview rich drawable
+    implementation 'io.github.ahmad-hamwi:tabsync:1.0.1'
+
+    // Swipe layout
+    implementation 'com.github.zerobranch:SwipeLayout:1.3.1'
 
 
 }

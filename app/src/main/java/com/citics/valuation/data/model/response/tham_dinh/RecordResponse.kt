@@ -3,7 +3,7 @@ package com.citics.cagent.data.model.response.tham_dinh
 import android.os.Parcelable
 import com.citics.cagent.data.model.response.AssetDetailData
 import com.citics.cagent.data.model.response.Document
-import com.citics.cagent.data.model.response.StepsValidationResult
+import com.citics.valuation.data.model.response.StepsValidationResult
 import com.citics.cagent.data.model.response.base.BaseResponse
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize

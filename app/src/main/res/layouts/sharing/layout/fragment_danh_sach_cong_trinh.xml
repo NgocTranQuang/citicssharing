@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_screen"
+        android:orientation="vertical">
+
+
+        <com.citics.valuation.customview.HeaderLayout
+            android:id="@+id/headerLayout"
+            style="@style/styleHeaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:header_title="@string/cong_trinh_xay_dung" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListCongTrinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:paddingStart="@dimen/activity_margin_large"
+            android:paddingEnd="@dimen/activity_margin_large" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin_large"
+            app:cardCornerRadius="@dimen/cardview_radius"
+            app:strokeColor="@color/stfImageColor"
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnThemCongTrinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_margin_large">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_15"
+                    android:layout_height="@dimen/dimen_15"
+                    android:src="@drawable/ic_plus"
+                    app:tint="@color/stfImageColor" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/activity_margin_medium"
+                    android:gravity="center"
+                    android:text="@string/them_cong_trinh_xay_dung"
+                    android:textColor="@color/stfImageColor"
+                    app:drawableTint="@color/colorMainBlue" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

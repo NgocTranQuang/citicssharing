@@ -3,6 +3,7 @@ package com.citics.cagent.data.model.response
 import android.os.Parcelable
 import com.citics.cagent.data.model.response.base.BaseResponse
 import com.citics.cagent.data.model.response.tham_dinh.Properties
+import com.citics.valuation.data.model.response.ExtraData
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
 

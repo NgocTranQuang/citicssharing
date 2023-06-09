@@ -56,7 +56,7 @@ class NormalDialog : BaseDialog<LayoutDialogCiticsBinding>(LayoutDialogCiticsBin
         setStart(gravity)
         isCancelable = false
         binding?.root?.negativeButtonListener = {
-            mPositiveButtonListener?.onClick(this.dialog, DialogInterface.BUTTON_NEGATIVE)
+            mNegativeButtonListener?.onClick(this.dialog, DialogInterface.BUTTON_NEGATIVE)
             dismiss()
         }
         binding?.root?.positiveButtonListener = {

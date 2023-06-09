@@ -913,7 +913,8 @@ Cảm ơn bạn đã tin dùng Citics.vn</string>
     <string name="tcnhstitle"><![CDATA[Vui lòng chọn lý do từ chối tiếp nhận hồ sơ <b><font color=#020202>%1$s </font></b>?]]></string>
     <string name="error_general">Có lỗi xảy ra, vui lòng liên hệ Citics</string>
     <string name="tnhstd">Tiếp nhận hồ sơ thẩm định</string>
-    <string name="des_dat_dac_thu">Tài sản bạn chọn thuộc loại đất đặc thù vì vậy Citics không có đủ căn cứ để ước tính giá trị tài sản. Nếu bạn muốn tự định giá tài sản này, vui lòng thay đổi thông tin thửa đất trước.</string>
+
+    <string name="des_dat_dac_thu"><![CDATA[<html>Tài sản bạn chọn thuộc loại đất đặc thù vì vậy Citics không có đủ căn cứ để ước tính giá trị tài sản. Bạn có thể <b>Thay đổi thông tin tài sản</b> để có giá trị tham khảo cho tài sản này hoặc <b>Thêm vào danh sách yêu cầu</b> để gửi sơ bộ hoặc thẩm định giá.</html>]]></string>
     <string name="chon_tep">Chọn tệp</string>
     <string name="tep_duoc_chon">tệp được chọn</string>
     <string name="ttphs">Thông tin phí hồ sơ</string>
@@ -1084,7 +1085,7 @@ Cảm ơn bạn đã tin dùng Citics.vn</string>
     <string name="bcmlttdcs">Bạn có muốn lưu thông tin đã chỉnh sửa?</string>
     <string name="des_ban_co_muon_luu_ts">Thông tin tài sản so sánh, " Giá trị điều chỉnh của bạn và toàn bộ thông tin đã chỉnh sửa sẽ biến mất nếu bạn thoát khỏi màn hình này.\n Bạn có muốn " Thêm vào tài sản của tôi để lưu lại những thông tin đã chỉnh sửa không?</string>
     <string name="thoat">Thoát</string>
-    <string name="des_khong_co_ttg">Citics không đủ thông tin để ước tính giá trị tài sản này.</string>
+    <string name="des_khong_co_ttg"><![CDATA[<html>Tài sản bạn chọn thuộc loại đất đặc thù vì vậy Citics không có đủ căn cứ để ước tính giá trị tài sản. Bạn có thể <b>Thay đổi thông tin tài sản</b> để có giá trị tham khảo cho tài sản này hoặc <b>Thêm vào danh sách yêu cầu</b> để gửi sơ bộ hoặc thẩm định giá.</html>]]></string>
     <string name="vs_thang_truoc">vs tháng trước</string>
     <string name="ho_so">Hồ sơ</string>
     <string name="hoan_tat">Hoàn tất</string>
@@ -1098,8 +1099,6 @@ Cảm ơn bạn đã tin dùng Citics.vn</string>
     <string name="kckcph">Không có kết cấu phù hợp.</string>
     <string name="cdhm">Chuyển đổi hạn mức</string>
     <string name="nhmcd">Nhập hạn mức chuyển đổi</string>
-    <string name="title_force_update_new_version">Phiên bản mới</string>
-    <string name="des_force_update_new_version">Phiên bản mới đã có mặt trên google play. Vui lòng cập nhật để tiếp tục sử dụng.</string>
     <string name="forgetcount">Lấy lại mã xác thực sau 00:%1$ss.</string>
     <string name="finishcount"><![CDATA[Mã xác thực đã hết hạn. Vui lòng chọn <a href="https://www.google.com">Gửi lại</a> để nhận mã xác thực mới.]]></string>
     <string name="tdda">Thay đổi dự án</string>
@@ -1170,5 +1169,13 @@ Cảm ơn bạn đã tin dùng Citics.vn</string>
     <string name="title_tai_khoan">Tài khoản</string>
 
     <string name="title_login_screen">Trải nghiệm liền mạch, tối ưu hóa chi phí</string>
+    <string name="cap_nhat_ung_dung">Cập nhật ứng dụng</string>
+    <string name="title_force_update_new_version">Cập nhật phiên bản mới</string>
+    <string name="des_force_update_new_version">Ứng dụng hiện đã có phiên bản mới. Để tiếp tục sử dụng vui lòng cập nhật mới.</string>
+    <string name="gia_c_valuer">Giá C-Valuer</string>
+    <string name="gia_tri_valuer_chinh_xac">Giá trị C-Valuer chính xác?</string>
+    <string name="tvdsyc">Thêm vào danh sách yêu cầu</string>
+    <string name="_01_vitritaisan">01. Vị trí tài sản</string>
+    <string name="tbdsts">Tờ bản đồ số, thửa số</string>
 
 </resources>

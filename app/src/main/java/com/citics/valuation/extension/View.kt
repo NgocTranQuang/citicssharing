@@ -39,6 +39,11 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.*
 import timber.log.Timber
 import com.citics.cbank.R
+import com.citics.valuation.customview.CiticsTextField
+import com.citics.valuation.customview.CustomChipLayout
+import com.citics.valuation.customview.TextViewUnit
+import com.citics.valuation.customview.ThongTinLayout
+import com.google.android.material.chip.ChipGroup
 import com.skydoves.balloon.*
 
 
@@ -105,7 +110,6 @@ fun Dialog.setDefaultWindowTheme() {
 fun getId(view: View): String? {
     return if (view.id == View.NO_ID) "no-id" else view.resources.getResourceName(view.id)
 }
-
 
 
 fun ImageView.loadByUrl(url: String?, errorImage: Int = R.drawable.error_data) {
@@ -268,4 +272,125 @@ fun ViewGroup.saveChildViewStates(): SparseArray<Parcelable> {
 
 fun ViewGroup.restoreChildViewStates(childViewStates: SparseArray<Parcelable>) {
     children.forEach { child -> child.restoreHierarchyState(childViewStates) }
+}
+
+
+fun ChipGroup.setListChip(
+    listChip: MutableList<String>?,
+    chipType: CustomChipLayout.ChipType = CustomChipLayout.ChipType.NORMAL
+) {
+    val newList = listChip?.filter { !TextUtils.isEmpty(it) }?.toMutableList() ?: mutableListOf()
+    if (newList.size == 0) {
+        newList.add("-")
+    }
+    removeAllViews()
+    addChips(newList, chipType)
+}
+
+fun ChipGroup.addChips(
+    listChip: MutableList<String>?,
+    chipType: CustomChipLayout.ChipType = CustomChipLayout.ChipType.NORMAL
+) {
+    listChip?.forEach {
+        val chip = CustomChipLayout(context)
+        chip.setValue(it, chipType)
+        addView(chip)
+    }
+}
+
+
+fun ViewGroup.setDataColor(map: Map<String, Any>?) {
+    forEach {
+        if (it is TextViewUnit) {
+            if (it.tag != null) {
+                if (it.tag is String) {
+                    it.setDataYellowColor(map?.get(it.tag))
+                }
+            }
+        } else if (it is ThongTinLayout) {
+            if (it.tag != null) {
+                it.setDataYellowColor(map?.get(it.tag))
+            }
+        } else if (it is ViewGroup) {
+            it.setDataColor(map)
+        }
+    }
+}
+
+fun ViewGroup.setDataColor(map: MutableList<String>?) {
+    forEach {
+        if (it is TextViewUnit) {
+            if (it.tag != null) {
+                if (it.tag is String) {
+                    if (map?.contains(it.tag) == true) {
+                        it.setTitleColor(R.color.color_red)
+                    } else {
+                        it.setTitleColor(R.color.color_text)
+                    }
+                }
+            }
+        } else if (it is ThongTinLayout) {
+            if (it.tag != null) {
+                if (map?.contains(it.tag) == true) {
+                    it.setTitleColor(R.color.color_red)
+                } else {
+                    it.setTitleColor(R.color.color_text)
+                }
+            }
+        } else if (it is ViewGroup) {
+            it.setDataColor(map)
+        }
+    }
+}
+
+fun ViewGroup.setColorError(map: MutableList<String>? = null) {
+    map?.let { keys ->
+        forEach { view ->
+//            if (view is CiticsTextField) {
+//                if (view.tag != null) {
+//                    if (keys.contains(view.tag)) {
+//                        view.setState(true)
+//                    } else {
+//                        view.setState(false)
+//                    }
+//                }
+//            } else if (view is CiticsTextChooser) {
+//                if (view.tag != null) {
+//                    if (keys.contains(view.tag)) {
+//                        view.setState(true)
+//                    } else {
+//                        view.setState(false)
+//                    }
+//                }
+//            } else if (view is ChooserWithChipsLayout) {
+//                if (view.tag != null) {
+//                    if (keys.contains(view.tag)) {
+//                        view.setState(true)
+//                    } else {
+//                        view.setState(false)
+//                    }
+//                }
+//            } else if (view is ViewGroup) {
+//                view.setColorError(keys)
+//            }
+        }
+    } ?: kotlin.run {
+        forEach { view ->
+//            if (view is CiticsTextField) {
+//                if (view.tag != null) {
+//                    view.setState(false)
+//                }
+//            } else if (view is CiticsTextChooser) {
+//                if (view.tag != null) {
+//                    view.setState(false)
+//                }
+//            } else if (view is ChooserWithChipsLayout) {
+//                if (view.tag != null) {
+//                    view.setState(false)
+//                }
+//            } else if (view is ViewGroup) {
+//                view.setColorError()
+//            }
+        }
+    }
 }

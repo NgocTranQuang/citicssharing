@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.viewbinding.ViewBinding
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.data.repository.Resource
@@ -19,6 +23,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import com.citics.cbank.R
+import com.citics.valuation.customview.HeaderLayout
 import com.citics.valuation.extension.showBalloonPopup
 
 abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> V) :
@@ -36,7 +41,15 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(private val bin
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
 
+                // in here you can do logic when backPress is clicked
+                onBackPress()
+                isEnabled = false
+                onBackHeader()
+            }
+        })
     }
 
     override fun onCreateView(
@@ -57,12 +70,27 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(private val bin
     }
 
     open fun onClickListener() {
+        getHeaderLayout()?.let {
+            it.onBackClickListener = {
+                onBackHeader()
+            }
+        }
+    }
+
+    open fun onBackHeader() {
+        activity?.onBackPressedDispatcher?.onBackPressed()
+    }
+
+    open fun onBackPress() {
 
     }
 
     open fun onObserverData() {
     }
 
+    open fun getHeaderLayout(): HeaderLayout? {
+        return null
+    }
 
     fun showErrorDialog(
         title: String? = getString(R.string.system_error),
@@ -99,6 +127,7 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(private val bin
         super.onDestroyView()
         _binding = null
     }
+
     fun showBalloonPopup(content: String, view: View, xOff: Int = 0) {
         view.showBalloonPopup(content, xOff)
     }
@@ -130,6 +159,21 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(private val bin
         (activity as BaseActivity<*, *>).apply {
             handleResponseOnce(onLoading, onFail, onSuccess)
         }
+    }
+
+
+    fun NavController.navigateWithAnimation(@IdRes resId: Int, args: Bundle? = null) {
+        navigate(resId = resId, args = args, navOptions = getNavOptions())
+    }
+
+
+    fun getNavOptions(): NavOptions {
+        return NavOptions.Builder()
+            .setEnterAnim(R.anim.nav_default_enter_anim)
+            .setExitAnim(R.anim.nav_default_exit_anim)
+            .setPopEnterAnim(R.anim.nav_default_pop_enter_anim)
+            .setPopExitAnim(R.anim.nav_default_pop_exit_anim)
+            .build()
     }
 
 

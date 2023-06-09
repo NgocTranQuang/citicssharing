@@ -33,18 +33,14 @@ class AssetRepository @Inject constructor(
     @ApiAgent private val apiServiceAgent: APIService,
 ) : BaseRepository() {
 
-//    suspend fun getLandDetailByLatLng(
-//        lat: Double, lng: Double, truCP: Boolean
-//    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
-//        var cp = ""
-//        if (StaticDataUtils.isTruCPoint) {
-//            cp = "cp"
-//        }
-//        return apiServiceSearch.getLandDetailByLatLng(
-//            cp,
-//            lat, lng
-//        )
-//    }
+    suspend fun getLandDetailByLatLng(
+        lat: Double, lng: Double
+    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+        return apiServiceSearch.getLandDetailByLatLng(
+            "",
+            lat, lng
+        )
+    }
 //
 //    suspend fun getLandDetailsByVN2000City(
 //        request: RequestBody,
@@ -165,8 +161,8 @@ class AssetRepository @Inject constructor(
             tang,
             dien_tich_thong_thuy,
             huong,
-           
-        )
+
+            )
     }
 
     suspend fun getOptionsSuggestion(
@@ -286,7 +282,7 @@ class AssetRepository @Inject constructor(
 
     suspend fun getMineFilterSummary(): NetworkResponse<MineFilterSummaryResponse, ErrorResponse> {
         return apiServiceAgent.getMineFilterSummary(
-           
+
         )
     }
 

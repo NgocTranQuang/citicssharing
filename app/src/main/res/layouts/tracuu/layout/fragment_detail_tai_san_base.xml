@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <com.citics.valuation.customview.HeaderLayout
+        android:id="@+id/headerLayout"
+        style="@style/styleHeaderLayout"
+        app:header_title="@string/lookup_detail_land"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.gturedi.views.StatefulLayout
+        android:id="@+id/vStateFul"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:stfAnimationEnabled="false">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/white">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:translationZ="1dp"
+                app:contentScrim="@color/white">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    app:contentScrim="@color/white"
+                    app:expandedTitleMarginEnd="64dp"
+                    app:expandedTitleMarginStart="48dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/lnCollapse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.7">
+
+
+                        <com.citics.valuation.customview.ImageSliderLayout
+                            android:id="@+id/imagesList"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+
+                        <com.citics.valuation.customview.AddressLayout
+                            android:id="@+id/vAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/lnHeaderTaiSan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/lnActionHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:background="@drawable/button_background_selector"
+                                android:gravity="center"
+                                android:visibility="visible">
+
+                                <com.citics.valuation.customview.TextViewDrawableSize
+                                    android:id="@+id/tvActionHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_folder_plus"
+                                    android:drawablePadding="@dimen/activity_margin_medium"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:gravity="center"
+                                    android:text="@string/tvdsyc"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_15"
+                                    app:drawableSize="@dimen/text_size_21"
+                                    app:drawableSizeTint="@color/white" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvTitlecvaluer"
+                                style="@style/Title16Style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_marginTop="@dimen/activity_margin_large"
+
+                                android:text="@string/gia_c_valuer" />
+
+                            <com.citics.valuation.customview.TextViewUnit
+                                android:id="@+id/tvCValue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_weight="1"
+
+                                android:drawableEnd="@drawable/ic_arrow_right"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:tag="gia_tri_tham_dinh"
+                                android:textColor="@color/text_main"
+                                android:textSize="@dimen/text_size_21"
+                                app:text_view_unit="@string/d"
+                                tools:text="128,599,245,086 đ" />
+
+                            <TextView
+                                android:id="@+id/tvNgayCapNhat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:textColor="@color/text_main"
+                                android:textSize="@dimen/text_size_12"
+                                tools:text="Citics cập nhật 20 tháng 03, 2023" />
+
+
+                            <TextView
+                                android:id="@+id/tvGtcl"
+                                style="@style/Title16Style"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_marginTop="@dimen/dimen_16"
+                                android:text="@string/gia_tri_chenh_lech_uoc_luong" />
+
+                            <LinearLayout
+                                android:id="@+id/lnValueChenhLech"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:orientation="horizontal">
+
+                                <com.citics.valuation.customview.TextViewUnit
+                                    android:id="@+id/tvBienDoGiaNhoNhat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:tag="bien_do_gia_thap_nhat"
+                                    android:textColor="@color/text_main"
+                                    android:textSize="@dimen/text_size_19"
+                                    app:text_view_unit="@string/d"
+                                    tools:text="128,599,245,086 đ" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dimen_4"
+                                    android:layout_marginEnd="@dimen/dimen_4"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="@string/gach"
+                                    android:textSize="@dimen/text_size_19" />
+
+                                <com.citics.valuation.customview.TextViewUnit
+                                    android:id="@+id/tvBienDoGiaLonNhat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:tag="bien_do_gia_cao_nhat"
+                                    android:textColor="@color/text_main"
+                                    android:textSize="@dimen/text_size_19"
+                                    app:text_view_unit="@string/d"
+                                    tools:text="128,599,245,086 đ" />
+                            </LinearLayout>
+
+                            <!--                            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+                            <LinearLayout
+                                android:id="@+id/lnTuDinhGia"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_tu_dinh_gia"
+                                android:clipToPadding="false"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/activity_margin_large"
+                                android:paddingBottom="@dimen/dimen_16">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gia_tri_valuer_chinh_xac"
+                                    android:textSize="@dimen/text_size_16" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvLike"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dimen_50"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/activity_margin_large"
+                                    app:cardCornerRadius="@dimen/dimen_50"
+                                    app:cardElevation="@dimen/dimen_8"
+                                    app:strokeColor="@color/color_border_cardview"
+                                    app:strokeWidth="1dp">
+
+                                    <TextView
+                                        android:id="@+id/tvTitleLike"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="@dimen/dimen_8"
+                                        android:drawablePadding="@dimen/dimen_8"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center"
+                                        android:paddingStart="@dimen/dimen_8"
+                                        android:paddingEnd="@dimen/dimen_8"
+                                        android:text="@string/chinh_xac"
+                                        android:textSize="@dimen/text_size_15"
+                                        app:drawableStartCompat="@drawable/ic_like" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/lnHeaderDuAn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/lnTimCanHo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:background="@drawable/button_background_selector"
+                                android:gravity="center"
+                                android:visibility="visible">
+
+                                <com.citics.valuation.customview.TextViewDrawableSize
+                                    android:id="@+id/tvTimCanHo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_tim_can_ho"
+                                    android:drawablePadding="@dimen/activity_margin_medium"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:gravity="center"
+                                    android:text="@string/tim_can_ho"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_15"
+                                    app:drawableSize="@dimen/text_size_21"
+                                    app:drawableSizeTint="@color/white" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvTitlecvaluer2"
+                                style="@style/Title16Style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_marginTop="@dimen/activity_margin_large"
+                                android:text="@string/gia_trug_binh" />
+
+                            <com.citics.valuation.customview.TextViewUnit
+                                android:id="@+id/tvGiaTrungBinhDuAn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_weight="1"
+                                android:drawableEnd="@drawable/ic_tham_dinh_time_small"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:tag="gia_tri_tham_dinh"
+                                android:textColor="@color/text_main"
+                                android:textSize="@dimen/text_size_21"
+                                app:drawableTint="@color/colorMainBlue"
+                                app:text_view_unit="@string/d"
+                                tools:text="128,599,245,086 đ" />
+
+                            <TextView
+                                android:id="@+id/tvNgayCapNhatDuAn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:textColor="@color/text_main"
+                                android:textSize="@dimen/text_size_12"
+
+                                tools:text="Citics cập nhật 20 tháng 03, 2023" />
+
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_marginTop="@dimen/activity_margin_large" />
+
+                            <TextView
+                                android:id="@+id/tvGtclDuAN"
+                                style="@style/Title16Style"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_marginTop="@dimen/dimen_16"
+                                android:text="@string/don_gia_trung_binh" />
+
+                            <com.citics.valuation.customview.TextViewUnit
+                                android:id="@+id/tvDonGiaTB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:tag="bien_do_gia_thap_nhat"
+                                android:textColor="@color/text_main"
+                                android:textSize="@dimen/text_size_19"
+                                app:text_view_unit="@string/d"
+                                tools:text="128,599,245,086 đ" />
+
+                            <TextView
+                                android:id="@+id/tvNgayCapNhatDGTBDUAn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:textColor="@color/text_main"
+                                android:textSize="@dimen/text_size_12"
+
+                                tools:text="Citics cập nhật 20 tháng 03, 2023" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvNoInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/ic_land_invalid"
+                            android:drawablePadding="@dimen/activity_margin_large"
+                            android:gravity="center"
+                            android:padding="@dimen/activity_margin_large"
+                            android:text="@string/des_dat_dac_thu"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/contentTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addAssetBtn"
+                    app:tabRippleColor="@color/transparent"
+                    app:tabTextAppearance="@style/TabLayoutLookup" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#4c000000"
+                        android:visibility="visible" />
+
+                    <com.citics.valuation.customview.ButtonUpdateLayout
+                        android:id="@+id/btnBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        app:button_update_layout_text="@string/tvdsyc" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lnNoData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:id="@+id/tvNoData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/activity_margin_large"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_large"
+                        android:text="@string/des_tskcthtct"
+                        app:drawableTopCompat="@drawable/ic_khong_co_thong_tin" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnThemMoiTaiSanCuaToi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_margin_large"
+                        android:layout_marginEnd="@dimen/activity_margin_large"
+                        android:background="@drawable/btn_bg_selector_dialog"
+                        android:text="@string/tmtsct"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </com.gturedi.views.StatefulLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

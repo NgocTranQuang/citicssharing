@@ -1,4 +1,4 @@
-package com.citics.cagent.data.model.response
+package com.citics.valuation.data.model.response
 
 import android.os.Parcelable
 import com.squareup.moshi.Json

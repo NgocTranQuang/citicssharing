@@ -13,11 +13,11 @@ class TypeCanHo : TypeDetail {
     }
 
     override fun getTitleButton(): Int {
-        return R.string.them_vao_tai_san_cua_toi
+        return R.string.tvdsyc
     }
 
     override fun getDrawableButton(): Int {
-        return R.drawable.ic_tray
+        return R.drawable.ic_folder_plus
     }
 
     override fun getListTabBarTitle(): MutableList<Int> {

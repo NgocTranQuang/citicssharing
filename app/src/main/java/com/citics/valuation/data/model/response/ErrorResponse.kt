@@ -1,7 +1,5 @@
 package com.citics.valuation.data.model.response
 
-import com.citics.cagent.data.model.response.RequiredFields
-
 /**
  * Created by ChinhQT on 09/10/2022.
  */

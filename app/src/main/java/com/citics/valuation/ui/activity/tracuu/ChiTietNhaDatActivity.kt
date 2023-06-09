@@ -1,0 +1,20 @@
+package com.citics.valuation.ui.activity.tracuu
+
+import android.view.LayoutInflater
+import androidx.activity.viewModels
+import com.citics.cbank.databinding.ActivityChitietnhadatBinding
+import com.citics.valuation.ui.base.BaseActivity
+import com.citics.valuation.ui.base.BaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class ChiTietNhaDatActivity : BaseActivity<ActivityChitietnhadatBinding, ChiTietNhaDatViewModel>() {
+    override val viewModel: ChiTietNhaDatViewModel by viewModels()
+    override val bindingInflater: (LayoutInflater) -> ActivityChitietnhadatBinding
+        get() = ActivityChitietnhadatBinding::inflate
+
+    override fun onConfigUI() {
+        super.onConfigUI()
+        viewModel.getLandDetailByLatLng(10.78958187858458, 106.74536564472302)
+    }
+}

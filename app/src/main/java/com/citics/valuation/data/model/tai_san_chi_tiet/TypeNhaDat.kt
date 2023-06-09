@@ -1,5 +1,6 @@
-package com.citics.cagent.data.model.tai_san_chi_tiet
+package com.citics.valuation.data.model.tai_san_chi_tiet
 
+import com.citics.cagent.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 
 
@@ -13,14 +14,14 @@ class TypeNhaDat : TypeDetail {
     }
 
     override fun getTitleButton(): Int {
-        return R.string.them_vao_tai_san_cua_toi
+        return R.string.tvdsyc
     }
 
     override fun getDrawableButton(): Int {
-        return R.drawable.ic_tray
+        return R.drawable.ic_folder_plus
     }
 
     override fun getListTabBarTitle(): MutableList<Int> {
-        return mutableListOf(R.string.thong_tin_gia, R.string.ve_thua_dat, R.string.ve_cong_trinh)
+        return mutableListOf(R.string.vi_tri_tai_san, R.string.ve_thua_dat, R.string.ve_cong_trinh)
     }
 }

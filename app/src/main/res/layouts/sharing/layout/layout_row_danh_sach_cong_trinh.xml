@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zerobranch.layout.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:draggedItem="@id/drag_item"
+    app:rightItem="@id/imgDelete"
+    app:swipeDirection="left">
+
+    <LinearLayout
+        android:id="@+id/imgDelete"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/color_logout"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/dimen_24"
+            android:layout_height="@dimen/dimen_24"
+            android:src="@drawable/ic_trash_delete"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drag_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_margin_large"
+            android:paddingBottom="@dimen/activity_margin_large"
+            android:textSize="@dimen/text_size_15"
+            app:layout_constraintEnd_toStartOf="@+id/imgValidate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Công trình xây dựng 1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgValidate"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_15"
+            app:tint="@color/color_blue"
+            android:layout_marginEnd="@dimen/activity_margin_large"
+            android:src="@drawable/ic_circle_check"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/img"
+            app:layout_constraintStart_toEndOf="@+id/tvName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_15"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/icon_normal" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.zerobranch.layout.SwipeLayout>

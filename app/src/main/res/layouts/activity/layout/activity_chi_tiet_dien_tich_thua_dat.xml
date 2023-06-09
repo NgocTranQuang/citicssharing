@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_screen"
+        android:orientation="vertical">
+
+        <com.citics.valuation.customview.HeaderLayout
+            android:id="@+id/headerLayout"
+            style="@style/styleHeaderLayout"
+            app:header_title="@string/chi_tiet_dien_tich_thua_dat" />
+
+        <com.citics.valuation.customview.ThongTinLayout
+            android:id="@+id/tvTongDienTich"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin_large"
+            android:layout_marginEnd="@dimen/activity_margin_large"
+            app:thong_tin_layout_default_value="@string/gach"
+            app:thong_tin_layout_icon="@drawable/arrow_zoom_out"
+            app:thong_tin_layout_is_bold="true"
+            app:thong_tin_layout_show_divider="false"
+            app:thong_tin_layout_title="@string/tong_dien_tich"
+            app:thong_tin_layout_unit="@string/m2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_margin_medium"
+            android:background="@color/color_divider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/activity_margin_large"
+            android:layout_marginEnd="@dimen/activity_margin_large"
+            android:overScrollMode="never" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

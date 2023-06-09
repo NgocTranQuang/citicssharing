@@ -150,7 +150,6 @@ interface APIService {
         @Path("cp") cp: String?,
         @Query("latitude") lat: Double,
         @Query("longitude") lng: Double,
-
         ): NetworkResponse<LandDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/land.vn2000.city/{cp}")
@@ -184,7 +183,6 @@ interface APIService {
     @POST("v2.4/calculate/estimation.asset")
     suspend fun estimationAsset(
         @Body estimationAssetRequest: EstimationAssetRequest,
-
         ): NetworkResponse<LandDetailResponse, ErrorResponse>
 
     @POST("v2.4/calculate/estimation.asset")

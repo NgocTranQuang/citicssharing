@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.citics.valuation.customview.CustomViewDotLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.citics.valuation.customview.CiticsTextField
+        android:id="@+id/vTf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:input_hint="@string/phong_bep"
+        app:label_icon_img="@drawable/ic_phong_khach"
+        app:label_title="@string/phong_bep" />
+
+</com.citics.valuation.customview.CustomViewDotLayout>
+

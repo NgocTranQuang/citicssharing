@@ -220,7 +220,7 @@
 
     <declare-styleable name="TextViewDrawableSize">
         <attr name="android:drawableStart" format="reference" />
-        <attr name="android:drawableTint" format="reference" />
+        <attr name="drawableSizeTint" format="color|reference" />
         <attr name="drawableSize" format="dimension" />
     </declare-styleable>
 
@@ -246,6 +246,8 @@
             <enum name="NHA_DAT" value="1" />
             <enum name="CAN_HO" value="2" />
         </attr>
+        <attr name="showFavourite" format="boolean" />
+
     </declare-styleable>
 
     <declare-styleable name="ButtonSelectorLayout">

@@ -18,8 +18,7 @@ data class SelectorItem(
     var name: String,
     var isSelected: Boolean = false,
     var isCustomData: Boolean = false
-) :
-    Parcelable
+) :Parcelable
 
 @Parcelize
 data class SingleChoiceData(

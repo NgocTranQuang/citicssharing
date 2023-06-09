@@ -31,15 +31,46 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.citics.valuation.ui.activity.main.MainActivity" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.main.MainActivity"
+            android:theme="@style/FullScreen" />
 
-        <activity android:name="com.citics.valuation.ui.activity.phuongthucnhancpoint.PhuongThucNhanCpointActivity" />
-        <activity android:name="com.citics.valuation.ui.activity.login.LoginActivity" />
-        <activity android:name="com.citics.valuation.ui.activity.hopthoai.HopThoaiActivity" />
-        <activity android:name="com.citics.valuation.ui.activity.hoso.HoSoActivity" />
-        <activity android:name="com.citics.valuation.ui.activity.taikhoan.TaiKhoanActivity" />
-        <activity android:name="com.citics.valuation.ui.activity.thongke.ThongKeActivity" />
-        <activity android:name="com.citics.valuation.ui.activity.tracuu.TraCuuActivity" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.phuongthucnhancpoint.PhuongThucNhanCpointActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.login.LoginActivity"
+            android:theme="@style/FullScreen" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.hopthoai.HopThoaiActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.hoso.HoSoActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.taikhoan.TaiKhoanActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.thongke.ThongKeActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.tracuu.TraCuuActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.webview.WebViewActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.citics.valuation.ui.activity.tracuu.ChiTietNhaDatActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.choice.SingleChoiceActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.choice.MultiChoiceActivity" />
+        <activity
+            android:name="com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.citics.cagent.ui.activity.choice.SingleChoiceTHSDDActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.citics.valuation.ui.activity.tracuu.ChiTietDienTichThuaDatActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.chitietcongtrinh.ChiTietCongTrinhActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.chitietcongtrinh.ThemPhongActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
