@@ -28,7 +28,8 @@ class TraCuuActivity :
         }
         binding.vStateFul.showEmpty()
 
-        startActivity(Intent(this, ChiTietNhaDatActivity::class.java))
+//        startActivity(Intent(this, ChiTietNhaDatActivity::class.java))
+        startActivity(Intent(this, ChiTietDuAnActivity::class.java))
     }
 
 

@@ -35,7 +35,7 @@ class AssetRepository @Inject constructor(
 
     suspend fun getLandDetailByLatLng(
         lat: Double, lng: Double
-    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.getLandDetailByLatLng(
             "",
             lat, lng
@@ -79,7 +79,7 @@ class AssetRepository @Inject constructor(
         loai_tai_san: String,
         properties: Properties,
         using_purpose: List<DetailUsingPurpose>
-    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         val estimationAssetRequest =
             EstimationAssetRequest(asset_id, loai_tai_san, properties, using_purpose)
         return apiServiceSearch.estimationAsset(
@@ -89,7 +89,7 @@ class AssetRepository @Inject constructor(
 
     suspend fun estimationAssetCH(
         asset_id: String, loai_tai_san: String, properties: Properties
-    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         val estimationAssetCHRequest = EstimationAssetCHRequest(asset_id, loai_tai_san, properties)
         return apiServiceSearch.estimationAssetCH(
             estimationAssetCHRequest
@@ -102,7 +102,7 @@ class AssetRepository @Inject constructor(
         return apiServiceSearch.getCanHoSuggestion(term, size)
     }
 
-    suspend fun getProjectDetail(id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun getProjectDetail(id: String): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.getProjectDetail(id)
     }
 
@@ -181,40 +181,36 @@ class AssetRepository @Inject constructor(
         )
     }
 
-//    suspend fun getApartmentAsset(
-//        project_id: String, ma_can: String
-//    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
-//        var cp = ""
-//        if (StaticDataUtils.isTruCPoint) {
-//            cp = "cp"
-//        }
-//        return apiServiceSearch.getApartmentAsset(
-//            cp,
-//            project_id, ma_can
-//        )
-//    }
+    suspend fun getApartmentAsset(
+        project_id: String, ma_can: String
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
+        return apiServiceSearch.getApartmentAsset(
+            "",
+            project_id, ma_can
+        )
+    }
 
     suspend fun selfAssetRequest(
         body: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.selfAssetRequest(
             body
         )
     }
 
-    suspend fun selfAssetComparedAdd(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun selfAssetComparedAdd(body: RequestBody): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.selfAssetComparedAdd(
             body
         )
     }
 
-    suspend fun addTSSSTSCT(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun addTSSSTSCT(body: RequestBody): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.addTSSSTSCT(
             body
         )
     }
 
-    suspend fun mineUpsert(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun mineUpsert(body: RequestBody): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.mineUpsert(
             body
         )
@@ -224,33 +220,33 @@ class AssetRepository @Inject constructor(
         return apiServiceSearch.getLichSuThamDinhGia(id)
     }
 
-    suspend fun updateComparedAsset(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun updateComparedAsset(body: RequestBody): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.updateComparedAsset(
             body
         )
     }
 
-    suspend fun updateComparedAssetTSCT(body: RequestBody): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun updateComparedAssetTSCT(body: RequestBody): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.updateComparedAssetTSCT(
             body
         )
     }
 
-    suspend fun getSelfAssetCalculate(): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun getSelfAssetCalculate(): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.getSelfAssetCalculate()
     }
 
-    suspend fun getSelfAssetCalculateTSCT(my_asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun getSelfAssetCalculateTSCT(my_asset_id: String): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.getSelfAssetCalculateTSCT(
             my_asset_id
         )
     }
 
-    suspend fun deleteComparedAsset(asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun deleteComparedAsset(asset_id: String): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.deleteComparedAsset(asset_id)
     }
 
-    suspend fun deleteComparedAssetTSCT(asset_id: DeleteTSSSTSCTRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun deleteComparedAssetTSCT(asset_id: DeleteTSSSTSCTRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.deleteComparedAssetTSCT(asset_id)
     }
 
@@ -300,51 +296,51 @@ class AssetRepository @Inject constructor(
         )
     }
 
-    suspend fun getMineById(my_asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun getMineById(my_asset_id: String): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.getMineById(
             my_asset_id
         )
     }
 
-    suspend fun getCValueOfAssetById(my_asset_id: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun getCValueOfAssetById(my_asset_id: String): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.getCValueOfAsset(
             my_asset_id
         )
     }
 
-    suspend fun addTSSSFromMyAsset(request: TSSSMyAssetRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun addTSSSFromMyAsset(request: TSSSMyAssetRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.addTSSSFromMyAsset(
             request
         )
     }
 
-    suspend fun updateTSSSFromMyAsset(request: TSSSMyAssetRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun updateTSSSFromMyAsset(request: TSSSMyAssetRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.updateTSSSFromMyAsset(
             request
         )
     }
 
-    suspend fun updatePhapLy(pl: LegalCreateOrUpdateRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun updatePhapLy(pl: LegalCreateOrUpdateRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.updatePhapLy(pl)
     }
 
-    suspend fun updatePhapLyTSCTSCT(pl: LegalCreateOrUpdateRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun updatePhapLyTSCTSCT(pl: LegalCreateOrUpdateRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.updatePhapLyTSCTSCT(pl)
     }
 
-    suspend fun deletePhapLy(pl: LegalDeleteTagRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun deletePhapLy(pl: LegalDeleteTagRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.deletePhapLy(pl)
     }
 
-    suspend fun deletePhapLyTagTSCTSCT(pl: LegalDeleteTagRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun deletePhapLyTagTSCTSCT(pl: LegalDeleteTagRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.deletePhapLyTSCTSCT(pl)
     }
 
-    suspend fun deleteImagePhapLy(pl: LegalDeleteDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun deleteImagePhapLy(pl: LegalDeleteDocumentRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.deleteImagesPhapLy(pl)
     }
 
-    suspend fun deleteImagesPhapLyTSCTSCT(pl: LegalDeleteDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun deleteImagesPhapLyTSCTSCT(pl: LegalDeleteDocumentRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.deleteImagesPhapLyTSCTSCT(pl)
     }
 
@@ -352,11 +348,11 @@ class AssetRepository @Inject constructor(
         return apiServiceSearch.legalProperty(type)
     }
 
-    suspend fun legalUpdateNameDocument(rq: LegalUpdateNameDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun legalUpdateNameDocument(rq: LegalUpdateNameDocumentRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.legalDocumentNameUpdate(rq)
     }
 
-    suspend fun legalDocumentNameUpdateTSCTSCT(rq: LegalUpdateNameDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun legalDocumentNameUpdateTSCTSCT(rq: LegalUpdateNameDocumentRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.legalDocumentNameUpdateTSCTSCT(rq)
     }
 
@@ -378,7 +374,7 @@ class AssetRepository @Inject constructor(
 
     suspend fun labelUpdate(
         reqest: AssetLabelRequest?
-    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.labelUpdate(
             reqest
         )
@@ -386,7 +382,7 @@ class AssetRepository @Inject constructor(
 
     suspend fun levelUpgrade(
         reqest: AssetLevelRequest?
-    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.levelUpgrade(
             reqest
         )

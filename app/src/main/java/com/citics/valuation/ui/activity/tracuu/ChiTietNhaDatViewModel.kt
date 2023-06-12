@@ -1,8 +1,7 @@
 package com.citics.valuation.ui.activity.tracuu
 
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.AssetVoteResponse
-import com.citics.cagent.data.model.response.LandDetailResponse
+import com.citics.cagent.data.model.response.AssetDetailResponse
 import com.citics.valuation.data.repository.AssetRepository
 import com.citics.valuation.data.repository.Resource
 import com.citics.valuation.ui.base.BaseViewModel
@@ -17,10 +16,22 @@ import javax.inject.Inject
 class ChiTietNhaDatViewModel @Inject constructor(private val assetRepository: AssetRepository) :
     BaseViewModel() {
 
-    private val _assetDetail: MutableStateFlow<Resource<LandDetailResponse>> =
+    private val _assetDetail: MutableStateFlow<Resource<AssetDetailResponse>> =
         MutableStateFlow(Resource.Loading())
-    val assetDetail: StateFlow<Resource<LandDetailResponse>> get() = _assetDetail
+    val assetDetail: StateFlow<Resource<AssetDetailResponse>> get() = _assetDetail
 
+    fun getProjectDetail(id: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _assetDetail.value = assetRepository.getProjectDetail(id).handleResponse()
+        }
+    }
+
+    fun getCanHoDetail(projectId: String, maCan: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _assetDetail.value =
+                assetRepository.getApartmentAsset(projectId, maCan).handleResponse()
+        }
+    }
 
     fun getLandDetailByLatLng(
         lat: Double, lng: Double
@@ -38,7 +49,7 @@ class ChiTietNhaDatViewModel @Inject constructor(private val assetRepository: As
         }
     }
 
-    fun updateAssetDetail(asset: LandDetailResponse) {
+    fun updateAssetDetail(asset: AssetDetailResponse) {
         _assetDetail.value = Resource.Success(asset)
     }
 }

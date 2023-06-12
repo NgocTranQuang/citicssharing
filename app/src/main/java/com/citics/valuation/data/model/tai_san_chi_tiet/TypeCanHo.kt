@@ -1,4 +1,4 @@
-package com.citics.cagent.data.model.tai_san_chi_tiet
+package com.citics.valuation.data.model.tai_san_chi_tiet
 
 import com.citics.cbank.R
 
@@ -20,9 +20,7 @@ class TypeCanHo : TypeDetail {
         return R.drawable.ic_folder_plus
     }
 
-    override fun getListTabBarTitle(): MutableList<Int> {
-        return mutableListOf(
-            R.string.thong_tin_gia, R.string.chi_tiet_can_ho
-        )
+    override fun getListTabBarTitle(): MutableList<Int>? {
+        return null
     }
 }

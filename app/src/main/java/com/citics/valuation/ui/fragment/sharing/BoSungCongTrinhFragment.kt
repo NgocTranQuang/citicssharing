@@ -7,17 +7,12 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.citics.cagent.data.model.request.EstimationConstructionRequest
 import com.citics.cagent.data.model.response.CongTrinh
 import com.citics.cagent.data.model.response.StaticNhaDatResponse
-import com.citics.cagent.data.model.response.TemplateResponse
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentBoSungCongTrinhBinding
 import com.citics.valuation.adapter.list_cong_trinh.RoomsAdapter
@@ -30,16 +25,11 @@ import com.citics.valuation.extension.*
 import com.citics.valuation.ui.activity.chitietcongtrinh.ChiTietCongTrinhViewModel
 import com.citics.valuation.ui.activity.chitietcongtrinh.ThemPhongActivity
 import com.citics.valuation.ui.base.BaseChooserFragment
-import com.citics.valuation.ui.base.BaseFragment
-import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.nhatdat.EditNhaDatViewModel
 import com.citics.valuation.utils.KEY_BUNDLE_DATA
 import com.citics.valuation.utils.LevelType
 import com.citics.valuation.utils.StaticDataUtils
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
-import java.util.*
 
 @AndroidEntryPoint
 class BoSungCongTrinhFragment :
@@ -111,7 +101,7 @@ class BoSungCongTrinhFragment :
             }
         }
         dataListenerScope {
-            editViewModel.updateLandDetailResponse.handleResponse {
+            editViewModel.updateAssetDetailResponse.handleResponse {
                 it?.data?.let {
                     hideLoading()
                     activityViewModel.setAsset(it)

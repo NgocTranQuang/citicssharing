@@ -9,4 +9,4 @@ import kotlinx.parcelize.Parcelize
  * Created by ChinhQT on 26/10/2022.
  */
 @Parcelize
-class LandDetailResponse : BaseResponse<AssetDetailData, ExtraData>(), Parcelable
+class AssetDetailResponse : BaseResponse<AssetDetailData, ExtraData>(), Parcelable

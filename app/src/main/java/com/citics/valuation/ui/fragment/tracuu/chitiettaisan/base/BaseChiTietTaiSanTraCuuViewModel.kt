@@ -2,7 +2,6 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base
 
 import androidx.lifecycle.viewModelScope
 import com.citics.cagent.data.model.response.AssetVoteResponse
-import com.citics.cagent.data.model.response.LandDetailResponse
 import com.citics.valuation.data.repository.AssetRepository
 import com.citics.valuation.data.repository.Resource
 import com.citics.valuation.ui.base.BaseViewModel

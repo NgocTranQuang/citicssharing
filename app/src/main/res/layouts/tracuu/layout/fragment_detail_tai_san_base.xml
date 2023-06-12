@@ -63,6 +63,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:visibility="gone"
+                            app:isShowText="true"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
@@ -296,9 +297,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_marginTop="@dimen/activity_margin_medium"
                                 android:textColor="@color/text_main"
                                 android:textSize="@dimen/text_size_12"
-
                                 tools:text="Citics cập nhật 20 tháng 03, 2023" />
 
                             <com.google.android.material.divider.MaterialDivider
@@ -325,7 +326,7 @@
                                 android:tag="bien_do_gia_thap_nhat"
                                 android:textColor="@color/text_main"
                                 android:textSize="@dimen/text_size_19"
-                                app:text_view_unit="@string/d"
+                                app:text_view_unit="@string/dm2"
                                 tools:text="128,599,245,086 đ" />
 
                             <TextView
@@ -333,10 +334,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="@dimen/activity_margin_large"
+                                android:layout_marginTop="@dimen/activity_margin_medium"
+                                android:layout_marginBottom="@dimen/activity_margin_large"
                                 android:textColor="@color/text_main"
                                 android:textSize="@dimen/text_size_12"
-
                                 tools:text="Citics cập nhật 20 tháng 03, 2023" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/activity_margin_large"
+                                android:background="@color/color_divider" />
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -384,7 +391,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#4c000000"
+                        android:background="@color/color_divider"
                         android:visibility="visible" />
 
                     <com.citics.valuation.customview.ButtonUpdateLayout

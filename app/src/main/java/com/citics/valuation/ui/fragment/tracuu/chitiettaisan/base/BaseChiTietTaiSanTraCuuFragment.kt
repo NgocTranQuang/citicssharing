@@ -5,7 +5,7 @@ import android.view.View
 import com.ahmadhamwi.tabsync.TabbedListMediator
 import com.citics.cagent.data.model.response.AssetDetailData
 import com.citics.cagent.data.model.response.DetailAdjustmentRates
-import com.citics.cagent.data.model.tai_san_chi_tiet.TypeDetail
+import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentDetailTaiSanBaseBinding
 import com.citics.valuation.adapter.tracuu.ChiTietTaiSanAdapter
@@ -45,12 +45,16 @@ abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewM
     override fun getHeaderLayout(): HeaderLayout? {
         return binding.headerLayout
     }
+
     override fun onClickListener() {
         super.onClickListener()
         binding.cvLike.setOnClickListener {
             onClickLike()
         }
         binding.lnActionHeader.setOnClickListener {
+            onHeaderButtonClick()
+        }
+        binding.lnTimCanHo.setOnClickListener {
             onHeaderButtonClick()
         }
         binding.vAddress.setOnFavouriteClick {
@@ -85,29 +89,49 @@ abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewM
     fun setBaseData(data: AssetDetailData?) {
         this.assetDetailData = data
         binding.vAddress.setLoaiTaiSan(data?.loai_tai_san ?: "")
-        if (data?.loai_tai_san == LoaiTaiSan.NHA_DAT.typeName || data?.loai_tai_san == LoaiTaiSan.CAN_HO.typeName) {
-            // Nha dat or can ho
-            binding.lnHeaderDuAn.visibility = View.GONE
-            binding.lnHeaderTaiSan.visibility = View.VISIBLE
-        } else {
-            // Du an
-            binding.lnHeaderDuAn.visibility = View.VISIBLE
-            binding.lnHeaderTaiSan.visibility = View.GONE
-        }
         setDataHeader(data?.properties?.danh_sach_hinh_anh?.map { it.photo_url ?: "" }
             ?.toMutableList(),
             data?.properties?.dia_chi1,
             data?.properties?.dia_chi2)
-        setNgayCapNhatGia(data?.properties?.ngay_cap_nhat_gia)
-        setDataPriceValuer(data?.adjustmentRates)
-        if (data?.usingPurpose?.firstOrNull { purpose -> purpose.ignore_pricing == true } != null) {
-            // Đất thuộc dạng không được phép sử dụng (ví dụ như đất quân đội, đất cấm...)
-            onDatDacThu()
+        if (data?.loai_tai_san == LoaiTaiSan.NHA_DAT.typeName || data?.loai_tai_san == LoaiTaiSan.CAN_HO.typeName) {
+            // Nha dat or can ho
+            binding.lnHeaderDuAn.visibility = View.GONE
+            binding.lnHeaderTaiSan.visibility = View.VISIBLE
+            setNgayCapNhatGia(data.properties?.ngay_cap_nhat_gia)
+            setDataPriceValuer(data.adjustmentRates)
+            if (data.loai_tai_san == LoaiTaiSan.NHA_DAT.typeName) {
+                if (data.usingPurpose?.firstOrNull { purpose -> purpose.ignore_pricing == true } != null) {
+                    // Đất thuộc dạng không được phép sử dụng (ví dụ như đất quân đội, đất cấm...)
+                    onDatDacThu()
+                } else {
+                    if ((data.adjustmentRates?.don_gia ?: 0) == 0L) {
+                        onDatInvalid()
+                    }
+                }
+            }
         } else {
-            if ((data?.adjustmentRates?.don_gia ?: 0) == 0L) {
-                onDatInvalid()
+            // Du an
+            binding.lnHeaderDuAn.visibility = View.VISIBLE
+            binding.lnHeaderTaiSan.visibility = View.GONE
+            binding.tvGiaTrungBinhDuAn.text = data?.properties?.gia_mo_ban_text
+            if (data?.properties?.ngay_cap_nhat_gia != null) {
+                binding.tvNgayCapNhatDuAn.text = getString(
+                    R.string.citics_cap_nhat,
+                    data.properties?.ngay_cap_nhat_gia?.toShowTime()
+                )
+            } else {
+                binding.tvNgayCapNhatDuAn.visibility = View.GONE
+            }
+            binding.tvDonGiaTB.setValue(data?.properties?.don_gia_trung_binh.toShow())
+            binding.tvNgayCapNhatDGTBDUAn.text = getString(
+                R.string.citics_cap_nhat,
+                data?.properties?.ngay_cap_nhat_don_gia_trung_binh?.toShowTime()
+            )
+            if (data?.properties?.ngay_cap_nhat_don_gia_trung_binh == null) {
+                binding.tvNgayCapNhatDGTBDUAn.visibility = View.GONE
             }
         }
+
     }
 
     private fun setNgayCapNhatGia(ngayCapNhatGia: Long?) {
@@ -123,9 +147,11 @@ abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewM
         binding.tvCValue.setValue(data?.gia_tri_tham_dinh?.toShow())
         binding.tvBienDoGiaNhoNhat.setValue(data?.bien_do_gia_thap_nhat?.toShow())
         binding.tvBienDoGiaLonNhat.setValue(data?.bien_do_gia_cao_nhat?.toShow())
+        // Dự án
+        binding.tvGiaTrungBinhDuAn.setValue(data?.don_gia?.toShow())
     }
 
-    fun setDataHeader(
+    private fun setDataHeader(
         danhSachHinhAnh: MutableList<String>?, address1: String? = null, address2: String? = null
     ) {
         setDataSlider(danhSachHinhAnh)
@@ -145,12 +171,17 @@ abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewM
     private fun initMediator() {
         binding.rvDetail.let { rv ->
             binding.contentTab.let { tab ->
-                TabbedListMediator(
-                    rv,
-                    tab,
-                    getDataDetail().getListTabBarTitle().map { getString(it) }.indices.toList(),
-                    true
-                ).attach()
+                getDataDetail().getListTabBarTitle()?.map { getString(it) }?.indices?.toList()
+                    ?.let {
+                        TabbedListMediator(
+                            rv,
+                            tab,
+                            it,
+                            true
+                        ).attach()
+                    } ?: kotlin.run {
+                    binding.contentTab.visibility = View.GONE
+                }
             }
         }
     }
@@ -160,7 +191,7 @@ abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewM
             binding.tvActionHeader.text = getString(it.getTitleButton())
             binding.btnBottom.setTitleButton(getString(it.getTitleButton()))
             binding.tvActionHeader.setDrawableStartTextview(it.getDrawableButton())
-            it.getListTabBarTitle().forEach { index ->
+            it.getListTabBarTitle()?.forEach { index ->
                 binding.contentTab.newTab().setText(getString(index)).let { tab ->
                     binding.contentTab.addTab(tab)
                 }

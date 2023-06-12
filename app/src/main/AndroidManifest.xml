@@ -71,6 +71,9 @@
         <activity android:name="com.citics.valuation.ui.activity.tracuu.ChiTietDienTichThuaDatActivity" />
         <activity android:name="com.citics.valuation.ui.activity.chitietcongtrinh.ChiTietCongTrinhActivity" />
         <activity android:name="com.citics.valuation.ui.activity.chitietcongtrinh.ThemPhongActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.tracuu.ChiTietDuAnActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.tracuu.TimKiemCanHoActivity" />
+        <activity android:name="com.citics.valuation.ui.activity.tracuu.ChiTietCanHoActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -2,7 +2,7 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.nhatdat
 
 import androidx.lifecycle.viewModelScope
 import com.citics.cagent.data.model.response.DetailUsingPurpose
-import com.citics.cagent.data.model.response.LandDetailResponse
+import com.citics.cagent.data.model.response.AssetDetailResponse
 import com.citics.cagent.data.model.response.tham_dinh.Properties
 import com.citics.valuation.data.repository.AssetRepository
 import com.citics.valuation.data.repository.Resource
@@ -21,9 +21,9 @@ import javax.inject.Inject
 class EditNhaDatViewModel @Inject constructor(private val assetRepository: AssetRepository) :
     BaseViewModel() {
 
-    private val _updateLandDetailResponse: MutableStateFlow<Resource<LandDetailResponse>> =
+    private val _updateAssetDetailResponse: MutableStateFlow<Resource<AssetDetailResponse>> =
         MutableStateFlow(Resource.Loading())
-    val updateLandDetailResponse: StateFlow<Resource<LandDetailResponse>> get() = _updateLandDetailResponse
+    val updateAssetDetailResponse: StateFlow<Resource<AssetDetailResponse>> get() = _updateAssetDetailResponse
 
     fun estimationAsset(
         asset_id: String,
@@ -32,7 +32,7 @@ class EditNhaDatViewModel @Inject constructor(private val assetRepository: Asset
         using_purpose: List<DetailUsingPurpose>
     ) {
         viewModelScope.launch(Dispatchers.IO) {
-            _updateLandDetailResponse.value = assetRepository.estimationAsset(
+            _updateAssetDetailResponse.value = assetRepository.estimationAsset(
                 asset_id, loai_tai_san, properties, using_purpose
             ).handleResponse()
         }

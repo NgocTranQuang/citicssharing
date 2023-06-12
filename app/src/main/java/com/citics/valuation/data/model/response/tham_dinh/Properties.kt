@@ -43,6 +43,7 @@ open class Properties(
     var so_block: String? = null,
     var so_tang: String? = null,
     var don_gia_trung_binh: Long? = null,
+    var ngay_cap_nhat_don_gia_trung_binh: Long? = null,
     var dien_tich_nho_nhat: Float? = null,
     var dien_tich_lon_nhat: Float? = null,
     var ghi_chu_phap_ly: String? = null,

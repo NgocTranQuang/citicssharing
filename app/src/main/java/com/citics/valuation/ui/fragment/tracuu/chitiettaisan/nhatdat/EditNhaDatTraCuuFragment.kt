@@ -4,13 +4,11 @@ import android.content.Intent
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.citics.cagent.data.model.response.LandDetailResponse
-import com.citics.cagent.data.model.response.tham_dinh.Properties
+import com.citics.cagent.data.model.response.AssetDetailResponse
 import com.citics.cbank.databinding.FragmentEditDetailLandBinding
 import com.citics.valuation.extension.copyByJson
 import com.citics.valuation.ui.activity.tracuu.ChiTietNhaDatViewModel
 import com.citics.valuation.ui.base.BaseChooserFragment
-import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,7 +18,7 @@ class EditNhaDatTraCuuFragment :
     ) {
     override val viewModel: EditNhaDatViewModel by viewModels()
     private val activityViewModel: ChiTietNhaDatViewModel by activityViewModels()
-    private var assetDetailCopy: LandDetailResponse? = null
+    private var assetDetailCopy: AssetDetailResponse? = null
 
     override fun onConfigUI() {
         super.onConfigUI()
@@ -65,7 +63,7 @@ class EditNhaDatTraCuuFragment :
             }
         }
         dataListenerScope {
-            viewModel.updateLandDetailResponse.handleResponse {
+            viewModel.updateAssetDetailResponse.handleResponse {
                 hideLoading()
                 it?.let {
                     activityViewModel.updateAssetDetail(it)

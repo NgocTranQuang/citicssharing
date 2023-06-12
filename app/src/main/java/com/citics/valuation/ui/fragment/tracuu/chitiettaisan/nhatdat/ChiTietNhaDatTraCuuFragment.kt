@@ -9,26 +9,21 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.citics.cagent.data.model.response.AssetDetailData
-import com.citics.cagent.data.model.response.DetailAdjustmentRates
-import com.citics.cagent.data.model.response.LandDetailResponse
-import com.citics.cagent.data.model.tai_san_chi_tiet.TypeDetail
+import com.citics.cagent.data.model.response.AssetDetailResponse
+import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
-import com.citics.valuation.customview.HeaderLayout
 import com.citics.valuation.customview.companion.VeCongTrinhLayout
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeNhaDat
 import com.citics.valuation.customview.companion.VeThuaDatLayout
 import com.citics.valuation.customview.companion.ViTriTaiSanLayout
-import com.citics.valuation.data.model.response.ExtraData
 import com.citics.valuation.extension.*
 import com.citics.valuation.ui.activity.chitietcongtrinh.ChiTietCongTrinhActivity
 import com.citics.valuation.ui.activity.tracuu.ChiTietNhaDatViewModel
-import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuFragment
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.utils.KEY_BUNDLE_DATA
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.distinctUntilChanged
 
 @AndroidEntryPoint
 class ChiTietNhaDatTraCuuFragment :
@@ -54,7 +49,7 @@ class ChiTietNhaDatTraCuuFragment :
         val bundle = intent?.getBundleExtra(KEY_BUNDLE_DATA)
         val asset = bundle?.getData<AssetDetailData>(ChiTietCongTrinhActivity.KEY_ASSET_DETAIL)
         val extra = bundle?.getString(ChiTietCongTrinhActivity.KEY_ASSET_EXTRA)
-        val land = LandDetailResponse().apply {
+        val land = AssetDetailResponse().apply {
             this.data = asset
             this.extra = extra?.toObject()
         }
@@ -131,7 +126,7 @@ class ChiTietNhaDatTraCuuFragment :
         }
     }
 
-    private fun setDataAsset(it: LandDetailResponse?) {
+    private fun setDataAsset(it: AssetDetailResponse?) {
         vitriTaiSanLayout?.setValue(it?.data?.properties)
         veThuaDatLayout?.setValue(it?.data?.properties)
         veCongTrinhLayout?.setValue(

@@ -1,6 +1,5 @@
 package com.citics.valuation.data.model.tai_san_chi_tiet
 
-import com.citics.cagent.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 
 

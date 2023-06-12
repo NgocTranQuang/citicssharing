@@ -43,6 +43,7 @@ import com.citics.valuation.customview.CiticsTextField
 import com.citics.valuation.customview.CustomChipLayout
 import com.citics.valuation.customview.TextViewUnit
 import com.citics.valuation.customview.ThongTinLayout
+import com.google.android.gms.common.internal.Preconditions
 import com.google.android.material.chip.ChipGroup
 import com.skydoves.balloon.*
 
@@ -222,7 +223,29 @@ fun RadioButton.applyCiticsStyle() {
     buttonTintList = colorStateList
 }
 
-//
+
+@ExperimentalCoroutinesApi
+@CheckResult
+fun EditText.textChanges(): Flow<CharSequence?> {
+    return callbackFlow {
+        Preconditions.checkMainThread()
+        val listener = doOnTextChanged { text, _, _, _ -> trySend(text) }
+        awaitClose { removeTextChangedListener(listener) }
+    }.onStart { emit(text) }
+}
+
+@OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
+fun EditText.searchDebounce(
+    time: Long = 500,
+    lifecycleScope: CoroutineScope,
+    onChange: (String?) -> Unit
+) {
+    textChanges().debounce(time).onEach {
+        onChange.invoke(it.toString())
+    }.launchIn(lifecycleScope)
+}
+
+
 fun View.showBalloonPopup(
     content: String,
     xOff: Int = 0,

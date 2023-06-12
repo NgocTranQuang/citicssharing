@@ -1,8 +1,5 @@
 package com.citics.valuation.data.repository
 
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
 import com.citics.cagent.data.model.request.*
 import com.citics.cagent.data.model.request.legal.LegalCreateOrUpdateRequest
 import com.citics.cagent.data.model.request.legal.LegalDeleteDocumentRequest
@@ -19,9 +16,6 @@ import com.citics.valuation.di.ApiAgent
 import com.citics.valuation.di.ApiAgentSearch
 import com.citics.valuation.di.ApiUploader
 import com.citics.valuation.service.APIService
-import com.citics.valuation.service.header.ApiHeadersProvider
-import com.citics.valuation.utils.PAGE_SIZE
-import kotlinx.coroutines.flow.Flow
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -119,13 +113,13 @@ class ValidationRepository @Inject constructor(
         )
     }
 
-    suspend fun getAssetComparedWarehouse(_assetId: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun getAssetComparedWarehouse(_assetId: String): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.getAssetComparedWarehouse(
             _assetId
         )
     }
 
-    suspend fun getAssetComparedDetail(_assetId: String): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun getAssetComparedDetail(_assetId: String): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.getAssetComparedDetail(
             _assetId
         )
@@ -217,7 +211,7 @@ class ValidationRepository @Inject constructor(
 
     suspend fun updateLegalStatusTSCTSCT(
         updateLegalStatusComparedRequest: UpdateLegalStatusComparedRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.updateLegalStatusTSCTSCT(
             updateLegalStatusComparedRequest
         )
@@ -327,7 +321,7 @@ class ValidationRepository @Inject constructor(
         return apiServiceAgent.recordPhotoUpload(rq)
     }
 
-    suspend fun recordPhotoUploadTSCTSCT(rq: LegalCreateOrUpdateRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun recordPhotoUploadTSCTSCT(rq: LegalCreateOrUpdateRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.recordPhotoUploadTSCTSCT(rq)
     }
 
@@ -343,7 +337,7 @@ class ValidationRepository @Inject constructor(
         return apiServiceAgent.recordPhotoDelete(rq)
     }
 
-    suspend fun recordPhotoDeleteTSCTSCT(rq: LegalDeleteDocumentRequest): NetworkResponse<LandDetailResponse, ErrorResponse> {
+    suspend fun recordPhotoDeleteTSCTSCT(rq: LegalDeleteDocumentRequest): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceAgent.recordPhotoDeleteTSCTSCT(rq)
     }
 

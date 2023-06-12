@@ -1177,5 +1177,7 @@ Cảm ơn bạn đã tin dùng Citics.vn</string>
     <string name="tvdsyc">Thêm vào danh sách yêu cầu</string>
     <string name="_01_vitritaisan">01. Vị trí tài sản</string>
     <string name="tbdsts">Tờ bản đồ số, thửa số</string>
+    <string name="so_dien_tich_in_range">%1$s m\u00B2 - %2$s m\u00B2</string>
+    <string name="citics_cap_nhat">Citics cập nhật %1$s</string>
 
 </resources>

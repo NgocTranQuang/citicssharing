@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.citics.valuation.customview.HeaderLayout
+        android:id="@+id/headerLayout"
+        style="@style/styleHeaderLayout"
+        app:header_title="@string/tim_can_ho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.citics.valuation.customview.SearchLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin_large"
+        android:hint="@string/nmch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/advancedSearchBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_margin_large"
+        android:layout_marginEnd="@dimen/activity_margin_large"
+        android:background="@color/transparent"
+        android:gravity="center_vertical"
+        android:text="@string/tim_kiem_nang_cao"
+        android:textAllCaps="false"
+        android:textColor="@color/text_address1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout" />
+
+    <com.gturedi.views.StatefulLayout
+        android:id="@+id/statefulLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/advancedSearchBtn">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dataList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.gturedi.views.StatefulLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

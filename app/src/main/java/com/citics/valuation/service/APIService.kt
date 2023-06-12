@@ -19,7 +19,6 @@ import com.citics.cagent.data.model.response.tudinhgia.DeleteTSSSTSCTRequest
 import com.citics.cagent.data.repository.customadapter.NetworkResponse
 import com.citics.cbank.BuildConfig
 import com.citics.valuation.data.model.response.ErrorResponse
-import com.citics.valuation.service.header.AuthenticatedHeaders
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -150,13 +149,13 @@ interface APIService {
         @Path("cp") cp: String?,
         @Query("latitude") lat: Double,
         @Query("longitude") lng: Double,
-        ): NetworkResponse<LandDetailResponse, ErrorResponse>
+        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/land.vn2000.city/{cp}")
     suspend fun getLandDetailsByVN2000City(
         @Path("cp") cp: String?,
         @Body request: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/asset/land.by.parcel/{cp}")
     suspend fun getLandDetailBySoToSoThua(
@@ -167,7 +166,7 @@ interface APIService {
         @Query("so_to") soto: String,
         @Query("so_thua") sothua: String,
 
-        ): NetworkResponse<LandDetailResponse, ErrorResponse>
+        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/asset/land.suggest")
     suspend fun getLandSuggestion(
@@ -183,13 +182,13 @@ interface APIService {
     @POST("v2.4/calculate/estimation.asset")
     suspend fun estimationAsset(
         @Body estimationAssetRequest: EstimationAssetRequest,
-        ): NetworkResponse<LandDetailResponse, ErrorResponse>
+        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/calculate/estimation.asset")
     suspend fun estimationAssetCH(
         @Body estimationAssetCHRequest: EstimationAssetCHRequest,
 
-        ): NetworkResponse<LandDetailResponse, ErrorResponse>
+        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/asset/project.suggest")
     suspend fun getCanHoSuggestion(
@@ -201,7 +200,7 @@ interface APIService {
     @GET("v2.4/asset/project.detail/{id}")
     suspend fun getProjectDetail(
         @Path("id") id: String
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/asset/project.detail/{id}")
     suspend fun getProjectDetail2(
@@ -255,56 +254,56 @@ interface APIService {
         @Query("project_id") project_id: String,
         @Query("ma_can") ma_can: String,
 
-        ): NetworkResponse<LandDetailResponse, ErrorResponse>
+        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/calculate/self.asset.calculate")
     suspend fun getSelfAssetCalculate(
 
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/asset/self.mine.asset.calculate")
     suspend fun getSelfAssetCalculateTSCT(
         @Query("my_asset_id") my_asset_id: String
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/calculate/self.asset.compared/add")
     suspend fun selfAssetComparedAdd(
         @Body body: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
 
     @POST("v2.4/asset/mine.asset.compared/add")
     suspend fun addTSSSTSCT(
         @Body body: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
 
     @POST("v2.4/asset/mine.upsert")
     suspend fun mineUpsert(
         @Body body: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @HTTP(method = "DELETE", path = "v2.4/calculate/self.asset.compared/delete", hasBody = true)
     suspend fun deleteComparedAsset(
         @Query("asset_id") asset_id: String
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @HTTP(method = "DELETE", path = "v2.4/asset/mine.asset.compared/delete", hasBody = true)
     suspend fun deleteComparedAssetTSCT(
         @Body body: DeleteTSSSTSCTRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     // Cập nhật thông tin tài sản so sánh tự định giá
     @POST("v2.4/calculate/self.asset.compared/update")
     suspend fun updateComparedAsset(
         @Body body: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     // Cập nhật thông tin tài sản so sánh tự định giá
     @POST("v2.4/asset/mine.asset.compared/update")
     suspend fun updateComparedAssetTSCT(
         @Body body: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     // Tìm tài sản so sánh
     @GET("v2.4/record/compared.assets.get/{recordId}")
@@ -333,12 +332,12 @@ interface APIService {
     @POST("v2.4/asset/label.update")
     suspend fun labelUpdate(
         @Body reqest: AssetLabelRequest?
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/level.upgrade")
     suspend fun levelUpgrade(
         @Body reqest: AssetLevelRequest?
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     //endregion
 
@@ -347,7 +346,7 @@ interface APIService {
     @POST("v2.4/calculate/self.asset.request")
     suspend fun selfAssetRequest(
         @Body body: RequestBody
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     //endregion
 
@@ -385,22 +384,22 @@ interface APIService {
     @GET("v2.4/asset/mine.get.by.id")
     suspend fun getMineById(
         @Query("my_asset_id") my_asset_id: String
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/asset/get.cvalue")
     suspend fun getCValueOfAsset(
         @Query("my_asset_id") my_asset_id: String
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/mine.asset.compared/add")
     suspend fun addTSSSFromMyAsset(
         @Body request: TSSSMyAssetRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/mine.asset.compared/update")
     suspend fun updateTSSSFromMyAsset(
         @Body request: TSSSMyAssetRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     //endregion
 
@@ -434,7 +433,7 @@ interface APIService {
     @POST("v2.4/asset/mine.asset/photo.update")
     suspend fun recordPhotoUploadTSCTSCT(
         @Body request: LegalCreateOrUpdateRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/record/asset.compared/photo.update")
     suspend fun recordPhotoUploadTSSS(
@@ -470,7 +469,7 @@ interface APIService {
     @HTTP(method = "DELETE", path = "v2.4/asset/mine.asset/photo.delete", hasBody = true)
     suspend fun recordPhotoDeleteTSCTSCT(
         @Body request: LegalDeleteDocumentRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
 
     @HTTP(method = "DELETE", path = "v2.4/record/asset.compared/photo.delete", hasBody = true)
@@ -491,33 +490,33 @@ interface APIService {
     @POST("v2.4/calculate/self.asset/legal.update")
     suspend fun updatePhapLy(
         @Body reqest: LegalCreateOrUpdateRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/mine.asset/legal.update")
     suspend fun updatePhapLyTSCTSCT(
         @Body reqest: LegalCreateOrUpdateRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @HTTP(method = "DELETE", path = "v2.4/calculate/self.asset/legal.delete.tag", hasBody = true)
     suspend fun deletePhapLy(
         @Body reqest: LegalDeleteTagRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @HTTP(method = "DELETE", path = "v2.4/asset/mine.asset/legal.delete.tag", hasBody = true)
     suspend fun deletePhapLyTSCTSCT(
         @Body reqest: LegalDeleteTagRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
 
     @HTTP(method = "DELETE", path = "v2.4/calculate/self.asset/legal.delete", hasBody = true)
     suspend fun deleteImagesPhapLy(
         @Body reqest: LegalDeleteDocumentRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @HTTP(method = "DELETE", path = "v2.4/asset/mine.asset/legal.delete", hasBody = true)
     suspend fun deleteImagesPhapLyTSCTSCT(
         @Body reqest: LegalDeleteDocumentRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/static/legal/property-type/{type}")
     suspend fun legalProperty(
@@ -527,12 +526,12 @@ interface APIService {
     @POST("v2.4/calculate/self.asset/legal.update.name")
     suspend fun legalDocumentNameUpdate(
         @Body reqest: LegalUpdateNameDocumentRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/mine.asset/legal.update.name")
     suspend fun legalDocumentNameUpdateTSCTSCT(
         @Body reqest: LegalUpdateNameDocumentRequest
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     //endregion
 
@@ -727,13 +726,13 @@ interface APIService {
     @GET("v2.4/record/asset.compared/warehouse.get/{assetId}")
     suspend fun getAssetComparedWarehouse(
         @Path("assetId") _assetId: String?
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     //    Lấy chi tiết tài sản so sanh
     @GET("v2.4/record/asset.compared/detail.get/{assetId}")
     suspend fun getAssetComparedDetail(
         @Path("assetId") _assetId: String?
-    ): NetworkResponse<LandDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     // Thêm tài sản so sanh vào hồ sơ
     @POST("v2.4/record/asset.compared/add")
@@ -753,7 +752,7 @@ interface APIService {
     suspend fun updateLegalStatusTSCTSCT(
         @Body updateLegalStatusComparedRequest: UpdateLegalStatusComparedRequest,
 
-        ): NetworkResponse<LandDetailResponse, ErrorResponse>
+        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     // Dung khi them tai san so sanh bang nhap lieu
     @POST("v2.4/record/asset.compared/location.update")
