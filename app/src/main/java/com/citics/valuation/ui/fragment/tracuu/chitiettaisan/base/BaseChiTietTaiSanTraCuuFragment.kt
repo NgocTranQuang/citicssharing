@@ -9,6 +9,7 @@ import com.citics.cagent.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentDetailTaiSanBaseBinding
 import com.citics.valuation.adapter.tracuu.ChiTietTaiSanAdapter
+import com.citics.valuation.customview.HeaderLayout
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.extension.setHtml
 import com.citics.valuation.extension.toShow
@@ -41,7 +42,9 @@ abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewM
         }
     }
 
-
+    override fun getHeaderLayout(): HeaderLayout? {
+        return binding.headerLayout
+    }
     override fun onClickListener() {
         super.onClickListener()
         binding.cvLike.setOnClickListener {

@@ -13,6 +13,7 @@ import com.citics.cagent.data.model.response.DetailAdjustmentRates
 import com.citics.cagent.data.model.response.LandDetailResponse
 import com.citics.cagent.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
+import com.citics.valuation.customview.HeaderLayout
 import com.citics.valuation.customview.companion.VeCongTrinhLayout
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeNhaDat
 import com.citics.valuation.customview.companion.VeThuaDatLayout
