@@ -26,4 +26,10 @@ in popUpTo will also be removed.-->
 
     </fragment>
 
+
+    <fragment
+        android:id="@+id/cvaluefragment"
+        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.sharing.CValueCanHoFragment" />
+
+
 </navigation>

@@ -12,6 +12,7 @@ import com.citics.valuation.data.model.others.SelectorItem
 import com.citics.valuation.data.model.others.SingleChoiceData
 import com.citics.valuation.extension.toMutableList
 import com.citics.valuation.ui.activity.choice.SingleChoiceActivity
+import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity
 import com.citics.valuation.utils.*
 import timber.log.Timber
 
@@ -23,9 +24,10 @@ abstract class BaseChooserFragment<V : ViewBinding, VM : BaseViewModel>(private 
     ) {
         if (it.resultCode == Activity.RESULT_OK) {
             val intent = it.data
-//            onDataSingleChoiceAndAddingCallBack(intent)
+            setDataSingleChoiceAndAddingCallBack(intent)
         }
     }
+
     val startSingleChoiceForResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
@@ -49,6 +51,19 @@ abstract class BaseChooserFragment<V : ViewBinding, VM : BaseViewModel>(private 
     ) {
         startSingleChoiceForResult.launch(
             SingleChoiceActivity.newIntent(requireContext(), data)
+        )
+    }
+
+    fun goToChooseScreen(
+        toTypedArray: List<ChooserItem>, type: Int, chooserItem: ChooserItem
+    ) {
+        startSingleChoiceAndAddingForResult.launch(
+            SingleChoiceAndAddingDataActivity.newIntent(
+                requireContext(),
+                SingleChoiceData(title = 0, lstData = toTypedArray, selected = null),
+                chooserItem = chooserItem,
+                type = type
+            )
         )
     }
 
@@ -97,6 +112,11 @@ abstract class BaseChooserFragment<V : ViewBinding, VM : BaseViewModel>(private 
         }
     }
 
+
+    open fun setDataSingleChoiceAndAddingCallBack(intent: Intent?) {
+        // TODO: For override
+
+    }
 
     open fun onResultSingleChoice(title: Int, id: String?, name: String?) {
         // TODO: For override

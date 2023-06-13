@@ -2,6 +2,7 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base
 
 import android.annotation.SuppressLint
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.ahmadhamwi.tabsync.TabbedListMediator
 import com.citics.cagent.data.model.response.AssetDetailData
 import com.citics.cagent.data.model.response.DetailAdjustmentRates
@@ -62,6 +63,9 @@ abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewM
         }
         binding.btnBottom.setOnClickListener {
             onHeaderButtonClick()
+        }
+        binding.tvCValue.setOnClickListener {
+            findNavController().navigateWithAnimation(R.id.cvaluefragment)
         }
     }
 

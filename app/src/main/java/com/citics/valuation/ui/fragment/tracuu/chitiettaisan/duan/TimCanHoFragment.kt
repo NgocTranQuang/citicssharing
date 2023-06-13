@@ -94,11 +94,7 @@ open class TimCanHoFragment :
     }
 
     open fun onClickTitleAdvancedSearchBtn() {
-//        findNavController().navigate(
-//            TimCanHoFragmentDirections.actionTimCanHoFragmentToTimCanHoNangCaoFragment(
-//                projectID
-//            )
-//        )
+        findNavController().navigateWithAnimation(R.id.timCanHoNangCao)
     }
 
     open fun onClickCanHo(it: CanHoSuggestionResponse.ContentItem) {

@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ChiTietNhaDatViewModel @Inject constructor(private val assetRepository: AssetRepository) :
+class ChiTietTaiSanTraCuuViewModel @Inject constructor(private val assetRepository: AssetRepository) :
     BaseViewModel() {
 
     private val _assetDetail: MutableStateFlow<Resource<AssetDetailResponse>> =

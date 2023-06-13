@@ -18,7 +18,7 @@ import com.citics.valuation.customview.companion.VeThuaDatLayout
 import com.citics.valuation.customview.companion.ViTriTaiSanLayout
 import com.citics.valuation.extension.*
 import com.citics.valuation.ui.activity.chitietcongtrinh.ChiTietCongTrinhActivity
-import com.citics.valuation.ui.activity.tracuu.ChiTietNhaDatViewModel
+import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuFragment
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuViewModel
@@ -29,7 +29,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ChiTietNhaDatTraCuuFragment :
     BaseChiTietTaiSanTraCuuFragment<BaseChiTietTaiSanTraCuuViewModel>() {
     override val viewModel: BaseChiTietTaiSanTraCuuViewModel by viewModels()
-    private val activityViewModel: ChiTietNhaDatViewModel by activityViewModels()
+    private val activityViewModel: ChiTietTaiSanTraCuuViewModel by activityViewModels()
 
     private var vitriTaiSanLayout: ViTriTaiSanLayout? = null
     private var veThuaDatLayout: VeThuaDatLayout? = null

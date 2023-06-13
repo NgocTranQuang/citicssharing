@@ -7,7 +7,7 @@ import androidx.navigation.fragment.findNavController
 import com.citics.cagent.data.model.response.AssetDetailResponse
 import com.citics.cbank.databinding.FragmentEditDetailLandBinding
 import com.citics.valuation.extension.copyByJson
-import com.citics.valuation.ui.activity.tracuu.ChiTietNhaDatViewModel
+import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.base.BaseChooserFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,7 +17,7 @@ class EditNhaDatTraCuuFragment :
         FragmentEditDetailLandBinding::inflate
     ) {
     override val viewModel: EditNhaDatViewModel by viewModels()
-    private val activityViewModel: ChiTietNhaDatViewModel by activityViewModels()
+    private val activityViewModel: ChiTietTaiSanTraCuuViewModel by activityViewModels()
     private var assetDetailCopy: AssetDetailResponse? = null
 
     override fun onConfigUI() {

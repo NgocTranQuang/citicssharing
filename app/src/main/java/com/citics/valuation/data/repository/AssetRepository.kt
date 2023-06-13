@@ -78,7 +78,7 @@ class AssetRepository @Inject constructor(
         asset_id: String,
         loai_tai_san: String,
         properties: Properties,
-        using_purpose: List<DetailUsingPurpose>
+        using_purpose: List<DetailUsingPurpose>?
     ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         val estimationAssetRequest =
             EstimationAssetRequest(asset_id, loai_tai_san, properties, using_purpose)
@@ -87,14 +87,6 @@ class AssetRepository @Inject constructor(
         )
     }
 
-    suspend fun estimationAssetCH(
-        asset_id: String, loai_tai_san: String, properties: Properties
-    ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
-        val estimationAssetCHRequest = EstimationAssetCHRequest(asset_id, loai_tai_san, properties)
-        return apiServiceSearch.estimationAssetCH(
-            estimationAssetCHRequest
-        )
-    }
 
     suspend fun getCanHoSuggestion(
         term: String, size: Int = 20
@@ -147,22 +139,9 @@ class AssetRepository @Inject constructor(
     }
 
     suspend fun getCanHoFilterAdvance(
-        project_id: String,
-        loaiCanHo: String,
-        thap: String,
-        tang: String,
-        dien_tich_thong_thuy: String,
-        huong: String
+        filters: HashMap<String, Any?>?
     ): NetworkResponse<CanHoFilterAdvanceResponse, ErrorResponse> {
-        return apiServiceSearch.getCanHoFilterAdvance(
-            project_id,
-            loaiCanHo,
-            thap,
-            tang,
-            dien_tich_thong_thuy,
-            huong,
-
-            )
+        return apiServiceSearch.getCanHoFilterAdvance(filters)
     }
 
     suspend fun getOptionsSuggestion(

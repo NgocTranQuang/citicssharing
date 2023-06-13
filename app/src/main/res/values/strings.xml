@@ -1179,5 +1179,16 @@ Cảm ơn bạn đã tin dùng Citics.vn</string>
     <string name="tbdsts">Tờ bản đồ số, thửa số</string>
     <string name="so_dien_tich_in_range">%1$s m\u00B2 - %2$s m\u00B2</string>
     <string name="citics_cap_nhat">Citics cập nhật %1$s</string>
+    <string name="des_thay_doi_thong_tin_can_ho">Trong quá trình thay đổi thông tin tài sản, có một số trường thông tin sẽ thay đổi giá tài sản. Căn hộ này sẽ tự động thêm vào tài sản của bạn nhằm lưu lại giá trị thay đổi. Bạn có muốn tiếp tục không?</string>
+    <string name="gia_tri_can_ho">Giá trị căn hộ</string>
+    <string name="don_gia_can_ho">Đơn giá căn hộ</string>
+
+    <string name="tien_hanh_cap_nhat_gia_cvalue">Tiến hành cập nhật giá C-Value</string>
+    <string name="gia_hien_tai">Giá hiện tại</string>
+    <string name="cap_nhat_cuoi">Cập nhật cuối</string>
+    <string name="des_ketqua_tim_kiem_nang_cao">Danh sách căn hộ gợi ý phù hợp với điều kiện tìm kiếm của bạn. Hoặc bạn có muốn xem kết quả tương đối?</string>
+    <string name="xem_kq_tuong_doi">xem kết quả tương đối?</string>
+
+
 
 </resources>

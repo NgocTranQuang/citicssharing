@@ -72,9 +72,18 @@ class AddressLayout @JvmOverloads constructor(
     fun setLoaiTaiSan(loaiTaiSan: String) {
         if (loaiTaiSan == LoaiTaiSan.NHA_DAT.typeName) {
             showUINhaDat()
-        } else {
+        } else if (loaiTaiSan == LoaiTaiSan.CAN_HO.typeName) {
             showUICanHO()
+        } else {
+            showUIDuAn()
         }
+    }
+
+    private fun showUIDuAn() {
+        binding.tvTitle.text = context.getString(R.string.du_an)
+        binding.tvTitle.setDrawableStartTextview(
+            ContextCompat.getDrawable(context, R.drawable.ic_du_an_white)
+        )
     }
 
     fun setAddress(address1: String, address2: String) {

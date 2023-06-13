@@ -26,7 +26,7 @@ open class Properties(
     var ten_du_an: String? = "",
     var toa_do: String? = "",
     var ma_du_an: String? = "",
-    var cap_nhat_cach_day: String? = "",
+    var cap_nhat_cach_day: String? = null,
     var ngay_cap_nhat_gia: Long? = null,
     var ngay_cap_nhat_gia_thuong_luong: Long? = null,
     var huong: String? = "",

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.citics.valuation.customview.HeaderLayout
+        android:id="@+id/headerLayout"
+        style="@style/styleHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:header_title="@string/gia_c_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/base_padding"
+        android:paddingRight="@dimen/base_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+
+        <TextView
+            android:id="@+id/tvTitlecvaluer"
+            style="@style/Title16Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_large"
+            android:text="@string/gia_c_valuer" />
+
+        <com.citics.valuation.customview.TextViewUnit
+            android:id="@+id/tvCValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:tag="gia_tri_tham_dinh"
+            android:textColor="@color/text_main"
+            android:textSize="@dimen/text_size_21"
+            app:text_view_unit="@string/d"
+            tools:text="128,599,245,086 đ" />
+
+
+        <TextView
+            android:id="@+id/tvGtcl"
+            style="@style/Title16Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:text="@string/gia_tri_chenh_lech_uoc_luong" />
+
+        <LinearLayout
+            android:id="@+id/lnValueChenhLech"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.citics.valuation.customview.TextViewUnit
+                android:id="@+id/tvBienDoGiaNhoNhat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:tag="bien_do_gia_thap_nhat"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_19"
+                app:text_view_unit="@string/d"
+                tools:text="128,599,245,086 đ" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/gach"
+                android:textSize="@dimen/text_size_19" />
+
+            <com.citics.valuation.customview.TextViewUnit
+                android:id="@+id/tvBienDoGiaLonNhat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:tag="bien_do_gia_cao_nhat"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_19"
+                app:text_view_unit="@string/d"
+                tools:text="128,599,245,086 đ" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNgayCapNhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_large"
+            android:textColor="@color/text_main"
+            android:textSize="@dimen/text_size_12"
+            tools:text="Citics cập nhật 20 tháng 03, 2023" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lnNhaDat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+
+            <com.citics.valuation.customview.ThongTinLayout
+                android:id="@+id/vGiaTriThuaDat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:thong_tin_layout_default_value="@string/gach"
+                app:thong_tin_layout_title="@string/gia_tri_thua_dat"
+                app:thong_tin_layout_unit="@string/d" />
+
+            <com.citics.valuation.customview.ThongTinLayout
+                android:id="@+id/vDonGiaThuaDat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:thong_tin_layout_default_value="@string/gach"
+                app:thong_tin_layout_title="@string/don_gia_thua_dat"
+                app:thong_tin_layout_unit="@string/dm2" />
+
+            <TextView
+                android:id="@+id/vChiTietDonGiaThuaDat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_marginBottom="@dimen/dimen_16"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/chi_tiet_don_gia_thua_dat"
+                android:textColor="@color/color_nhat"
+                android:textSize="@dimen/text_size_15" />
+
+            <View
+                android:id="@+id/vDivider"
+                style="@style/DividerStyle" />
+
+            <com.citics.valuation.customview.ThongTinLayout
+                android:id="@+id/vGiaCongTrinhXayDung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:thong_tin_layout_default_value="@string/gach"
+                app:thong_tin_layout_title="@string/gia_cong_trinh_xay_dung"
+                app:thong_tin_layout_unit="@string/d" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <TextView
+                    style="@style/Title18Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_margin_large"
+                    android:text="@string/lich_su_gia_du_an" />
+
+                <com.citics.valuation.customview.CiticsChartLayout
+                    android:id="@+id/vChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lnCanHo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_large"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/chi_tiet_gia"
+                android:textFontWeight="700"
+                android:textSize="@dimen/text_size_18" />
+
+            <com.citics.valuation.customview.ThongTinLayout
+                android:id="@+id/vGiaTriCanHo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:thong_tin_layout_title="@string/gia_tri_can_ho"
+                app:thong_tin_layout_unit="@string/d" />
+
+            <com.citics.valuation.customview.ThongTinLayout
+                android:id="@+id/vDonGiaCanHo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:thong_tin_layout_show_divider="false"
+                app:thong_tin_layout_title="@string/don_gia_can_ho"
+                app:thong_tin_layout_unit="@string/dm2" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

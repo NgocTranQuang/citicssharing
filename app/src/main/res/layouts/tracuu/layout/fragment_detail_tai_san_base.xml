@@ -112,7 +112,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="@dimen/activity_margin_large"
                                 android:layout_marginTop="@dimen/activity_margin_large"
-
                                 android:text="@string/gia_c_valuer" />
 
                             <com.citics.valuation.customview.TextViewUnit

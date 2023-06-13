@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import androidx.activity.viewModels
 import com.citics.cbank.databinding.ActivityChitietnhadatBinding
 import com.citics.valuation.ui.base.BaseActivity
-import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChiTietNhaDatActivity : BaseActivity<ActivityChitietnhadatBinding, ChiTietNhaDatViewModel>() {
-    override val viewModel: ChiTietNhaDatViewModel by viewModels()
+class ChiTietNhaDatActivity : BaseActivity<ActivityChitietnhadatBinding, ChiTietTaiSanTraCuuViewModel>() {
+    override val viewModel: ChiTietTaiSanTraCuuViewModel by viewModels()
     override val bindingInflater: (LayoutInflater) -> ActivityChitietnhadatBinding
         get() = ActivityChitietnhadatBinding::inflate
 

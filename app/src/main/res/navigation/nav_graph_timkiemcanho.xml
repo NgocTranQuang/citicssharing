@@ -18,11 +18,17 @@ in popUpTo will also be removed.-->
 
     </fragment>
 
-    <!--    <fragment-->
-    <!--        android:id="@+id/editNhaDat"-->
-    <!--        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.nhatdat.EditNhaDatTraCuuFragment"-->
-    <!--        android:label="@string/chi_tiet_thua_dat">-->
+    <fragment
+        android:id="@+id/timCanHoNangCao"
+        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.duan.TimCanHoNangCaoFragment"
+        android:label="@string/chi_tiet_thua_dat">
 
-    <!--    </fragment>-->
+    </fragment>
+    <fragment
+        android:id="@+id/ketQuaTimKiem"
+        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.duan.KetQuaTimKiemFragment"
+        android:label="@string/chi_tiet_thua_dat">
+
+    </fragment>
 
 </navigation>

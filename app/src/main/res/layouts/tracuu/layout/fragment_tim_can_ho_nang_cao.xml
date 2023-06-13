@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.citics.valuation.customview.HeaderLayout
+        android:id="@+id/headerLayout"
+        style="@style/styleHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:header_title="@string/tim_kiem_nang_cao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lnContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/activity_margin_large"
+            android:paddingEnd="@dimen/activity_margin_large"
+            app:layout_constraintBottom_toTopOf="@+id/searchBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+
+            <com.citics.valuation.customview.CiticsTextChooser
+                android:id="@+id/thapChooser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/loaiCanHoChooser"
+                app:text_chooser_icon_img="@drawable/ic_so_thap"
+                app:text_chooser_input_hint="@string/thap_hint"
+                app:text_chooser_title="@string/thap" />
+
+
+            <com.citics.valuation.customview.CiticsTextChooser
+                android:id="@+id/tangChooser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin_large"
+                app:layout_constraintTop_toBottomOf="@id/thapChooser"
+                app:text_chooser_icon_img="@drawable/ic_so_tang"
+                app:text_chooser_input_hint="@string/tang_hint"
+                app:text_chooser_title="@string/tang" />
+
+
+            <com.citics.valuation.customview.CiticsTextChooser
+                android:id="@+id/loaiCanHoChooser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin_large"
+                app:layout_constraintTop_toTopOf="parent"
+                app:text_chooser_icon_img="@drawable/ic_box"
+                app:text_chooser_input_hint="@string/loai_can_ho_hint"
+                app:text_chooser_title="@string/loai_can_ho" />
+
+            <com.citics.valuation.customview.CiticsTextField
+                android:id="@+id/vDienTichTimTuong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                app:input_hint="@string/dien_tih_tim_tuong"
+                app:label_end="@string/m2"
+                app:label_icon_img="@drawable/arrow_zoom_out"
+                app:label_show_icon="true"
+                app:label_title="@string/dien_tih_tim_tuong"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tangChooser" />
+
+
+            <com.citics.valuation.customview.CiticsTextField
+                android:id="@+id/dienTichThongThuyTF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                app:input_hint="@string/dien_tich_thong_thuy"
+                app:label_end="@string/m2"
+                app:label_icon_img="@drawable/arrow_zoom_out"
+                app:label_show_icon="true"
+                app:label_title="@string/dien_tich_thong_thuy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tangChooser" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.citics.valuation.customview.ButtonUpdateLayout
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        app:button_update_layout_text="@string/tra_cuu_can_ho"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.appcompat.widget.LinearLayoutCompat>

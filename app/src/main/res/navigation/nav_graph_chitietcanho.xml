@@ -9,20 +9,20 @@ in popUpTo will also be removed.-->
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_authentication"
-    app:startDestination="@id/chiTietDuAn">
+    app:startDestination="@id/chiTietCanHo">
 
     <fragment
-        android:id="@+id/chiTietDuAn"
+        android:id="@+id/chiTietCanHo"
         android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.duan.ChiTietCanHoTraCuuFragment"
         android:label="@string/chi_tiet_thua_dat">
-
     </fragment>
 
-    <!--    <fragment-->
-    <!--        android:id="@+id/editNhaDat"-->
-    <!--        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.nhatdat.EditNhaDatTraCuuFragment"-->
-    <!--        android:label="@string/chi_tiet_thua_dat">-->
+    <fragment
+        android:id="@+id/editCanHo"
+        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.duan.ChinhSuaCanHoTraCuuFragment" />
 
-    <!--    </fragment>-->
+    <fragment
+        android:id="@+id/cvaluefragment"
+        android:name="com.citics.valuation.ui.fragment.tracuu.chitiettaisan.sharing.CValueCanHoFragment" />
 
 </navigation>

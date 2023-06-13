@@ -11,7 +11,7 @@ import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 import com.citics.valuation.customview.companion.ChiTietCanHoLayout
 import com.citics.valuation.extension.setDataColor
-import com.citics.valuation.ui.activity.tracuu.ChiTietNhaDatViewModel
+import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuFragment
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuViewModel
@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ChiTietCanHoTraCuuFragment :
     BaseChiTietTaiSanTraCuuFragment<BaseChiTietTaiSanTraCuuViewModel>() {
     override val viewModel: BaseChiTietTaiSanTraCuuViewModel by viewModels()
-    private val activityViewModel: ChiTietNhaDatViewModel by activityViewModels()
+    private val activityViewModel: ChiTietTaiSanTraCuuViewModel by activityViewModels()
 
     private var vChiTietCanHo: ChiTietCanHoLayout? = null
 
@@ -64,11 +64,11 @@ class ChiTietCanHoTraCuuFragment :
         super.onClickListener()
         vChiTietCanHo?.onClickEditDetail = {
             activity?.let {
-                NormalDialog.Builder(it).setTitle(R.string.chinh_sua_thong_tin_tua_dat)
-                    .setMessage(getString(R.string.des_dialog_chinh_sua_thong_tin_thua_dat))
+                NormalDialog.Builder(it).setTitle(R.string.thay_doi_thong_tin_tai_san)
+                    .setMessage(getString(R.string.des_thay_doi_thong_tin_can_ho))
                     .setImage(R.drawable.ic_square_and_pencil)
                     .setPositiveButton(R.string.btn_tien_hanh_bo_sung) { _: DialogInterface, _: Int ->
-                        findNavController().navigateWithAnimation(R.id.editNhaDat)
+                        findNavController().navigateWithAnimation(R.id.editCanHo)
                     }.setNegativeButton(R.string.btn_no_thanks) { _: DialogInterface, _: Int ->
                     }.show(it.supportFragmentManager)
             }

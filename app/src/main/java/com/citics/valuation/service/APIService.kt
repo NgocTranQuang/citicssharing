@@ -149,7 +149,7 @@ interface APIService {
         @Path("cp") cp: String?,
         @Query("latitude") lat: Double,
         @Query("longitude") lng: Double,
-        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @POST("v2.4/asset/land.vn2000.city/{cp}")
     suspend fun getLandDetailsByVN2000City(
@@ -182,13 +182,7 @@ interface APIService {
     @POST("v2.4/calculate/estimation.asset")
     suspend fun estimationAsset(
         @Body estimationAssetRequest: EstimationAssetRequest,
-        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
-
-    @POST("v2.4/calculate/estimation.asset")
-    suspend fun estimationAssetCH(
-        @Body estimationAssetCHRequest: EstimationAssetCHRequest,
-
-        ): NetworkResponse<AssetDetailResponse, ErrorResponse>
+    ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/asset/project.suggest")
     suspend fun getCanHoSuggestion(
@@ -229,14 +223,9 @@ interface APIService {
 
     @GET("v2.4/asset/project/apartment.filter.advance")
     suspend fun getCanHoFilterAdvance(
-        @Query("project_id") project_id: String,
-        @Query("block") block: String,
-        @Query("thap") thap: String,
-        @Query("tang") tang: String,
-        @Query("dien_tich_thong_thuy") dien_tich_thong_thuy: String,
-        @Query("huong") huong: String,
-
+        @QueryMap filters: HashMap<String, Any?>?
         ): NetworkResponse<CanHoFilterAdvanceResponse, ErrorResponse>
+
 
     @GET("v2.4/asset/projects/{id}/filter-options")
     suspend fun getOptionsSuggestion(
@@ -1064,18 +1053,18 @@ interface APIService {
     @GET("v2.4/notification/notification.get")
     suspend fun getNotification(
         @Query("page") page: Int? = null,
-        ): NetworkResponse<BaseResponse<NotificationResponseDTO, Any>, ErrorResponse>
+    ): NetworkResponse<BaseResponse<NotificationResponseDTO, Any>, ErrorResponse>
 
 
     @GET("v2.4/record/receive.off")
     suspend fun ngungTiepNhanHoSo(
         @Query("off") off: Boolean? = null,
-        ): NetworkResponse<UserProfileResponse, ErrorResponse>
+    ): NetworkResponse<UserProfileResponse, ErrorResponse>
 
 
     @POST("v2.4/calculate/estimation.construction.live")
     suspend fun estimationConstruction(
         @Body reqest: EstimationConstructionRequest?,
-        ): NetworkResponse<BaseResponse<EstimationConstructionResponse, Any>, ErrorResponse>
+    ): NetworkResponse<BaseResponse<EstimationConstructionResponse, Any>, ErrorResponse>
 
 }
