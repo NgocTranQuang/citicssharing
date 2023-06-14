@@ -13,8 +13,8 @@ import com.citics.valuation.data.model.response.ErrorResponse
 import citics.sharing.di.ApiAgent
 import citics.sharing.di.ApiAgentSearch
 import citics.sharing.service.APIService
-import com.citics.valuation.utils.RSA
-import com.citics.valuation.utils.Utils
+import citics.sharing.utils.RSA
+import citics.sharing.utils.Utils
 import javax.inject.Inject
 import javax.inject.Singleton
 

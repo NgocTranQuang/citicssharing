@@ -1,4 +1,4 @@
-package com.citics.valuation.utils
+package citics.sharing.utils
 
 import android.content.Context
 import android.text.TextUtils

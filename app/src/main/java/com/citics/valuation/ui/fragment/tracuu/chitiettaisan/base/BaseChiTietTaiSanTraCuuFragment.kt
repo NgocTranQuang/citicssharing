@@ -16,7 +16,7 @@ import citics.sharing.extension.setHtml
 import citics.sharing.extension.toShow
 import citics.sharing.extension.toShowTime
 import com.citics.valuation.ui.base.BaseFragment
-import com.citics.valuation.utils.LoaiTaiSan
+import citics.sharing.utils.LoaiTaiSan
 
 abstract class BaseChiTietTaiSanTraCuuFragment<VM : BaseChiTietTaiSanTraCuuViewModel> :
     BaseFragment<FragmentDetailTaiSanBaseBinding, VM>(FragmentDetailTaiSanBaseBinding::inflate) {

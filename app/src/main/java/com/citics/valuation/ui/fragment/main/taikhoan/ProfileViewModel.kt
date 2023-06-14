@@ -9,8 +9,8 @@ import citics.sharing.data.model.response.tham_dinh.ResultResponse
 import citics.sharing.data.repository.Resource
 import citics.sharing.data.repository.UserRepository
 import com.citics.valuation.ui.base.BaseViewModel
-import com.citics.valuation.utils.DEFAULT
-import com.citics.valuation.utils.Utils
+import citics.sharing.utils.DEFAULT
+import citics.sharing.utils.Utils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

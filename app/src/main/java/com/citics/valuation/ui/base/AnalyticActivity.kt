@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.citics.cbank.BuildConfig
 import com.citics.cbank.R
 import com.citics.valuation.ui.dialog.NormalDialog
-import com.citics.valuation.utils.KEY_ANDROID_LATEST_VERSION
+import citics.sharing.utils.KEY_ANDROID_LATEST_VERSION
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 

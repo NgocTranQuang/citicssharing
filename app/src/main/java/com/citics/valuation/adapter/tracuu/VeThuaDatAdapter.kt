@@ -11,7 +11,7 @@ import com.citics.cbank.R
 import com.citics.cbank.databinding.RowVeThuaDatBinding
 import com.citics.valuation.adapter.base.BaseAdapter
 import citics.sharing.extension.toShow
-import com.citics.valuation.utils.Utils
+import citics.sharing.utils.Utils
 
 class VeThuaDatAdapter(
     context: Context,

@@ -26,9 +26,9 @@ import com.citics.valuation.ui.activity.chitietcongtrinh.ChiTietCongTrinhViewMod
 import com.citics.valuation.ui.activity.chitietcongtrinh.ThemPhongActivity
 import com.citics.valuation.ui.base.BaseChooserFragment
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.nhatdat.EditNhaDatViewModel
-import com.citics.valuation.utils.KEY_BUNDLE_DATA
-import com.citics.valuation.utils.LevelType
-import com.citics.valuation.utils.StaticDataUtils
+import citics.sharing.utils.KEY_BUNDLE_DATA
+import citics.sharing.utils.LevelType
+import citics.sharing.utils.StaticDataUtils
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

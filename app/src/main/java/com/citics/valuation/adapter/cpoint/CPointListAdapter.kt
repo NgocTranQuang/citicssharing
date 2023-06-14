@@ -8,8 +8,8 @@ import citics.sharing.data.model.response.cpoint.CPointListResponse
 import com.citics.valuation.adapter.base.BaseLoadMoreAdapter
 import citics.sharing.extension.setBackgroundTint
 import citics.sharing.extension.toShowTime
-import com.citics.valuation.utils.CPType
-import com.citics.valuation.utils.FORMAT_TIME_THAM_DINH
+import citics.sharing.utils.CPType
+import citics.sharing.utils.FORMAT_TIME_THAM_DINH
 import com.citics.cbank.R
 import com.citics.cbank.databinding.RowCpointItemBinding
 

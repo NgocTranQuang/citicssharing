@@ -10,7 +10,7 @@ import com.citics.valuation.data.model.response.RequiredLand
 import com.citics.cbank.R
 import com.citics.cbank.databinding.RowMucDichSuDungDatThamDinhBinding
 import com.citics.valuation.adapter.base.BaseAdapter
-import com.citics.valuation.utils.UsingTimeType
+import citics.sharing.utils.UsingTimeType
 
 class MucDichSuDungDatAdapter(
     context: Context,

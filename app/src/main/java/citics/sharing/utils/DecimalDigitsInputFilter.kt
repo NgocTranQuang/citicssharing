@@ -1,4 +1,4 @@
-package com.citics.valuation.utils
+package citics.sharing.utils
 
 import android.text.InputFilter
 import android.text.Spanned

@@ -12,8 +12,8 @@ import com.citics.valuation.ui.activity.main.StaticViewModel
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.ui.fragment.main.taikhoan.ProfileViewModel
-import com.citics.valuation.utils.DialogType
-import com.citics.valuation.utils.PHONE_SUPPORT_CITICS
+import citics.sharing.utils.DialogType
+import citics.sharing.utils.PHONE_SUPPORT_CITICS
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 

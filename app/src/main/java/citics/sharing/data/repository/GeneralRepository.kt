@@ -10,7 +10,7 @@ import citics.sharing.di.ApiAgent
 import citics.sharing.di.ApiAgentSearch
 import citics.sharing.di.ApiUploader
 import citics.sharing.service.APIService
-import com.citics.valuation.utils.LoaiTaiSan
+import citics.sharing.utils.LoaiTaiSan
 import okhttp3.MultipartBody
 import javax.inject.Inject
 import javax.inject.Singleton

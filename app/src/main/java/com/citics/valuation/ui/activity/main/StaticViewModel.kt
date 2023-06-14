@@ -5,8 +5,8 @@ import citics.sharing.data.model.response.*
 import citics.sharing.data.repository.Resource
 import citics.sharing.service.customadapter.NetworkResponse
 import com.citics.valuation.ui.base.BaseViewModel
-import com.citics.valuation.utils.LoaiTaiSan
-import com.citics.valuation.utils.StaticDataUtils
+import citics.sharing.utils.LoaiTaiSan
+import citics.sharing.utils.StaticDataUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

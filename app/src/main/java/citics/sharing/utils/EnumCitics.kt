@@ -1,4 +1,4 @@
-package com.citics.valuation.utils
+package citics.sharing.utils
 
 import android.content.Context
 import com.citics.cbank.R
@@ -54,12 +54,12 @@ enum class LevelType(val type: String, val position: Int) {
     companion object {
         fun fromKeyToCode(key: String): Int {
             when (key) {
-                LevelType.TAI_SAN_SO_SANH.type -> return TAI_SAN_SO_SANH.position
-                LevelType.MUA_BAN.type -> return MUA_BAN.position
-                LevelType.CHINH_SUA_GIA.type -> return CHINH_SUA_GIA.position
-                LevelType.TRA_CUU.type -> return TRA_CUU.position
-                LevelType.THAM_DINH.type -> return THAM_DINH.position
-                LevelType.LAM_TSSS_CHINH_SUA_GIA.type -> return LAM_TSSS_CHINH_SUA_GIA.position
+                TAI_SAN_SO_SANH.type -> return TAI_SAN_SO_SANH.position
+                MUA_BAN.type -> return MUA_BAN.position
+                CHINH_SUA_GIA.type -> return CHINH_SUA_GIA.position
+                TRA_CUU.type -> return TRA_CUU.position
+                THAM_DINH.type -> return THAM_DINH.position
+                LAM_TSSS_CHINH_SUA_GIA.type -> return LAM_TSSS_CHINH_SUA_GIA.position
                 else -> return 0
             }
         }

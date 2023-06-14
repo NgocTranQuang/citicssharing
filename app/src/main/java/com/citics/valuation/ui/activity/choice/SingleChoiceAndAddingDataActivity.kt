@@ -18,7 +18,7 @@ import citics.sharing.extension.getData
 import citics.sharing.extension.getListParcelable
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel
-import com.citics.valuation.utils.KEY_BUNDLE_DATA
+import citics.sharing.utils.KEY_BUNDLE_DATA
 
 /**
  * Created by ChinhQT on 28/02/2023.

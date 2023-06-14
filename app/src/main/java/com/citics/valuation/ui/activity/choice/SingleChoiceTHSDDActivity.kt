@@ -11,6 +11,7 @@ import com.citics.valuation.adapter.choice.SingleChoiceAdapter
 import citics.sharing.data.model.others.ChooserItem
 import citics.sharing.data.model.others.SingleChoiceData
 import citics.sharing.extension.getListParcelable
+import citics.sharing.utils.*
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.utils.*

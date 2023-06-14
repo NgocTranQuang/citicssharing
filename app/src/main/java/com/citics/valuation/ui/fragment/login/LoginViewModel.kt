@@ -10,7 +10,7 @@ import citics.sharing.service.customadapter.NetworkResponse
 import citics.sharing.data.repository.Resource
 import citics.sharing.data.repository.UserRepository
 import com.citics.valuation.ui.base.BaseViewModel
-import com.citics.valuation.utils.RSA
+import citics.sharing.utils.RSA
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

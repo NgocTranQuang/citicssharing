@@ -1,4 +1,4 @@
-package com.citics.valuation.utils
+package citics.sharing.utils
 
 import android.util.Base64
 import com.citics.cbank.BuildConfig

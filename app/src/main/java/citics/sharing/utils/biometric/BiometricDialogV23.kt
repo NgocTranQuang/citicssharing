@@ -1,4 +1,4 @@
-package com.citics.valuation.utils.biometric
+package citics.sharing.utils.biometric
 
 import android.annotation.SuppressLint
 import android.content.Context

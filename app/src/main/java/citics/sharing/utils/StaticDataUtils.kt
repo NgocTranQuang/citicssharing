@@ -1,4 +1,4 @@
-package com.citics.valuation.utils
+package citics.sharing.utils
 
 import citics.sharing.data.model.response.DetailUsingPurpose
 import citics.sharing.data.model.response.StaticCanHoResponse

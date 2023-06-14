@@ -16,8 +16,8 @@ import citics.sharing.data.model.others.SelectorItem
 import citics.sharing.data.model.others.SingleChoiceData
 import citics.sharing.extension.toListChooser
 import citics.sharing.extension.toListSelector
-import com.citics.valuation.utils.LevelType
-import com.citics.valuation.utils.StaticDataUtils
+import citics.sharing.utils.LevelType
+import citics.sharing.utils.StaticDataUtils
 
 /**
  * Created by ChinhQT on 25/10/2022.

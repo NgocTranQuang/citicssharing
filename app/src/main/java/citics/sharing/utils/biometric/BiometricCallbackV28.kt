@@ -1,9 +1,9 @@
-package com.citics.valuation.utils.biometric
+package citics.sharing.utils.biometric
 
 import android.hardware.biometrics.BiometricPrompt
 import androidx.annotation.RequiresApi
 import android.os.Build
-import com.citics.valuation.utils.biometric.BiometricCallback
+import citics.sharing.utils.biometric.BiometricCallback
 
 @RequiresApi(api = Build.VERSION_CODES.P)
 class BiometricCallbackV28(private val biometricCallback: BiometricCallback) :

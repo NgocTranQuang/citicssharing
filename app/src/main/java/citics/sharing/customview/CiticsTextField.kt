@@ -24,7 +24,7 @@ import com.citics.cbank.databinding.LayoutTextFieldBinding
 import citics.sharing.extension.restoreChildViewStates
 import citics.sharing.extension.saveChildViewStates
 import citics.sharing.extension.toRound
-import com.citics.valuation.utils.DecimalDigitsInputFilter
+import citics.sharing.utils.DecimalDigitsInputFilter
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 

@@ -7,7 +7,7 @@ import citics.sharing.service.customadapter.NetworkResponse
 import com.citics.valuation.data.datasource.local.PreferenceManager
 import com.citics.valuation.data.model.response.ErrorResponse
 import citics.sharing.data.repository.Resource
-import com.citics.valuation.utils.CLIENT_CODE_NETWORK_ERROR
+import citics.sharing.utils.CLIENT_CODE_NETWORK_ERROR
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

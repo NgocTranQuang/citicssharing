@@ -14,6 +14,7 @@ import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentLoginBinding
 import citics.sharing.extension.emailValidator
 import citics.sharing.extension.phoneValidator
+import citics.sharing.utils.*
 import com.citics.valuation.ui.activity.main.MainActivity
 import com.citics.valuation.ui.base.BaseBiometricFragment
 import com.citics.valuation.ui.dialog.NormalDialog

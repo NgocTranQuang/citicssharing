@@ -2,7 +2,7 @@ package com.citics.valuation.data.datasource.local
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.citics.valuation.utils.Language
+import citics.sharing.utils.Language
 import com.citics.cbank.BuildConfig
 import javax.inject.Inject
 

@@ -11,7 +11,7 @@ import androidx.core.content.res.ResourcesCompat
 import timber.log.Timber
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutBaseDialogBinding
-import com.citics.valuation.utils.DialogType
+import citics.sharing.utils.DialogType
 
 /**
  * Created by ChinhQT on 09/10/2022.

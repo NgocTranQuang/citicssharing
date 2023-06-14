@@ -14,7 +14,7 @@ import com.citics.cbank.R
 import citics.sharing.data.model.others.ChooserItem
 import citics.sharing.data.model.others.SelectorItem
 import com.citics.valuation.ui.activity.webview.WebViewActivity
-import com.citics.valuation.utils.FileUtils
+import citics.sharing.utils.FileUtils
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import es.dmoral.toasty.Toasty

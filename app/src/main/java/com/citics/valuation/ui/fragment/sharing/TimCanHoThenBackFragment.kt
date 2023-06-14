@@ -7,7 +7,7 @@ import androidx.core.os.bundleOf
 import citics.sharing.data.model.response.CanHoSuggestionResponse
 import com.citics.cbank.R
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.duan.TimCanHoFragment
-import com.citics.valuation.utils.DialogUtils
+import citics.sharing.utils.DialogUtils
 
 class TimCanHoThenBackFragment : TimCanHoFragment() {
 

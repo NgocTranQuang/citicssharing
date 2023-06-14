@@ -11,7 +11,7 @@ import citics.sharing.data.model.response.CongTrinh
 import com.citics.cbank.databinding.FragmentThemLoaiPhongBinding
 import citics.sharing.extension.getData
 import com.citics.valuation.ui.base.BaseActivity
-import com.citics.valuation.utils.KEY_BUNDLE_DATA
+import citics.sharing.utils.KEY_BUNDLE_DATA
 import dagger.hilt.android.AndroidEntryPoint
 
 /**

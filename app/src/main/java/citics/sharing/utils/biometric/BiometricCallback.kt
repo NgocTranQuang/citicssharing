@@ -1,4 +1,4 @@
-package com.citics.valuation.utils.biometric
+package citics.sharing.utils.biometric
 import androidx.fragment.app.FragmentManager
 
 interface BiometricCallback {

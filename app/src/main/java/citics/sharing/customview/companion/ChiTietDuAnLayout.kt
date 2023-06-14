@@ -9,7 +9,7 @@ import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutTraCuuChiTietDuAnBinding
 import citics.sharing.extension.toShow
 import citics.sharing.extension.toShowTime
-import com.citics.valuation.utils.UIHelper
+import citics.sharing.utils.UIHelper
 
 /**
  * Created by ChinhQT on 25/10/2022.

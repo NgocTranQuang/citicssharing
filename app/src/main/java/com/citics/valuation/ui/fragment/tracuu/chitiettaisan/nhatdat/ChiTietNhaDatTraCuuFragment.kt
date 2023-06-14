@@ -24,7 +24,7 @@ import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuFragment
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuViewModel
-import com.citics.valuation.utils.KEY_BUNDLE_DATA
+import citics.sharing.utils.KEY_BUNDLE_DATA
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

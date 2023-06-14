@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import citics.sharing.extension.setDefaultWindowTheme
 import citics.sharing.extension.setHtml
-import com.citics.valuation.utils.DialogType
+import citics.sharing.utils.DialogType
 import timber.log.Timber
 import com.citics.cbank.databinding.LayoutDialogCiticsBinding
 

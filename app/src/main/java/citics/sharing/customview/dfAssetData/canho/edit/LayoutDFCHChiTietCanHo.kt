@@ -24,10 +24,10 @@ import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity
 import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity.Companion.MCH_TYPE
 import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity.Companion.TANG_TYPE
 import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity.Companion.THAP_TYPE
-import com.citics.valuation.utils.KEY_BUNDLE_DATA
-import com.citics.valuation.utils.LIST_HUONG_NHA
-import com.citics.valuation.utils.LevelType
-import com.citics.valuation.utils.StaticDataUtils
+import citics.sharing.utils.KEY_BUNDLE_DATA
+import citics.sharing.utils.LIST_HUONG_NHA
+import citics.sharing.utils.LevelType
+import citics.sharing.utils.StaticDataUtils
 
 /**
  * Created by ChinhQT on 25/10/2022.

@@ -1,7 +1,7 @@
 package citics.sharing.data.model.response
 
 import android.os.Parcelable
-import com.citics.valuation.utils.UNKNOWN
+import citics.sharing.utils.UNKNOWN
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
 

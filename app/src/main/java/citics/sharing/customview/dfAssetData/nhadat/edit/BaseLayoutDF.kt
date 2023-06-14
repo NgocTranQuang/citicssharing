@@ -14,6 +14,7 @@ import citics.sharing.data.model.others.SingleChoiceData
 import com.citics.valuation.ui.activity.choice.SingleChoiceActivity
 import com.citics.valuation.utils.*
 import citics.sharing.extension.toMutableList
+import citics.sharing.utils.*
 import timber.log.Timber
 
 open class BaseLayoutDF @JvmOverloads constructor(

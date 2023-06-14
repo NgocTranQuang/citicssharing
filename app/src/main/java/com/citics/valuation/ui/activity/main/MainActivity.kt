@@ -9,7 +9,7 @@ import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivityMainBinding
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel
-import com.citics.valuation.utils.LoaiTaiSan
+import citics.sharing.utils.LoaiTaiSan
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 

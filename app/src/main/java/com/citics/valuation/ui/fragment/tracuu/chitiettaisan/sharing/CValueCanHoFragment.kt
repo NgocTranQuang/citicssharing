@@ -7,7 +7,7 @@ import citics.sharing.data.model.response.DetailAdjustmentRates
 import com.citics.cbank.R
 import citics.sharing.extension.toShow
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
-import com.citics.valuation.utils.LoaiTaiSan
+import citics.sharing.utils.LoaiTaiSan
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

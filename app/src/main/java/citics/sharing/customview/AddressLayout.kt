@@ -9,7 +9,7 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutAddressBinding
-import com.citics.valuation.utils.LoaiTaiSan
+import citics.sharing.utils.LoaiTaiSan
 
 
 /**

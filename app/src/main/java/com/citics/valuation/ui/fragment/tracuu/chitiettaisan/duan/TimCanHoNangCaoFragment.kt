@@ -14,8 +14,8 @@ import citics.sharing.extension.toListChooser
 import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity
 import com.citics.valuation.ui.activity.tracuu.TimKiemCanHoViewModel
 import com.citics.valuation.ui.base.BaseChooserFragment
-import com.citics.valuation.utils.KEY_BUNDLE_DATA
-import com.citics.valuation.utils.StaticDataUtils
+import citics.sharing.utils.KEY_BUNDLE_DATA
+import citics.sharing.utils.StaticDataUtils
 import dagger.hilt.android.AndroidEntryPoint
 
 /**

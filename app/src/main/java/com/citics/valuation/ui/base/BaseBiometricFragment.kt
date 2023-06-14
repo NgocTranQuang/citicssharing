@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.viewbinding.ViewBinding
 import com.citics.cbank.R
-import com.citics.valuation.utils.biometric.BiometricCallback
-import com.citics.valuation.utils.biometric.MyBiometricManager
+import citics.sharing.utils.biometric.BiometricCallback
+import citics.sharing.utils.biometric.MyBiometricManager
 import timber.log.Timber
 import androidx.biometric.BiometricManager
 
