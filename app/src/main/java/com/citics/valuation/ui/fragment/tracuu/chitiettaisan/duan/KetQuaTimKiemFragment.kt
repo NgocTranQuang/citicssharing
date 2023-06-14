@@ -53,22 +53,22 @@ class KetQuaTimKiemFragment :
 
     override val viewModel: KetQuaTimKiemVM by viewModels()
 
-    private var projectID: String = ""
-    private var thap: String? = null
-    private var tang: String? = null
-    private var loaiCanHo: String? = null
-    private var dienTichTimTuong: String? = null
-    private var dienTichThongThuy: String? = null
+//    private var projectID: String = ""
+//    private var thap: String? = null
+//    private var tang: String? = null
+//    private var loaiCanHo: String? = null
+//    private var dienTichTimTuong: String? = null
+//    private var dienTichThongThuy: String? = null
 
     private var timKiemNangCaoAdapter: TimKiemNangCaoAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        thap = arguments?.getString(KEY_THAP)
-        tang = arguments?.getString(KEY_TANG)
-        loaiCanHo = arguments?.getString(KEY_LOAI_CAN_HO)
-        dienTichTimTuong = arguments?.getString(KEY_DIEN_TICH_TIM_TUONG)
-        dienTichThongThuy = arguments?.getString(KEY_DIEN_TICH_THONG_THUY)
+//        thap = arguments?.getString(KEY_THAP)
+//        tang = arguments?.getString(KEY_TANG)
+//        loaiCanHo = arguments?.getString(KEY_LOAI_CAN_HO)
+//        dienTichTimTuong = arguments?.getString(KEY_DIEN_TICH_TIM_TUONG)
+//        dienTichThongThuy = arguments?.getString(KEY_DIEN_TICH_THONG_THUY)
     }
 
 
@@ -76,12 +76,10 @@ class KetQuaTimKiemFragment :
         super.onConfigUI()
 
         timKiemNangCaoAdapter = TimKiemNangCaoAdapter {
-            Timber.d("TimKiemNangCaoAdapter $it")
             startActivity(
                 ChiTietCanHoActivity.newIntent(
                     requireContext(),
-                    activityViewModel.projectID.value,
-                    it.text ?: ""
+                    getHasMapMaCanHo(mch = it.text ?: "")
                 )
             )
         }
@@ -90,9 +88,15 @@ class KetQuaTimKiemFragment :
         binding.dataList.adapter = timKiemNangCaoAdapter
         binding.tvDes.text = context?.getString(R.string.des_ketqua_tim_kiem_nang_cao)
         binding.tvDes.makeLinks((context?.getString(R.string.xem_kq_tuong_doi) ?: "") to {
-
+            startActivity(
+                ChiTietCanHoActivity.newIntent(
+                    requireContext(),
+                    activityViewModel.mapFilter.value ?: hashMapOf()
+                )
+            )
         })
     }
+
 
     override fun getHeaderLayout(): HeaderLayout {
         return binding.headerLayout
@@ -125,28 +129,8 @@ class KetQuaTimKiemFragment :
         }
     }
 
-//    override fun registerObserver() {
-//        viewLifecycleOwner.lifecycleScope.launch {
-//            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-//                ketQuaTimKiemVM.canHoFilterAdvanceResponse.collect {
-//                    when (it) {
-//                        is Resource.Loading -> {
-//                        }
-//                        is Resource.Success -> {
-//                            val temporary = it.data?.data?.content
-//                            val size = temporary?.size ?: 0
-//                            if (size > 0) {
-//                                timKiemNangCaoAdapter?.submitList(temporary)
-//                                binding?.statefulLayout?.showContent()
-//                            } else {
-//                                binding?.statefulLayout?.showEmpty()
-//                            }
-//                        }
-//                        else -> {
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
+    private fun getHasMapMaCanHo(mch: String): HashMap<String, Any?> {
+        val projectID = activityViewModel.mapFilter.value?.get("project_id")
+        return hashMapOf("project_id" to projectID, "ma_can" to mch)
+    }
 }

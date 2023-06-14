@@ -5,30 +5,33 @@ import android.content.Intent
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import com.citics.cbank.databinding.ActivityChitietcanhoBinding
+import com.citics.valuation.extension.toJson
+import com.citics.valuation.extension.toObject
 import com.citics.valuation.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChiTietCanHoActivity : BaseActivity<ActivityChitietcanhoBinding, ChiTietTaiSanTraCuuViewModel>() {
+class ChiTietCanHoActivity :
+    BaseActivity<ActivityChitietcanhoBinding, ChiTietTaiSanTraCuuViewModel>() {
     override val viewModel: ChiTietTaiSanTraCuuViewModel by viewModels()
     override val bindingInflater: (LayoutInflater) -> ActivityChitietcanhoBinding
         get() = ActivityChitietcanhoBinding::inflate
 
     companion object {
-        private const val KEY_PROJECT_ID = "KEY_PROJECT_ID"
-        private const val KEY_MA_CAN_HO = "KEY_MA_CAN_HO"
-        fun newIntent(context: Context, projectID: String, macanho: String): Intent {
+        private const val KEY_HAS_MAP = "KEY_HAS_MAP"
+        fun newIntent(context: Context, map: HashMap<String, Any?>): Intent {
             val intent = Intent(context, ChiTietCanHoActivity::class.java)
-            intent.putExtra(KEY_PROJECT_ID, projectID)
-            intent.putExtra(KEY_MA_CAN_HO, macanho)
+            intent.putExtra(KEY_HAS_MAP, map.toJson())
             return intent
         }
     }
 
     override fun onConfigUI() {
         super.onConfigUI()
-        val macanho = intent?.getStringExtra(KEY_MA_CAN_HO) ?: ""
-        val projectID = intent?.getStringExtra(KEY_PROJECT_ID) ?: ""
-        viewModel.getCanHoDetail(projectID, macanho)
+        val hasMap = intent?.getStringExtra(KEY_HAS_MAP)
+        val map = hasMap?.toObject<HashMap<String, Any?>>()
+        map?.let {
+            viewModel.getCanHoDetail(map)
+        }
     }
 }

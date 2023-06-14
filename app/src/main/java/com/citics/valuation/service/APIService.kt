@@ -240,9 +240,7 @@ interface APIService {
     @GET("v2.4/asset/project/apartment.filter/{cp}")
     suspend fun getApartmentAsset(
         @Path("cp") cp: String?,
-        @Query("project_id") project_id: String,
-        @Query("ma_can") ma_can: String,
-
+        @QueryMap filters: HashMap<String, Any?>?,
         ): NetworkResponse<AssetDetailResponse, ErrorResponse>
 
     @GET("v2.4/calculate/self.asset.calculate")

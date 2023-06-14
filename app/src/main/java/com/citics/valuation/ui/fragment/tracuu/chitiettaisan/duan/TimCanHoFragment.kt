@@ -98,7 +98,15 @@ open class TimCanHoFragment :
     }
 
     open fun onClickCanHo(it: CanHoSuggestionResponse.ContentItem) {
-        startActivity(ChiTietCanHoActivity.newIntent(requireContext(), projectID, it.text ?: ""))
+        startActivity(
+            ChiTietCanHoActivity.newIntent(
+                requireContext(),
+                getHasMapMaCanHo(it.text ?: "")
+            )
+        )
     }
 
+    private fun getHasMapMaCanHo(mch: String): HashMap<String, Any?> {
+        return hashMapOf("project_id" to projectID, "ma_can" to mch)
+    }
 }

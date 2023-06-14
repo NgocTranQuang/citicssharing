@@ -161,11 +161,11 @@ class AssetRepository @Inject constructor(
     }
 
     suspend fun getApartmentAsset(
-        project_id: String, ma_can: String
+        hasMap: HashMap<String,Any?>
     ): NetworkResponse<AssetDetailResponse, ErrorResponse> {
         return apiServiceSearch.getApartmentAsset(
             "",
-            project_id, ma_can
+            hasMap
         )
     }
 

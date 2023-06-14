@@ -26,10 +26,10 @@ class ChiTietTaiSanTraCuuViewModel @Inject constructor(private val assetReposito
         }
     }
 
-    fun getCanHoDetail(projectId: String, maCan: String) {
+    fun getCanHoDetail(hasMap: HashMap<String,Any?>) {
         viewModelScope.launch(Dispatchers.IO) {
             _assetDetail.value =
-                assetRepository.getApartmentAsset(projectId, maCan).handleResponse()
+                assetRepository.getApartmentAsset(hasMap).handleResponse()
         }
     }
 
