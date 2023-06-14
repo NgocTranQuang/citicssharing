@@ -2,20 +2,15 @@ package com.citics.valuation.data.repository
 
 import com.citics.cagent.data.model.response.*
 import com.citics.cagent.data.model.response.base.BaseResponse
-import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import citics.sharing.service.customadapter.NetworkResponse
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.data.repository.base.BaseRepository
-import com.citics.valuation.di.ApiAgent
-import com.citics.valuation.di.ApiAgentSearch
-import com.citics.valuation.di.ApiUploader
-import com.citics.valuation.service.APIService
-import com.citics.valuation.service.header.ApiHeadersProvider
+import citics.sharing.di.ApiAgent
+import citics.sharing.di.ApiAgentSearch
+import citics.sharing.di.ApiUploader
+import citics.sharing.service.APIService
 import com.citics.valuation.utils.LoaiTaiSan
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.flow
 import okhttp3.MultipartBody
-import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 

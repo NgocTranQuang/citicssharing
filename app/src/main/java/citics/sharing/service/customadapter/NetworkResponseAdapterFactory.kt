@@ -1,4 +1,4 @@
-package com.citics.cagent.data.repository.customadapter
+package citics.sharing.service.customadapter
 
 import retrofit2.Call
 import retrofit2.CallAdapter

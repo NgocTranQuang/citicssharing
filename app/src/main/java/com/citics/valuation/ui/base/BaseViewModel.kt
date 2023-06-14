@@ -2,15 +2,12 @@ package com.citics.valuation.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import citics.sharing.service.customadapter.NetworkResponse
 import com.citics.valuation.data.datasource.local.PreferenceManager
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.data.repository.GeneralRepository
 import com.citics.valuation.data.repository.Resource
 import com.citics.valuation.utils.CLIENT_CODE_NETWORK_ERROR
-import com.citics.valuation.utils.SERVER_CODE_INVALID_C_POINT_408
-import com.citics.valuation.utils.SERVER_CODE_INVALID_C_POINT_409
-import com.citics.valuation.utils.SERVER_CODE_LOGIN_IN_NEW_DEVICE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

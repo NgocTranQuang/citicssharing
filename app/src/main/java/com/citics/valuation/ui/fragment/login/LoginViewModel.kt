@@ -5,7 +5,7 @@ import com.citics.cagent.data.model.request.BiometricRequest
 import com.citics.cagent.data.model.request.NotificationRequest
 import com.citics.cagent.data.model.request.UserRequest
 import com.citics.cagent.data.model.response.UserResponse
-import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import citics.sharing.service.customadapter.NetworkResponse
 import com.citics.valuation.data.repository.NotificationRepository
 import com.citics.valuation.data.repository.Resource
 import com.citics.valuation.data.repository.UserRepository

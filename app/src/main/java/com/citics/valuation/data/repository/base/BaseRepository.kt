@@ -1,7 +1,6 @@
 package com.citics.valuation.data.repository.base
 
 import com.citics.valuation.data.datasource.local.PreferenceManager
-import com.citics.valuation.service.header.ApiHeadersProvider
 import javax.inject.Inject
 import javax.inject.Singleton
 

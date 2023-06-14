@@ -1,4 +1,4 @@
-package com.citics.valuation.di
+package citics.sharing.di
 
 import android.content.Context
 import com.citics.valuation.data.datasource.local.PreferenceManager

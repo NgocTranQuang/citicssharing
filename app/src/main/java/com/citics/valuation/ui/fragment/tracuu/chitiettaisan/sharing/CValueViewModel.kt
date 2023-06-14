@@ -2,7 +2,6 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.sharing
 
 import androidx.lifecycle.viewModelScope
 import com.citics.cagent.data.model.response.AssetDetailResponse
-import com.citics.cagent.data.repository.customadapter.NetworkResponse
 import com.citics.valuation.data.repository.AssetRepository
 import com.citics.valuation.data.repository.Resource
 import com.citics.valuation.ui.base.BaseViewModel
@@ -10,7 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel

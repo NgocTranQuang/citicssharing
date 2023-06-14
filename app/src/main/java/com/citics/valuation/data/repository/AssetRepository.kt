@@ -1,6 +1,5 @@
 package com.citics.valuation.data.repository
 
-import com.citics.cagent.data.model.request.EstimationAssetCHRequest
 import com.citics.cagent.data.model.request.EstimationAssetRequest
 import com.citics.cagent.data.model.request.TSSSMyAssetRequest
 import com.citics.cagent.data.model.request.legal.LegalCreateOrUpdateRequest
@@ -13,12 +12,12 @@ import com.citics.cagent.data.model.response.tham_dinh.AssetLabelRequest
 import com.citics.cagent.data.model.response.tham_dinh.AssetLevelRequest
 import com.citics.cagent.data.model.response.tham_dinh.Properties
 import com.citics.cagent.data.model.response.tudinhgia.DeleteTSSSTSCTRequest
-import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import citics.sharing.service.customadapter.NetworkResponse
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.data.repository.base.BaseRepository
-import com.citics.valuation.di.ApiAgent
-import com.citics.valuation.di.ApiAgentSearch
-import com.citics.valuation.service.APIService
+import citics.sharing.di.ApiAgent
+import citics.sharing.di.ApiAgentSearch
+import citics.sharing.service.APIService
 import okhttp3.RequestBody
 import javax.inject.Inject
 import javax.inject.Singleton

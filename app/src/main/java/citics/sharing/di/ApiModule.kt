@@ -1,16 +1,15 @@
-package com.citics.valuation.di
+package citics.sharing.di
 
-import com.citics.cagent.data.repository.customadapter.NetworkResponseAdapterFactory
+import citics.sharing.service.customadapter.NetworkResponseAdapterFactory
 import com.citics.valuation.data.datasource.local.PreferenceManager
-import com.citics.valuation.service.APIService
-import com.citics.valuation.service.header.ApiHeadersProvider
+import citics.sharing.service.APIService
+import citics.sharing.service.header.ApiHeadersProvider
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

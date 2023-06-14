@@ -1,4 +1,4 @@
-package com.citics.valuation.di
+package citics.sharing.di
 
 import javax.inject.Qualifier
 

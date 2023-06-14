@@ -1,4 +1,4 @@
-package com.citics.cagent.data.repository.customadapter
+package citics.sharing.service.customadapter
 
 import okhttp3.ResponseBody
 import retrofit2.Call

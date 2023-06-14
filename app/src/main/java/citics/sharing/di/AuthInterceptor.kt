@@ -1,6 +1,6 @@
-package com.citics.valuation.di
+package citics.sharing.di
 
-import com.citics.valuation.service.header.ApiHeadersProvider
+import citics.sharing.service.header.ApiHeadersProvider
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject

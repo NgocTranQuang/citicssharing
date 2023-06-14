@@ -1,4 +1,4 @@
-package com.citics.valuation.service
+package citics.sharing.service
 
 import com.citics.cagent.data.model.request.*
 import com.citics.cagent.data.model.request.legal.LegalCreateOrUpdateRequest
@@ -16,7 +16,7 @@ import com.citics.cagent.data.model.response.hoahong.HoaHongOverviewResponse
 import com.citics.cagent.data.model.response.hoahong.HoaHongResponse
 import com.citics.cagent.data.model.response.tham_dinh.*
 import com.citics.cagent.data.model.response.tudinhgia.DeleteTSSSTSCTRequest
-import com.citics.cagent.data.repository.customadapter.NetworkResponse
+import citics.sharing.service.customadapter.NetworkResponse
 import com.citics.cbank.BuildConfig
 import com.citics.valuation.data.model.response.ErrorResponse
 import okhttp3.MultipartBody
