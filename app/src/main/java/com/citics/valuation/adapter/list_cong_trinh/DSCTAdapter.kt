@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.citics.cagent.data.model.response.CongTrinh
+import citics.sharing.data.model.response.CongTrinh
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutRowDanhSachCongTrinhBinding
 

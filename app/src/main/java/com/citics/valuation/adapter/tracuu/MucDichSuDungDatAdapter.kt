@@ -5,7 +5,7 @@ import android.content.Context
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.citics.cagent.data.model.response.DetailUsingPurpose
+import citics.sharing.data.model.response.DetailUsingPurpose
 import com.citics.valuation.data.model.response.RequiredLand
 import com.citics.cbank.R
 import com.citics.cbank.databinding.RowMucDichSuDungDatThamDinhBinding

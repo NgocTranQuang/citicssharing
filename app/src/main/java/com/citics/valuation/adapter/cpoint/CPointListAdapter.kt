@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.citics.cagent.data.model.response.cpoint.CPointListResponse
+import citics.sharing.data.model.response.cpoint.CPointListResponse
 import com.citics.valuation.adapter.base.BaseLoadMoreAdapter
 import citics.sharing.extension.setBackgroundTint
 import citics.sharing.extension.toShowTime

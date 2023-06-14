@@ -12,7 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.viewbinding.ViewBinding
 import com.citics.valuation.data.model.response.ErrorResponse
-import com.citics.valuation.data.repository.Resource
+import citics.sharing.data.repository.Resource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow

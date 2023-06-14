@@ -6,7 +6,7 @@
 //import android.view.View
 //import android.widget.LinearLayout
 //import com.citics.cagent.R
-//import com.citics.cagent.data.model.response.CongTrinh
+//import citics.sharing.data.model.response.CongTrinh
 //import com.citics.cagent.databinding.LayoutDfChitietcongtrinhxaydungBinding
 //import com.citics.cagent.utilities.LevelType
 //import com.citics.cagent.utilities.extensions.setListChip

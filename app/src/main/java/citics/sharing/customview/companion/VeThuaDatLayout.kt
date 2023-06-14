@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.citics.cagent.data.model.response.Document
-import com.citics.cagent.data.model.response.tham_dinh.Properties
+import citics.sharing.data.model.response.Document
+import citics.sharing.data.model.response.tham_dinh.Properties
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutVeThuaDatBinding
 import citics.sharing.extension.open

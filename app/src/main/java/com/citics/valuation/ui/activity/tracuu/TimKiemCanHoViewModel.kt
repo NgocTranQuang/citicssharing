@@ -1,19 +1,10 @@
 package com.citics.valuation.ui.activity.tracuu
 
-import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.CanHoSuggestionResponse
-import com.citics.cagent.data.model.response.base.BaseResponse
-import com.citics.cagent.data.model.response.cpoint.DepositMethodResponse
-import com.citics.valuation.data.repository.AssetRepository
-import com.citics.valuation.data.repository.Resource
-import com.citics.valuation.data.repository.UserRepository
+import citics.sharing.data.repository.AssetRepository
 import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 
 /**

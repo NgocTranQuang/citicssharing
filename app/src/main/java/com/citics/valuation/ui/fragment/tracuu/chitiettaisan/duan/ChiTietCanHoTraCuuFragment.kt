@@ -6,7 +6,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import citics.sharing.customview.companion.ChiTietCanHoLayout
-import com.citics.cagent.data.model.response.AssetDetailResponse
+import citics.sharing.data.model.response.AssetDetailResponse
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeCanHo
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R

@@ -1,9 +1,9 @@
 package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base
 
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.AssetVoteResponse
-import com.citics.valuation.data.repository.AssetRepository
-import com.citics.valuation.data.repository.Resource
+import citics.sharing.data.model.response.AssetVoteResponse
+import citics.sharing.data.repository.AssetRepository
+import citics.sharing.data.repository.Resource
 import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

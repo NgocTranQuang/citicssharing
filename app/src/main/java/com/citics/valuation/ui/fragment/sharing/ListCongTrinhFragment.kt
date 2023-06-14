@@ -7,7 +7,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import citics.sharing.customview.HeaderLayout
-import com.citics.cagent.data.model.response.CongTrinh
+import citics.sharing.data.model.response.CongTrinh
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentDanhSachCongTrinhBinding
 import com.citics.valuation.adapter.list_cong_trinh.DanhSachCongTrinhAdapter

@@ -7,10 +7,10 @@
 //import androidx.navigation.findNavController
 //import androidx.navigation.fragment.findNavController
 //import com.citics.cagent.R
-//import com.citics.cagent.data.model.response.DetailAdjustmentRates
-//import com.citics.cagent.data.model.response.DetailUsingPurpose
-//import com.citics.cagent.data.model.response.LandDTO
-//import com.citics.cagent.data.model.response.tham_dinh.Properties
+//import citics.sharing.data.model.response.DetailAdjustmentRates
+//import citics.sharing.data.model.response.DetailUsingPurpose
+//import citics.sharing.data.model.response.LandDTO
+//import citics.sharing.data.model.response.tham_dinh.Properties
 //import com.citics.cagent.databinding.LayoutDfChViewThongtingiaodichBinding
 //import com.citics.cagent.databinding.LayoutDfNdHientrangthuadatBinding
 //import com.citics.cagent.databinding.LayoutDfNdViewChitietthuadatBinding

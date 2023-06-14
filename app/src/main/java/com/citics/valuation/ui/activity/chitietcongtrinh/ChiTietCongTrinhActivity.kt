@@ -5,7 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.core.os.bundleOf
-import com.citics.cagent.data.model.response.AssetDetailData
+import citics.sharing.data.model.response.AssetDetailData
 import com.citics.cbank.databinding.ActivityChitietcongtrinhBinding
 import citics.sharing.extension.getData
 import com.citics.valuation.ui.base.BaseActivity

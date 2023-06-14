@@ -1,6 +1,6 @@
 package com.citics.valuation.utils
 
-import com.citics.valuation.data.model.others.ChooserItem
+import citics.sharing.data.model.others.ChooserItem
 
 
 /**

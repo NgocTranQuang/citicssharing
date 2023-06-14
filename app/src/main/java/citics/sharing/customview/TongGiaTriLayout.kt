@@ -5,7 +5,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
-import com.citics.cagent.data.model.response.DetailAdjustmentRates
+import citics.sharing.data.model.response.DetailAdjustmentRates
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutTongGiaTriBinding
 import com.citics.valuation.adapter.tracuu.VeThuaDatAdapter

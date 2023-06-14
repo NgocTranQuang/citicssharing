@@ -1,9 +1,9 @@
 package com.citics.valuation.ui.activity.main
 
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.*
+import citics.sharing.data.model.response.*
+import citics.sharing.data.repository.Resource
 import citics.sharing.service.customadapter.NetworkResponse
-import com.citics.valuation.data.repository.Resource
 import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.utils.LoaiTaiSan
 import com.citics.valuation.utils.StaticDataUtils

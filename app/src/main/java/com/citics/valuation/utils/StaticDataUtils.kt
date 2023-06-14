@@ -1,9 +1,10 @@
 package com.citics.valuation.utils
 
-import com.citics.cagent.data.model.response.DetailUsingPurpose
-import com.citics.cagent.data.model.response.StaticCanHoResponse
-import com.citics.cagent.data.model.response.StaticNhaDatResponse
-import com.citics.cagent.data.model.response.TemplateResponse
+import citics.sharing.data.model.response.DetailUsingPurpose
+import citics.sharing.data.model.response.StaticCanHoResponse
+import citics.sharing.data.model.response.StaticNhaDatResponse
+import citics.sharing.data.model.response.TemplateResponse
+
 
 object StaticDataUtils {
     // Data static api

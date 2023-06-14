@@ -4,11 +4,11 @@ import android.content.Intent
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.citics.cagent.data.model.response.OptionsSuggestionResponse
+import citics.sharing.data.model.response.OptionsSuggestionResponse
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentTimCanHoNangCaoBinding
-import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.data.model.others.SingleChoiceData
+import citics.sharing.data.model.others.ChooserItem
+import citics.sharing.data.model.others.SingleChoiceData
 import citics.sharing.extension.getData
 import citics.sharing.extension.toListChooser
 import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity

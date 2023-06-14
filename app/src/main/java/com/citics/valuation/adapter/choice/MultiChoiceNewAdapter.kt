@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.citics.cbank.databinding.LayoutRowMultichoiceBinding
 import com.citics.valuation.adapter.base.BaseAdapter
-import com.citics.valuation.data.model.others.ChooserItem
+import citics.sharing.data.model.others.ChooserItem
 import timber.log.Timber
 
 class MultiChoiceNewAdapter(

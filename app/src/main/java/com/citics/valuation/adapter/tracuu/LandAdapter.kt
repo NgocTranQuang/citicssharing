@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.citics.cagent.data.model.response.LandDTO
+import citics.sharing.data.model.response.LandDTO
 import com.citics.valuation.data.model.response.RequiredLand
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutRowLandBinding

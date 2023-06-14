@@ -6,10 +6,10 @@
 //import android.util.AttributeSet
 //import android.view.LayoutInflater
 //import com.citics.cagent.R
-//import com.citics.cagent.data.model.others.SingleChoiceData
-//import com.citics.cagent.data.model.response.AssetDetailData
-//import com.citics.cagent.data.model.response.DetailAdjustmentRates
-//import com.citics.cagent.data.model.response.tham_dinh.Properties
+//import citics.sharing.data.model.others.SingleChoiceData
+//import citics.sharing.data.model.response.AssetDetailData
+//import citics.sharing.data.model.response.DetailAdjustmentRates
+//import citics.sharing.data.model.response.tham_dinh.Properties
 //import com.citics.cagent.databinding.LayoutDfChThongtingiaodichBinding
 //import com.citics.cagent.databinding.LayoutDfNdThongtingiaodichBinding
 //import com.citics.cagent.utilities.*

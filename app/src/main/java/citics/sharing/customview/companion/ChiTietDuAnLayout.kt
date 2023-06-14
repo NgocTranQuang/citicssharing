@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
-import com.citics.cagent.data.model.response.tham_dinh.Properties
+import citics.sharing.data.model.response.tham_dinh.Properties
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutTraCuuChiTietDuAnBinding
 import citics.sharing.extension.toShow

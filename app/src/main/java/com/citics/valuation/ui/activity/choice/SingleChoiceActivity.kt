@@ -10,8 +10,8 @@ import androidx.core.os.bundleOf
 import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivityChoiceBinding
 import com.citics.valuation.adapter.choice.SingleChoiceAdapter
-import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.data.model.others.SingleChoiceData
+import citics.sharing.data.model.others.ChooserItem
+import citics.sharing.data.model.others.SingleChoiceData
 import citics.sharing.extension.getListParcelable
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel

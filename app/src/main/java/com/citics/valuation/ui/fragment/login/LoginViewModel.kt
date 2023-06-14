@@ -1,14 +1,14 @@
 package com.citics.valuation.ui.fragment.login
 
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.request.BiometricRequest
-import com.citics.cagent.data.model.request.NotificationRequest
-import com.citics.cagent.data.model.request.UserRequest
-import com.citics.cagent.data.model.response.UserResponse
+import citics.sharing.data.model.request.BiometricRequest
+import citics.sharing.data.model.request.NotificationRequest
+import citics.sharing.data.model.request.UserRequest
+import citics.sharing.data.model.response.UserResponse
+import citics.sharing.data.repository.NotificationRepository
 import citics.sharing.service.customadapter.NetworkResponse
-import com.citics.valuation.data.repository.NotificationRepository
-import com.citics.valuation.data.repository.Resource
-import com.citics.valuation.data.repository.UserRepository
+import citics.sharing.data.repository.Resource
+import citics.sharing.data.repository.UserRepository
 import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.utils.RSA
 import dagger.hilt.android.lifecycle.HiltViewModel

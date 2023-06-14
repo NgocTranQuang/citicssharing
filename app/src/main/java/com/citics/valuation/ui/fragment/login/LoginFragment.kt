@@ -7,8 +7,8 @@ import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.citics.cagent.data.model.request.NotificationRequest
-import com.citics.cagent.data.model.response.UserResponse
+import citics.sharing.data.model.request.NotificationRequest
+import citics.sharing.data.model.response.UserResponse
 import com.citics.cbank.BuildConfig
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentLoginBinding

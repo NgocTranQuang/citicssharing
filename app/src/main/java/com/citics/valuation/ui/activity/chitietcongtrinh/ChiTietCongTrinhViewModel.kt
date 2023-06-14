@@ -1,13 +1,9 @@
 package com.citics.valuation.ui.activity.chitietcongtrinh
 
-import com.citics.cagent.data.model.response.AssetDetailData
-import com.citics.cagent.data.model.response.CongTrinh
-import com.citics.cagent.data.model.response.base.BaseResponse
-import com.citics.cagent.data.model.response.cpoint.DepositMethodResponse
+import citics.sharing.data.model.response.AssetDetailData
+import citics.sharing.data.model.response.CongTrinh
+import citics.sharing.data.repository.AssetRepository
 import com.citics.valuation.data.model.response.ExtraData
-import com.citics.valuation.data.repository.AssetRepository
-import com.citics.valuation.data.repository.Resource
-import com.citics.valuation.data.repository.UserRepository
 import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

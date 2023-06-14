@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.citics.cbank.databinding.LayoutJobItemBinding
-import com.citics.valuation.data.model.others.ChooserItem
+import citics.sharing.data.model.others.ChooserItem
 
 /**
  * Created by ChinhQT on 19/10/2022.

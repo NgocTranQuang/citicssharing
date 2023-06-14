@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.core.os.bundleOf
 import citics.sharing.customview.TongGiaTriLayout
-import com.citics.cagent.data.model.response.LandDTO
+import citics.sharing.data.model.response.LandDTO
 import com.citics.valuation.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 import com.citics.cbank.databinding.ActivityChiTietDienTichThuaDatBinding

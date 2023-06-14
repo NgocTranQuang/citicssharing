@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import citics.sharing.customview.TongGiaTriLayout
-import com.citics.cagent.data.model.response.LandDTO
+import citics.sharing.data.model.response.LandDTO
 import com.citics.cbank.R
 import com.citics.cbank.databinding.RowVeThuaDatBinding
 import com.citics.valuation.adapter.base.BaseAdapter

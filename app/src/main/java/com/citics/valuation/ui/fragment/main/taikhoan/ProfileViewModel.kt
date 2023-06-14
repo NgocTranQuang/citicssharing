@@ -1,13 +1,13 @@
 package com.citics.valuation.ui.fragment.main.taikhoan
 
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.LogoutResponse
-import com.citics.cagent.data.model.response.RegisterResponseDTO
-import com.citics.cagent.data.model.response.UserProfileResponse
-import com.citics.cagent.data.model.response.base.BaseResponse
-import com.citics.cagent.data.model.response.tham_dinh.ResultResponse
-import com.citics.valuation.data.repository.Resource
-import com.citics.valuation.data.repository.UserRepository
+import citics.sharing.data.model.response.LogoutResponse
+import citics.sharing.data.model.response.RegisterResponseDTO
+import citics.sharing.data.model.response.UserProfileResponse
+import citics.sharing.data.model.response.base.BaseResponse
+import citics.sharing.data.model.response.tham_dinh.ResultResponse
+import citics.sharing.data.repository.Resource
+import citics.sharing.data.repository.UserRepository
 import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.utils.DEFAULT
 import com.citics.valuation.utils.Utils

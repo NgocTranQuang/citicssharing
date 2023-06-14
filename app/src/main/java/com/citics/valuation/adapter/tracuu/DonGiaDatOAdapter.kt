@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.citics.cagent.data.model.response.LandDTO
+import citics.sharing.data.model.response.LandDTO
 import com.citics.cbank.databinding.ItemRowDongiaBinding
 import com.citics.valuation.adapter.base.BaseAdapter
 

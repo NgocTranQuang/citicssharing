@@ -5,8 +5,8 @@ import android.content.Context
 import android.view.View
 import com.github.mikephil.charting.components.MarkerView
 import android.widget.TextView
+import citics.sharing.data.model.response.tham_dinh.DashGrowthResponse
 import com.github.mikephil.charting.utils.MPPointF
-import com.citics.cagent.data.model.response.tham_dinh.DashGrowthResponse
 import com.citics.cbank.R
 import citics.sharing.extension.toShow
 import com.github.mikephil.charting.charts.BarChart

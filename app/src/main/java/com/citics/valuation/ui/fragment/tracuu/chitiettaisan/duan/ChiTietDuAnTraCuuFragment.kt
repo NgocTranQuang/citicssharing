@@ -7,7 +7,7 @@ import citics.sharing.customview.companion.ChiTietDuAnLayout
 import citics.sharing.customview.companion.ThongTinDuAnLayout
 import citics.sharing.customview.companion.TienIchNoiKhuLayout
 import citics.sharing.extension.setDataColor
-import com.citics.cagent.data.model.response.AssetDetailResponse
+import citics.sharing.data.model.response.AssetDetailResponse
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDuAn
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel

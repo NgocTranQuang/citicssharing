@@ -4,8 +4,8 @@
 //import android.util.AttributeSet
 //import android.view.LayoutInflater
 //import android.view.View
-//import com.citics.cagent.data.model.response.PhapLyDTO
-//import com.citics.cagent.data.model.response.tham_dinh.Properties
+//import citics.sharing.data.model.response.PhapLyDTO
+//import citics.sharing.data.model.response.tham_dinh.Properties
 //import com.citics.cagent.databinding.LayoutDfChViewPhaplyBinding
 //import com.citics.cagent.databinding.LayoutDfChViewThongtinduanBinding
 //import com.citics.cagent.utilities.LevelType

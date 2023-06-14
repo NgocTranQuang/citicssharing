@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import citics.sharing.customview.ThongTinLayout
-import com.citics.cagent.data.model.response.tham_dinh.Properties
+import citics.sharing.data.model.response.tham_dinh.Properties
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutTienIchNoiKhuBinding
 

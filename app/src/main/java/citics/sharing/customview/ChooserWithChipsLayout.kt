@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import citics.sharing.customview.dfAssetData.nhadat.edit.BaseLayoutDF
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutChooserWithChipBinding
-import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.data.model.others.MultiChoiceData
-import com.citics.valuation.data.model.others.SelectorItem
+import citics.sharing.data.model.others.ChooserItem
+import citics.sharing.data.model.others.MultiChoiceData
+import citics.sharing.data.model.others.SelectorItem
 import citics.sharing.extension.setListChip
 
 /**

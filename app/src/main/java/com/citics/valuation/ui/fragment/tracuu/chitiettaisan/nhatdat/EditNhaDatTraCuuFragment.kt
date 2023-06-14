@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.citics.cagent.data.model.response.AssetDetailResponse
+import citics.sharing.data.model.response.AssetDetailResponse
 import com.citics.cbank.databinding.FragmentEditDetailLandBinding
 import citics.sharing.extension.copyByJson
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel

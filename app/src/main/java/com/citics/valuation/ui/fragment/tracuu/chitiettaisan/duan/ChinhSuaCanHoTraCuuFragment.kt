@@ -6,7 +6,7 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import citics.sharing.customview.HeaderLayout
-import com.citics.cagent.data.model.response.tham_dinh.Properties
+import citics.sharing.data.model.response.tham_dinh.Properties
 import com.citics.cbank.databinding.FragmentEditCanHoTracuuBinding
 import citics.sharing.extension.copyByJson
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel

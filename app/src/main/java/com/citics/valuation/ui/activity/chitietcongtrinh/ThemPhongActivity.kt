@@ -7,7 +7,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.core.os.bundleOf
-import com.citics.cagent.data.model.response.CongTrinh
+import citics.sharing.data.model.response.CongTrinh
 import com.citics.cbank.databinding.FragmentThemLoaiPhongBinding
 import citics.sharing.extension.getData
 import com.citics.valuation.ui.base.BaseActivity

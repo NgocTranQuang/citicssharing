@@ -5,8 +5,8 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import citics.sharing.customview.HeaderLayout
 import com.ahmadhamwi.tabsync.TabbedListMediator
-import com.citics.cagent.data.model.response.AssetDetailData
-import com.citics.cagent.data.model.response.DetailAdjustmentRates
+import citics.sharing.data.model.response.AssetDetailData
+import citics.sharing.data.model.response.DetailAdjustmentRates
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentDetailTaiSanBaseBinding

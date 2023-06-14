@@ -14,8 +14,8 @@ import citics.sharing.customview.companion.ViTriTaiSanLayout
 import citics.sharing.extension.getData
 import citics.sharing.extension.setDataColor
 import citics.sharing.extension.toObject
-import com.citics.cagent.data.model.response.AssetDetailData
-import com.citics.cagent.data.model.response.AssetDetailResponse
+import citics.sharing.data.model.response.AssetDetailData
+import citics.sharing.data.model.response.AssetDetailResponse
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeNhaDat

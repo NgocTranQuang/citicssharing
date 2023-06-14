@@ -2,11 +2,11 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.duan
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.AssetDetailResponse
-import com.citics.cagent.data.model.response.OptionsSuggestionResponse
-import com.citics.cagent.data.model.response.tham_dinh.Properties
-import com.citics.valuation.data.repository.AssetRepository
-import com.citics.valuation.data.repository.Resource
+import citics.sharing.data.model.response.AssetDetailResponse
+import citics.sharing.data.model.response.OptionsSuggestionResponse
+import citics.sharing.data.model.response.tham_dinh.Properties
+import citics.sharing.data.repository.AssetRepository
+import citics.sharing.data.repository.Resource
 import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

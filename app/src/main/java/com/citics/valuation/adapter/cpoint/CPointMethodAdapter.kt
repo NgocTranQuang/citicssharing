@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.citics.cagent.data.model.response.cpoint.DepositMethodResponse
+import citics.sharing.data.model.response.cpoint.DepositMethodResponse
 import com.citics.valuation.adapter.base.BaseLoadMoreAdapter
 import com.citics.cbank.databinding.RowItemMethodBinding
 

@@ -17,7 +17,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
 import com.citics.cbank.R
 import com.citics.valuation.data.model.response.ErrorResponse
-import com.citics.valuation.data.repository.Resource
+import citics.sharing.data.repository.Resource
 import com.citics.valuation.ui.activity.login.LoginActivity
 import com.citics.valuation.ui.dialog.LoadingDialog
 import com.citics.valuation.ui.dialog.NormalDialog

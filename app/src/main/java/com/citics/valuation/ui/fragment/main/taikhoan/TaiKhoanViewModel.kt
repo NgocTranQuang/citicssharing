@@ -1,13 +1,9 @@
 package com.citics.valuation.ui.fragment.main.taikhoan
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.UserProfileResponse
-import com.citics.valuation.data.repository.AssetRepository
-import com.citics.valuation.data.repository.Resource
-import com.citics.valuation.data.repository.UserRepository
+import citics.sharing.data.model.response.UserProfileResponse
+import citics.sharing.data.repository.Resource
+import citics.sharing.data.repository.UserRepository
 import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

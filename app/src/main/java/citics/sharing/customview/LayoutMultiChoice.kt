@@ -7,8 +7,8 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutMultiChoiceBinding
-import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.data.model.others.SelectorItem
+import citics.sharing.data.model.others.ChooserItem
+import citics.sharing.data.model.others.SelectorItem
 import citics.sharing.extension.loadByName
 import timber.log.Timber
 

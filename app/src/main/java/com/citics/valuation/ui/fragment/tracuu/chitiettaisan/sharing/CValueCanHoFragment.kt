@@ -3,7 +3,7 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.sharing
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.citics.cagent.data.model.response.DetailAdjustmentRates
+import citics.sharing.data.model.response.DetailAdjustmentRates
 import com.citics.cbank.R
 import citics.sharing.extension.toShow
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel

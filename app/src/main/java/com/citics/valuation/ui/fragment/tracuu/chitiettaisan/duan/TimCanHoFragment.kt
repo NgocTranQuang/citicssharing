@@ -9,7 +9,7 @@ import androidx.lifecycle.coroutineScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import citics.sharing.customview.HeaderLayout
-import com.citics.cagent.data.model.response.CanHoSuggestionResponse
+import citics.sharing.data.model.response.CanHoSuggestionResponse
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentTimCanHoBinding
 import com.citics.valuation.adapter.tracuu.MapFilterCanHoTimKiemAdapter

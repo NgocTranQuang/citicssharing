@@ -1,10 +1,10 @@
 package com.citics.valuation.ui.activity.hopthoai
 
 import androidx.lifecycle.viewModelScope
-import com.citics.cagent.data.model.response.base.BaseResponse
-import com.citics.cagent.data.model.response.cpoint.DepositMethodResponse
-import com.citics.valuation.data.repository.Resource
-import com.citics.valuation.data.repository.UserRepository
+import citics.sharing.data.model.response.base.BaseResponse
+import citics.sharing.data.model.response.cpoint.DepositMethodResponse
+import citics.sharing.data.repository.Resource
+import citics.sharing.data.repository.UserRepository
 import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

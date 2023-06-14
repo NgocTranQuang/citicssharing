@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.viewbinding.ViewBinding
 import com.citics.cbank.R
-import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.data.model.others.SelectorItem
-import com.citics.valuation.data.model.others.SingleChoiceData
+import citics.sharing.data.model.others.ChooserItem
+import citics.sharing.data.model.others.SelectorItem
+import citics.sharing.data.model.others.SingleChoiceData
 import citics.sharing.extension.toMutableList
 import com.citics.valuation.ui.activity.choice.SingleChoiceActivity
 import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity

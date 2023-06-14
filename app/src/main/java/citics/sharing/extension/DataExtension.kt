@@ -8,12 +8,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
 import android.widget.Toast
-import com.citics.cagent.data.model.response.Document
-import com.citics.cagent.data.model.response.LandDTO
+import citics.sharing.data.model.response.Document
+import citics.sharing.data.model.response.LandDTO
 import com.citics.cbank.R
-import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.data.model.others.SelectorItem
-import citics.sharing.extension.toShow
+import citics.sharing.data.model.others.ChooserItem
+import citics.sharing.data.model.others.SelectorItem
 import com.citics.valuation.ui.activity.webview.WebViewActivity
 import com.citics.valuation.utils.FileUtils
 import com.google.gson.Gson

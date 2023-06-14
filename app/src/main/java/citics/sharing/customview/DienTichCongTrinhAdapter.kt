@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.citics.cagent.data.model.response.CongTrinh
+import citics.sharing.data.model.response.CongTrinh
 import com.citics.cbank.R
 import com.citics.cbank.databinding.RowDienTichCongTrinhBinding
 import com.citics.valuation.adapter.base.BaseAdapter

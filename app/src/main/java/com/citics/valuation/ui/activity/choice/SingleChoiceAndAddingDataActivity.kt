@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentDataChooserBinding
 import com.citics.valuation.adapter.choice.ChooserAdapter
-import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.data.model.others.SingleChoiceData
+import citics.sharing.data.model.others.ChooserItem
+import citics.sharing.data.model.others.SingleChoiceData
 import citics.sharing.extension.getData
 import citics.sharing.extension.getListParcelable
 import com.citics.valuation.ui.base.BaseActivity
