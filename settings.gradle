@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CBank24"
 include ':app'
+include ':sharing'

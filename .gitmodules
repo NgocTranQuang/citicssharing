@@ -1,0 +1,3 @@
+[submodule "citicscommon"]
+	path = citicscommon
+	url = https://github.com/NgocTranQuang/citicssharing.git
