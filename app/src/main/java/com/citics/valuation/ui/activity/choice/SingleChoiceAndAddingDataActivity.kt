@@ -14,8 +14,8 @@ import com.citics.cbank.databinding.FragmentDataChooserBinding
 import com.citics.valuation.adapter.choice.ChooserAdapter
 import com.citics.valuation.data.model.others.ChooserItem
 import com.citics.valuation.data.model.others.SingleChoiceData
-import com.citics.valuation.extension.getData
-import com.citics.valuation.extension.getListParcelable
+import citics.sharing.extension.getData
+import citics.sharing.extension.getListParcelable
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.utils.KEY_BUNDLE_DATA

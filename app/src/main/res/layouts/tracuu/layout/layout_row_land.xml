@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.citics.valuation.customview.CustomViewDotLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<citics.sharing.customview.CustomViewDotLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.citics.valuation.customview.TextViewDrawableSize
+            <citics.sharing.customview.TextViewDrawableSize
                 android:id="@+id/tvTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -45,7 +45,7 @@
             android:layout_marginTop="@dimen/activity_margin_medium"
             android:orientation="horizontal">
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/tfPHQH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 app:label_icon_img="@drawable/ic_phqh"
                 app:label_title="@string/phqh" />
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/tfVPQH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,5 +72,5 @@
         </LinearLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-</com.citics.valuation.customview.CustomViewDotLayout>
+</citics.sharing.customview.CustomViewDotLayout>
 

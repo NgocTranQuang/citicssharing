@@ -5,9 +5,8 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.StringRes
-import com.citics.cbank.R
 import com.citics.cbank.databinding.DialogConfirmUpdateCvalueBinding
-import com.citics.valuation.extension.setDefaultWindowTheme
+import citics.sharing.extension.setDefaultWindowTheme
 
 class ConfirmUpdateCValueDialog(giaHienTai: String, ngayCapNhatCuoi: String) : BaseDialog<DialogConfirmUpdateCvalueBinding>
     (DialogConfirmUpdateCvalueBinding::inflate) {

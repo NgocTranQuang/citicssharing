@@ -12,8 +12,8 @@ import com.citics.cbank.databinding.ActivityChoiceBinding
 import com.citics.valuation.adapter.choice.MultiChoiceNewAdapter
 import com.citics.valuation.data.model.others.ChooserItem
 import com.citics.valuation.data.model.others.MultiChoiceData
-import com.citics.valuation.extension.getListParcelable
-import com.citics.valuation.extension.getListString
+import citics.sharing.extension.getListParcelable
+import citics.sharing.extension.getListString
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel
 import com.citics.valuation.utils.*

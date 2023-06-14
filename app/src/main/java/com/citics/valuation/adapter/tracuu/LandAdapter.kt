@@ -9,8 +9,8 @@ import com.citics.valuation.data.model.response.RequiredLand
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutRowLandBinding
 import com.citics.valuation.adapter.base.BaseAdapter
-import com.citics.valuation.extension.getDrawableFromName
-import com.citics.valuation.extension.toShow
+import citics.sharing.extension.getDrawableFromName
+import citics.sharing.extension.toShow
 import timber.log.Timber
 
 class LandAdapter(val context: Context, val listData: MutableList<LandDTO>) :

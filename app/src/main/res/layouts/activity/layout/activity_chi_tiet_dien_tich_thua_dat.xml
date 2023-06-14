@@ -11,12 +11,12 @@
         android:background="@color/color_bg_screen"
         android:orientation="vertical">
 
-        <com.citics.valuation.customview.HeaderLayout
+        <citics.sharing.customview.HeaderLayout
             android:id="@+id/headerLayout"
             style="@style/styleHeaderLayout"
             app:header_title="@string/chi_tiet_dien_tich_thua_dat" />
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/tvTongDienTich"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -8,12 +8,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import citics.sharing.customview.HeaderLayout
 import com.citics.cagent.data.model.response.CanHoSuggestionResponse
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentTimCanHoBinding
 import com.citics.valuation.adapter.tracuu.MapFilterCanHoTimKiemAdapter
-import com.citics.valuation.customview.HeaderLayout
-import com.citics.valuation.extension.searchDebounce
+import citics.sharing.extension.searchDebounce
 import com.citics.valuation.ui.activity.tracuu.ChiTietCanHoActivity
 import com.citics.valuation.ui.activity.tracuu.TimKiemCanHoViewModel
 import com.citics.valuation.ui.base.BaseFragment

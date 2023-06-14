@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         style="@style/styleHeaderLayout"
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:layout_marginTop="@dimen/activity_margin_large"
             android:text="@string/gia_c_valuer" />
 
-        <com.citics.valuation.customview.TextViewUnit
+        <citics.sharing.customview.TextViewUnit
             android:id="@+id/tvCValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.citics.valuation.customview.TextViewUnit
+            <citics.sharing.customview.TextViewUnit
                 android:id="@+id/tvBienDoGiaNhoNhat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 android:text="@string/gach"
                 android:textSize="@dimen/text_size_19" />
 
-            <com.citics.valuation.customview.TextViewUnit
+            <citics.sharing.customview.TextViewUnit
                 android:id="@+id/tvBienDoGiaLonNhat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
             tools:visibility="visible">
 
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vGiaTriThuaDat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                 app:thong_tin_layout_title="@string/gia_tri_thua_dat"
                 app:thong_tin_layout_unit="@string/d" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDonGiaThuaDat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
                 android:id="@+id/vDivider"
                 style="@style/DividerStyle" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vGiaCongTrinhXayDung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
                     android:layout_marginTop="@dimen/activity_margin_large"
                     android:text="@string/lich_su_gia_du_an" />
 
-                <com.citics.valuation.customview.CiticsChartLayout
+                <citics.sharing.customview.CiticsChartLayout
                     android:id="@+id/vChart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -196,14 +196,14 @@
                 android:textFontWeight="700"
                 android:textSize="@dimen/text_size_18" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vGiaTriCanHo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:thong_tin_layout_title="@string/gia_tri_can_ho"
                 app:thong_tin_layout_unit="@string/d" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDonGiaCanHo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

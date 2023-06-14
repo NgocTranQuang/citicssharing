@@ -5,12 +5,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import citics.sharing.customview.TongGiaTriLayout
 import com.citics.cagent.data.model.response.LandDTO
 import com.citics.cbank.R
 import com.citics.cbank.databinding.RowVeThuaDatBinding
 import com.citics.valuation.adapter.base.BaseAdapter
-import com.citics.valuation.customview.TongGiaTriLayout
-import com.citics.valuation.extension.toShow
+import citics.sharing.extension.toShow
 import com.citics.valuation.utils.Utils
 
 class VeThuaDatAdapter(

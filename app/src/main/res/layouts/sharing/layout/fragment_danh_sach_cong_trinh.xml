@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
 
-        <com.citics.valuation.customview.HeaderLayout
+        <citics.sharing.customview.HeaderLayout
             android:id="@+id/headerLayout"
             style="@style/styleHeaderLayout"
             android:layout_width="match_parent"

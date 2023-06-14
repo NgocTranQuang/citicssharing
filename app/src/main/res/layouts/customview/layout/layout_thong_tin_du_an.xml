@@ -37,7 +37,7 @@
                 tools:text="You will fall in love with this beautiful Colonial with lots of curb appeal.Very appealing in and out, With New Roof (2018) New AC System (2017) hardwoods main floor, Gourmet Kitchen with an Island, Granite counter tops, Spacious 3 Bedrooms with 2 Full Baths, Walk out to a Large Deck and Patio overlooking your beautiful in Ground Pool and private Back Yard situated on a premium lot in a cul-de-sac will not disappoint.
 There are latex disposable gloves at the homes if needed.You will fall in love with this beautiful Colonial with lots of curb appeal.Very appealing in and out, With New Roof (2018) New AC System (2017) hardwoods main floor," />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDuAn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +46,7 @@ There are latex disposable gloves at the homes if needed.You will fall in love w
                 app:thong_tin_layout_is_bold="false"
                 app:thong_tin_layout_title="@string/du_an" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDiaChi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +55,7 @@ There are latex disposable gloves at the homes if needed.You will fall in love w
                 app:thong_tin_layout_is_bold="false"
                 app:thong_tin_layout_title="@string/dia_chi_tai_san" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vToaDoGoogle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@ There are latex disposable gloves at the homes if needed.You will fall in love w
                 app:thong_tin_layout_is_bold="false"
                 app:thong_tin_layout_title="@string/toa_do_google" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vChuDauTu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +73,7 @@ There are latex disposable gloves at the homes if needed.You will fall in love w
                 app:thong_tin_layout_is_bold="false"
                 app:thong_tin_layout_title="@string/chu_dau_tu" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vWebsiteDuAn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

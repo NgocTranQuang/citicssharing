@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         style="@style/styleHeaderLayout" />
 
@@ -42,7 +42,7 @@
                         android:overScrollMode="never"
                         android:padding="@dimen/activity_margin_large" />
 
-                    <com.citics.valuation.customview.CiticsTextField
+                    <citics.sharing.customview.CiticsTextField
                         android:id="@+id/tfKhac"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
             </androidx.core.widget.NestedScrollView>
 
 
-            <com.citics.valuation.customview.ButtonUpdateLayout
+            <citics.sharing.customview.ButtonUpdateLayout
                 android:id="@+id/btnUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

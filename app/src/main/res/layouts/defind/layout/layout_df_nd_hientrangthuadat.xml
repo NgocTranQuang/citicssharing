@@ -17,7 +17,7 @@
             style="@style/styleTextViewTitleInTab"
             android:text="@string/hien_trang_thua_dat" />
 
-        <com.citics.valuation.customview.CiticsTextChooser
+        <citics.sharing.customview.CiticsTextChooser
             android:id="@+id/vMatTienTiepGiap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             app:text_chooser_input_hint="@string/mat_tien_tiep_giap"
             app:text_chooser_title="@string/mat_tien_tiep_giap" />
 
-        <com.citics.valuation.customview.CiticsTextField
+        <citics.sharing.customview.CiticsTextField
             android:id="@+id/vKhoangCachRaDuongChinh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
             app:label_icon_img="@drawable/ic_huong_dong"
             app:label_title="@string/khoang_cach_ra_duong_chinh" />
 
-        <com.citics.valuation.customview.TextViewDrawableSize
+        <citics.sharing.customview.TextViewDrawableSize
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_margin_large"
@@ -47,12 +47,12 @@
             android:fontFamily="@font/quicksand_bold"
             android:text="@string/duong_truoc_tai_san" />
 
-        <com.citics.valuation.customview.CustomViewDotLayout
+        <citics.sharing.customview.CustomViewDotLayout
             android:id="@+id/dot1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/vDoRong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,14 +64,14 @@
                 app:label_title="@string/do_rong" />
 
 
-        </com.citics.valuation.customview.CustomViewDotLayout>
+        </citics.sharing.customview.CustomViewDotLayout>
 
-        <com.citics.valuation.customview.CustomViewDotLayout
+        <citics.sharing.customview.CustomViewDotLayout
             android:id="@+id/dot2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.citics.valuation.customview.CiticsTextChooser
+            <citics.sharing.customview.CiticsTextChooser
                 android:id="@+id/vKetCauDuong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,14 +80,14 @@
                 app:text_chooser_input_hint="@string/chon_loai_ket_cau_duong_truoc_tai_san"
                 app:text_chooser_title="@string/ket_cau_duong" />
 
-        </com.citics.valuation.customview.CustomViewDotLayout>
+        </citics.sharing.customview.CustomViewDotLayout>
 
-        <com.citics.valuation.customview.CustomViewDotLayout
+        <citics.sharing.customview.CustomViewDotLayout
             android:id="@+id/dot3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/vDoanNhoNhat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,15 +98,15 @@
                 app:label_icon_img="@drawable/ic_do_rong"
                 app:label_title="@string/doan_nho_nhat" />
 
-        </com.citics.valuation.customview.CustomViewDotLayout>
+        </citics.sharing.customview.CustomViewDotLayout>
 
-        <com.citics.valuation.customview.CustomViewDotLayout
+        <citics.sharing.customview.CustomViewDotLayout
             android:id="@+id/dot4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hide_bottom_line="true">
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/vQuyHoachDuKien"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,9 +117,9 @@
                 app:label_icon_img="@drawable/ic_quy_hoach_du_kien"
                 app:label_title="@string/quy_hoach_du_kien" />
 
-        </com.citics.valuation.customview.CustomViewDotLayout>
+        </citics.sharing.customview.CustomViewDotLayout>
 
-        <com.citics.valuation.customview.CiticsTextChooser
+        <citics.sharing.customview.CiticsTextChooser
             android:id="@+id/vKetNoiGiaoThong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.citics.valuation.customview.TextViewDrawableSize
+            <citics.sharing.customview.TextViewDrawableSize
                 android:id="@+id/tvDes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,136 +145,136 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:text="@string/hien_trang_tiep_giap_voi_tai_san" />
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vDong"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_huong_dong"
                     app:label_title="@string/dong" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vTay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_arrow_right_to_left"
                     app:label_title="@string/tay" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vNam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_huong_nam"
                     app:label_title="@string/nam" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vBac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_huong_bac"
                     app:label_title="@string/bac" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vTayBac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_huong_taybac"
                     app:label_title="@string/tay_bac" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vTayNam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_huong_tay_nam"
                     app:label_title="@string/tay_nam" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vDongBac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_huong_dong_bac"
                     app:label_title="@string/dong_bac" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
 
-            <com.citics.valuation.customview.CustomViewDotLayout
+            <citics.sharing.customview.CustomViewDotLayout
                 android:id="@+id/dot10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/vDongnam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:input_hint="@string/nhttg"
                     app:label_icon_img="@drawable/ic_huong_dongnam"
                     app:label_title="@string/dong_nam" />
-            </com.citics.valuation.customview.CustomViewDotLayout>
+            </citics.sharing.customview.CustomViewDotLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.citics.valuation.customview.ChooserWithChipsLayout
+        <citics.sharing.customview.ChooserWithChipsLayout
             android:id="@+id/vHienTrangSuDung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -283,7 +283,7 @@
             app:chooser_chip_icon="@drawable/ic_tab_hien_trang_thua_dat"
             app:chooser_chip_title="@string/hien_trang_su_dung" />
 
-        <com.citics.valuation.customview.ChooserWithChipsLayout
+        <citics.sharing.customview.ChooserWithChipsLayout
             android:id="@+id/vYeuToKhac"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -292,7 +292,7 @@
             app:chooser_chip_icon="@drawable/ic_yeu_to_khac"
             app:chooser_chip_title="@string/yeu_to_khac" />
 
-        <com.citics.valuation.customview.CiticsTextChooser
+        <citics.sharing.customview.CiticsTextChooser
             android:id="@+id/vSoSanhVoiThucTe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -303,7 +303,7 @@
             app:text_chooser_input_hint="@string/so_sanh_voi_thuc_te"
             app:text_chooser_title="@string/so_sanh_voi_thuc_te" />
 
-        <com.citics.valuation.customview.CiticsTextField
+        <citics.sharing.customview.CiticsTextField
             android:id="@+id/vGhiChu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -314,7 +314,7 @@
             app:label_icon_img="@drawable/ic_ghi_chu"
             app:label_title="@string/ghi_chu_ve_thua_dat" />
 
-        <com.citics.valuation.customview.CiticsTextField
+        <citics.sharing.customview.CiticsTextField
             android:id="@+id/vGiaThuyet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

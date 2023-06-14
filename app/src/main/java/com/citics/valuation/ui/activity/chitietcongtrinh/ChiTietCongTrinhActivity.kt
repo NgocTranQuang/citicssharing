@@ -2,27 +2,15 @@ package com.citics.valuation.ui.activity.chitietcongtrinh
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
-import android.text.TextUtils
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.core.os.bundleOf
 import com.citics.cagent.data.model.response.AssetDetailData
-import com.citics.cagent.data.model.response.CongTrinh
-import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivityChitietcongtrinhBinding
-import com.citics.cbank.databinding.ActivityLoginBinding
-import com.citics.valuation.extension.getData
-import com.citics.valuation.extension.toJson
-import com.citics.valuation.ui.activity.main.StaticViewModel
+import citics.sharing.extension.getData
 import com.citics.valuation.ui.base.BaseActivity
-import com.citics.valuation.ui.dialog.NormalDialog
-import com.citics.valuation.ui.fragment.main.taikhoan.ProfileViewModel
-import com.citics.valuation.utils.DialogType
 import com.citics.valuation.utils.KEY_BUNDLE_DATA
-import com.citics.valuation.utils.PHONE_SUPPORT_CITICS
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 /**
  * Created by ChinhQT on 04/10/2022.

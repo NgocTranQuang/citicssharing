@@ -9,7 +9,7 @@ import androidx.activity.viewModels
 import androidx.core.os.bundleOf
 import com.citics.cagent.data.model.response.CongTrinh
 import com.citics.cbank.databinding.FragmentThemLoaiPhongBinding
-import com.citics.valuation.extension.getData
+import citics.sharing.extension.getData
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.utils.KEY_BUNDLE_DATA
 import dagger.hilt.android.AndroidEntryPoint

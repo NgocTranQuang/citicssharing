@@ -2,19 +2,16 @@ package com.citics.valuation.ui.dialog
 
 import android.content.Context
 import android.content.DialogInterface
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import androidx.annotation.StringRes
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.citics.valuation.extension.setDefaultWindowTheme
-import com.citics.valuation.extension.setHtml
+import citics.sharing.extension.setDefaultWindowTheme
+import citics.sharing.extension.setHtml
 import com.citics.valuation.utils.DialogType
 import timber.log.Timber
-import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutDialogCiticsBinding
 
 /**

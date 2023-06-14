@@ -3,6 +3,7 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base
 import android.annotation.SuppressLint
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import citics.sharing.customview.HeaderLayout
 import com.ahmadhamwi.tabsync.TabbedListMediator
 import com.citics.cagent.data.model.response.AssetDetailData
 import com.citics.cagent.data.model.response.DetailAdjustmentRates
@@ -10,11 +11,10 @@ import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentDetailTaiSanBaseBinding
 import com.citics.valuation.adapter.tracuu.ChiTietTaiSanAdapter
-import com.citics.valuation.customview.HeaderLayout
 import com.citics.valuation.data.model.response.ErrorResponse
-import com.citics.valuation.extension.setHtml
-import com.citics.valuation.extension.toShow
-import com.citics.valuation.extension.toShowTime
+import citics.sharing.extension.setHtml
+import citics.sharing.extension.toShow
+import citics.sharing.extension.toShowTime
 import com.citics.valuation.ui.base.BaseFragment
 import com.citics.valuation.utils.LoaiTaiSan
 

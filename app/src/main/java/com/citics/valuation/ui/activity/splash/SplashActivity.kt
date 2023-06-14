@@ -7,7 +7,7 @@ import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
 import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivitySplashBinding
-import com.citics.valuation.extension.delayOnLifecycle
+import citics.sharing.extension.delayOnLifecycle
 import com.citics.valuation.ui.activity.login.LoginActivity
 import com.citics.valuation.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint

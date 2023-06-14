@@ -20,7 +20,7 @@
             android:orientation="vertical"
             android:padding="@dimen/activity_margin_large">
 
-            <com.citics.valuation.customview.TextViewDrawableSize
+            <citics.sharing.customview.TextViewDrawableSize
                 android:id="@+id/tvvct"
                 style="@style/Title21Style"
                 android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
                 android:drawablePadding="@dimen/activity_margin_medium"
                 android:text="@string/ve_cong_trinh" />
 
-            <com.citics.valuation.customview.TextViewDrawableSize
+            <citics.sharing.customview.TextViewDrawableSize
                 android:id="@+id/tvttqh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
             app:strokeColor="@color/color_border_cardview"
             app:strokeWidth="1dp">
 
-            <com.citics.valuation.customview.TextViewDrawableSize
+            <citics.sharing.customview.TextViewDrawableSize
                 android:id="@+id/btnBoSungCongTrinh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                 android:textSize="@dimen/text_size_15" />
         </com.google.android.material.card.MaterialCardView>
 
-        <com.citics.valuation.customview.TextViewDrawableSize
+        <citics.sharing.customview.TextViewDrawableSize
             android:id="@+id/rvInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

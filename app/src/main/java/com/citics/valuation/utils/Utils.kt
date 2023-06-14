@@ -6,7 +6,7 @@ import android.icu.text.NumberFormat
 import com.citics.cagent.data.model.response.UserResponse
 import com.citics.cagent.data.model.response.tham_dinh.RecordResponse
 import com.citics.valuation.data.datasource.local.PreferenceManager
-import com.citics.valuation.extension.getDrawableFromName
+import citics.sharing.extension.getDrawableFromName
 import java.util.*
 
 

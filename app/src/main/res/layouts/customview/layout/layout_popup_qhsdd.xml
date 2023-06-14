@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.citics.valuation.customview.TextViewDrawableSize
+    <citics.sharing.customview.TextViewDrawableSize
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -11,7 +11,7 @@ import android.webkit.*
 import androidx.activity.viewModels
 import androidx.core.os.bundleOf
 import com.citics.cbank.databinding.FragmentWebviewBinding
-import com.citics.valuation.customview.HeaderLayout
+import citics.sharing.customview.HeaderLayout
 import com.citics.valuation.ui.base.BaseActivity
 import com.citics.valuation.ui.base.BaseViewModel
 import timber.log.Timber

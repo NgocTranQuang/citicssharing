@@ -10,7 +10,7 @@ import com.citics.cbank.R
 import com.citics.valuation.data.model.others.ChooserItem
 import com.citics.valuation.data.model.others.SelectorItem
 import com.citics.valuation.data.model.others.SingleChoiceData
-import com.citics.valuation.extension.toMutableList
+import citics.sharing.extension.toMutableList
 import com.citics.valuation.ui.activity.choice.SingleChoiceActivity
 import com.citics.valuation.ui.activity.choice.SingleChoiceAndAddingDataActivity
 import com.citics.valuation.utils.*

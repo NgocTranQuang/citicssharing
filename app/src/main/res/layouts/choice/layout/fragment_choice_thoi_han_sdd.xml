@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:paddingBottom="@dimen/system_navigation_bar">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         style="@style/styleHeaderLayout" />
 
@@ -32,14 +32,14 @@
             android:paddingHorizontal="@dimen/activity_margin_large"
             android:visibility="gone">
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/vNgayThangHetHan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:input_hint="@string/nnthh"
                 app:label_title="@string/nthh" />
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/vNamHetHan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.citics.valuation.customview.ButtonUpdateLayout
+    <citics.sharing.customview.ButtonUpdateLayout
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -9,7 +9,7 @@ import com.citics.cagent.data.model.response.CongTrinh
 import com.citics.cbank.R
 import com.citics.cbank.databinding.LayoutRowDanhSachCongTrinhBinding
 import com.citics.valuation.adapter.base.BaseAdapter
-import com.citics.valuation.extension.setTintColor
+import citics.sharing.extension.setTintColor
 
 class DanhSachCongTrinhAdapter(
     var context: Context,

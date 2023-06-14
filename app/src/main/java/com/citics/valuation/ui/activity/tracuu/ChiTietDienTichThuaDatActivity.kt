@@ -6,20 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.core.os.bundleOf
-import androidx.paging.PagingData
+import citics.sharing.customview.TongGiaTriLayout
 import com.citics.cagent.data.model.response.LandDTO
-import com.citics.valuation.adapter.cpoint.CPointMethodAdapter
 import com.citics.valuation.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import com.citics.cbank.R
 import com.citics.cbank.databinding.ActivityChiTietDienTichThuaDatBinding
-import com.citics.cbank.databinding.ActivityPhuongThucNhapDiemBinding
-import com.citics.cbank.databinding.ActivityTracuuBinding
 import com.citics.valuation.adapter.tracuu.VeThuaDatAdapter
-import com.citics.valuation.customview.DienTichCongTrinhAdapter
-import com.citics.valuation.customview.TongGiaTriLayout
-import com.citics.valuation.extension.getData
-import com.citics.valuation.extension.getListParcelable
+import citics.sharing.extension.getListParcelable
 
 @AndroidEntryPoint
 class ChiTietDienTichThuaDatActivity :

@@ -44,7 +44,7 @@
                 android:gravity="end|center_vertical"
                 android:orientation="horizontal">
 
-                <com.citics.valuation.customview.TextViewUnit
+                <citics.sharing.customview.TextViewUnit
                     android:id="@+id/tvValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

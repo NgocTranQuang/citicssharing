@@ -3,11 +3,13 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.duan
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import citics.sharing.customview.companion.ChiTietDuAnLayout
+import citics.sharing.customview.companion.ThongTinDuAnLayout
+import citics.sharing.customview.companion.TienIchNoiKhuLayout
+import citics.sharing.extension.setDataColor
 import com.citics.cagent.data.model.response.AssetDetailResponse
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDuAn
-import com.citics.valuation.customview.companion.*
-import com.citics.valuation.extension.*
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.activity.tracuu.TimKiemCanHoActivity
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuFragment

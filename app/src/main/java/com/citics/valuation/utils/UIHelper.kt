@@ -3,7 +3,7 @@ package com.citics.valuation.utils
 import android.content.Context
 import android.text.TextUtils
 import com.citics.cbank.R
-import com.citics.valuation.extension.toDate
+import citics.sharing.extension.toDate
 
 object UIHelper {
     fun getNgayCapNhatGia(context : Context, date : Long?) : String{

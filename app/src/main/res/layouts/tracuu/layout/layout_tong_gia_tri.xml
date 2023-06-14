@@ -61,7 +61,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:text="@string/one_ve_thua_dat" />
 
-            <com.citics.valuation.customview.TextViewUnit
+            <citics.sharing.customview.TextViewUnit
                 android:id="@+id/tvValueVeThuaDat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:text="@string/two_cong_trinh_xay_dung" />
 
-            <com.citics.valuation.customview.TextViewUnit
+            <citics.sharing.customview.TextViewUnit
                 android:id="@+id/tvValueCongTrinh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

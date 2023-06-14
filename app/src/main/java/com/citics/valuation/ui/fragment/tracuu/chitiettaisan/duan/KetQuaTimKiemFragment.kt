@@ -8,13 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.citics.cbank.R
 import com.citics.cbank.databinding.FragmentCanHoKetQuaTimKiemBinding
 import com.citics.valuation.adapter.tracuu.TimKiemNangCaoAdapter
-import com.citics.valuation.customview.HeaderLayout
-import com.citics.valuation.extension.makeLinks
+import citics.sharing.customview.HeaderLayout
+import citics.sharing.extension.makeLinks
 import com.citics.valuation.ui.activity.tracuu.ChiTietCanHoActivity
 import com.citics.valuation.ui.activity.tracuu.TimKiemCanHoViewModel
 import com.citics.valuation.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 /**
  * Created by ChinhQT on 10/11/2022.

@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/vToSo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             app:thong_tin_layout_icon="@drawable/ic_sotosothua"
             app:thong_tin_layout_title="@string/tbds" />
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/vThuaSo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             app:thong_tin_layout_icon="@drawable/ic_sotosothua"
             app:thong_tin_layout_title="@string/ts" />
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/vToaDoGoogle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

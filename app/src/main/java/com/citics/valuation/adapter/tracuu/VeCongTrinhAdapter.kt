@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import com.citics.cagent.data.model.response.CongTrinh
 import com.citics.cbank.databinding.LayoutRowVeCongTrinhBinding
 import com.citics.valuation.adapter.base.BaseAdapter
-import com.citics.valuation.adapter.base.BaseLoadMoreAdapter
-import com.citics.valuation.extension.setDataColor
-import com.citics.valuation.extension.toShow
+import citics.sharing.extension.setDataColor
+import citics.sharing.extension.toShow
 
 class VeCongTrinhAdapter(context: Context, var mapCongTrinh: Map<String, Any>?) :
     BaseAdapter<LayoutRowVeCongTrinhBinding, CongTrinh>(context) {

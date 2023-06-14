@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.citics.cagent.data.model.response.cpoint.CPointListResponse
 import com.citics.valuation.adapter.base.BaseLoadMoreAdapter
-import com.citics.valuation.extension.setBackgroundTint
-import com.citics.valuation.extension.toShowTime
+import citics.sharing.extension.setBackgroundTint
+import citics.sharing.extension.toShowTime
 import com.citics.valuation.utils.CPType
 import com.citics.valuation.utils.FORMAT_TIME_THAM_DINH
 import com.citics.cbank.R

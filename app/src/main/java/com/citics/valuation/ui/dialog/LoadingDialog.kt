@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.citics.cbank.R
 import com.citics.cbank.databinding.DialogLoadingBinding
-import com.citics.valuation.extension.setDefaultWindowTheme
+import citics.sharing.extension.setDefaultWindowTheme
 
 /**
  * Created by ChinhQT on 07/11/2022.

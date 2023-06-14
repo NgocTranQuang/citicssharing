@@ -8,7 +8,7 @@
 //import androidx.fragment.app.FragmentTransaction
 //import com.citics.cbank.R
 //import com.citics.cbank.databinding.LayoutUserLockDialogBinding
-//import com.citics.valuation.extension.setDefaultWindowTheme
+//import citics.sharing.extension.setDefaultWindowTheme
 //import com.citics.valuation.utils.DialogType
 //import com.citics.valuation.utils.LOCK_PERMANENT
 //import com.citics.valuation.utils.LOCK_TEMP

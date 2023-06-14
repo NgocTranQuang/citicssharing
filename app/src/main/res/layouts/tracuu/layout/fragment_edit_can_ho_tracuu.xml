@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         style="@style/styleHeaderLayout"
         app:header_title="@string/thay_doi_thong_tin_can_ho" />
@@ -17,7 +17,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.citics.valuation.customview.dfAssetData.canho.edit.LayoutDFCHChiTietCanHo
+        <citics.sharing.customview.dfAssetData.canho.edit.LayoutDFCHChiTietCanHo
             android:layout_width="match_parent"
             android:id="@+id/lnChiTietCanHo"
             android:layout_height="match_parent" />
@@ -32,7 +32,7 @@
 <!--            android:paddingEnd="@dimen/activity_margin_large"-->
 <!--            android:paddingBottom="@dimen/activity_margin_large">-->
 
-<!--            <com.citics.valuation.customview.CiticsTextChooser-->
+<!--            <citics.sharing.customview.CiticsTextChooser-->
 <!--                android:id="@+id/vloaiCanHo"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -40,7 +40,7 @@
 <!--                app:text_chooser_input_hint="@string/loai_can_ho"-->
 <!--                app:text_chooser_title="@string/loai_can_ho" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextChooser-->
+<!--            <citics.sharing.customview.CiticsTextChooser-->
 <!--                android:id="@+id/vThap"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -49,7 +49,7 @@
 <!--                app:text_chooser_input_hint="@string/thap"-->
 <!--                app:text_chooser_title="@string/thap" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextChooser-->
+<!--            <citics.sharing.customview.CiticsTextChooser-->
 <!--                android:id="@+id/vTang"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -58,7 +58,7 @@
 <!--                app:text_chooser_input_hint="@string/tang"-->
 <!--                app:text_chooser_title="@string/tang" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextChooser-->
+<!--            <citics.sharing.customview.CiticsTextChooser-->
 <!--                android:id="@+id/vViTri"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -67,7 +67,7 @@
 <!--                app:text_chooser_input_hint="@string/vi_tri"-->
 <!--                app:text_chooser_title="@string/vi_tri" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextField-->
+<!--            <citics.sharing.customview.CiticsTextField-->
 <!--                android:id="@+id/vDienTichTimTuong"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -77,7 +77,7 @@
 <!--                app:label_icon_img="@drawable/arrow_zoom_out"-->
 <!--                app:label_title="@string/dien_tih_tim_tuong" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextField-->
+<!--            <citics.sharing.customview.CiticsTextField-->
 <!--                android:id="@+id/vDienTichThongThy"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -88,7 +88,7 @@
 <!--                app:label_show_icon="true"-->
 <!--                app:label_title="@string/dien_tich_thong_thuy" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextChooser-->
+<!--            <citics.sharing.customview.CiticsTextChooser-->
 <!--                android:id="@+id/vHuongNha"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -98,7 +98,7 @@
 <!--                app:text_chooser_input_hint="@string/huong_nha"-->
 <!--                app:text_chooser_title="@string/huong_nha" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextField-->
+<!--            <citics.sharing.customview.CiticsTextField-->
 <!--                android:id="@+id/vHuongCanhQuan"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -108,7 +108,7 @@
 <!--                app:label_icon_img="@drawable/ic_warning"-->
 <!--                app:label_title="@string/huong_canh_quan" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextField-->
+<!--            <citics.sharing.customview.CiticsTextField-->
 <!--                android:id="@+id/vPhongNgu"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -118,7 +118,7 @@
 <!--                app:label_icon_img="@drawable/ic_phong_ngu"-->
 <!--                app:label_title="@string/phong_ngu" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextField-->
+<!--            <citics.sharing.customview.CiticsTextField-->
 <!--                android:id="@+id/vPhongKhach"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -128,7 +128,7 @@
 <!--                app:label_icon_img="@drawable/ic_phong_khach"-->
 <!--                app:label_title="@string/phong_khach" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextField-->
+<!--            <citics.sharing.customview.CiticsTextField-->
 <!--                android:id="@+id/vPhongVeSinh"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -138,7 +138,7 @@
 <!--                app:label_icon_img="@drawable/ic_phong_ngu"-->
 <!--                app:label_title="@string/phong_ve_sinh" />-->
 
-<!--            <com.citics.valuation.customview.CiticsTextField-->
+<!--            <citics.sharing.customview.CiticsTextField-->
 <!--                android:id="@+id/vPhongBep"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -148,7 +148,7 @@
 <!--                app:label_icon_img="@drawable/ic_phong_khach"-->
 <!--                app:label_title="@string/phong_bep" />-->
 
-<!--            <com.citics.valuation.customview.TextViewDrawableSize-->
+<!--            <citics.sharing.customview.TextViewDrawableSize-->
 <!--                android:id="@+id/t2"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
@@ -157,12 +157,12 @@
 <!--                android:drawablePadding="@dimen/activity_margin_medium"-->
 <!--                android:text="@string/hang_muc_khac" />-->
 
-<!--            <com.citics.valuation.customview.CustomViewDotLayout-->
+<!--            <citics.sharing.customview.CustomViewDotLayout-->
 <!--                android:id="@+id/vdot1"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content">-->
 
-<!--                <com.citics.valuation.customview.CiticsTextChooser-->
+<!--                <citics.sharing.customview.CiticsTextChooser-->
 <!--                    android:id="@+id/vBanCong"-->
 <!--                    android:layout_width="match_parent"-->
 <!--                    android:layout_height="wrap_content"-->
@@ -172,15 +172,15 @@
 <!--                    app:text_chooser_input_hint="@string/ban_cong"-->
 <!--                    app:text_chooser_title="@string/ban_cong" />-->
 
-<!--            </com.citics.valuation.customview.CustomViewDotLayout>-->
+<!--            </citics.sharing.customview.CustomViewDotLayout>-->
 
-<!--            <com.citics.valuation.customview.CustomViewDotLayout-->
+<!--            <citics.sharing.customview.CustomViewDotLayout-->
 <!--                android:id="@+id/d4"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                app:hide_bottom_line="true">-->
 
-<!--                <com.citics.valuation.customview.CiticsTextChooser-->
+<!--                <citics.sharing.customview.CiticsTextChooser-->
 <!--                    android:id="@+id/vLoGia"-->
 <!--                    android:layout_width="match_parent"-->
 <!--                    android:layout_height="wrap_content"-->
@@ -190,13 +190,13 @@
 <!--                    app:text_chooser_input_hint="@string/lo_gia"-->
 <!--                    app:text_chooser_title="@string/lo_gia" />-->
 
-<!--            </com.citics.valuation.customview.CustomViewDotLayout>-->
+<!--            </citics.sharing.customview.CustomViewDotLayout>-->
 
 
 <!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
     </androidx.core.widget.NestedScrollView>
 
-    <com.citics.valuation.customview.ButtonUpdateLayout
+    <citics.sharing.customview.ButtonUpdateLayout
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

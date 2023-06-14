@@ -3,7 +3,7 @@ package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.sharing
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.citics.cbank.databinding.FragmentCvalueBinding
-import com.citics.valuation.customview.HeaderLayout
+import citics.sharing.customview.HeaderLayout
 import com.citics.valuation.ui.base.BaseFragment
 import com.citics.valuation.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint

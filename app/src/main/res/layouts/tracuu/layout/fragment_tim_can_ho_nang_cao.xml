@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         style="@style/styleHeaderLayout"
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/headerLayout">
 
-            <com.citics.valuation.customview.CiticsTextChooser
+            <citics.sharing.customview.CiticsTextChooser
                 android:id="@+id/thapChooser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 app:text_chooser_title="@string/thap" />
 
 
-            <com.citics.valuation.customview.CiticsTextChooser
+            <citics.sharing.customview.CiticsTextChooser
                 android:id="@+id/tangChooser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                 app:text_chooser_title="@string/tang" />
 
 
-            <com.citics.valuation.customview.CiticsTextChooser
+            <citics.sharing.customview.CiticsTextChooser
                 android:id="@+id/loaiCanHoChooser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
                 app:text_chooser_input_hint="@string/loai_can_ho_hint"
                 app:text_chooser_title="@string/loai_can_ho" />
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/vDienTichTimTuong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tangChooser" />
 
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/dienTichThongThuyTF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
     </androidx.core.widget.NestedScrollView>
 
 
-    <com.citics.valuation.customview.ButtonUpdateLayout
+    <citics.sharing.customview.ButtonUpdateLayout
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         app:button_update_layout_text="@string/tra_cuu_can_ho"

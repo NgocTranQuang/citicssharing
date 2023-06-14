@@ -6,11 +6,9 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.OpenableColumns
 import android.webkit.MimeTypeMap
-import com.citics.valuation.extension.isDocument
+import citics.sharing.extension.isDocument
 import timber.log.Timber
 import java.io.*
-import java.util.Date
-import kotlin.random.Random
 
 
 object FileUtils {

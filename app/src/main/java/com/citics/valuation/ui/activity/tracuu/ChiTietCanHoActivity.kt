@@ -5,8 +5,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import com.citics.cbank.databinding.ActivityChitietcanhoBinding
-import com.citics.valuation.extension.toJson
-import com.citics.valuation.extension.toObject
+import citics.sharing.extension.toJson
+import citics.sharing.extension.toObject
 import com.citics.valuation.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 

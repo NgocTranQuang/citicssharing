@@ -8,7 +8,7 @@
     android:clipToPadding="false"
     android:orientation="vertical">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         style="@style/styleHeaderLayout"
         app:header_title="@string/lookup_detail_land"
@@ -58,7 +58,7 @@
                         app:layout_collapseParallaxMultiplier="0.7">
 
 
-                        <com.citics.valuation.customview.ImageSliderLayout
+                        <citics.sharing.customview.ImageSliderLayout
                             android:id="@+id/imagesList"
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
@@ -68,7 +68,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
 
-                        <com.citics.valuation.customview.AddressLayout
+                        <citics.sharing.customview.AddressLayout
                             android:id="@+id/vAddress"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -88,7 +88,7 @@
                                 android:gravity="center"
                                 android:visibility="visible">
 
-                                <com.citics.valuation.customview.TextViewDrawableSize
+                                <citics.sharing.customview.TextViewDrawableSize
                                     android:id="@+id/tvActionHeader"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
                                 android:layout_marginTop="@dimen/activity_margin_large"
                                 android:text="@string/gia_c_valuer" />
 
-                            <com.citics.valuation.customview.TextViewUnit
+                            <citics.sharing.customview.TextViewUnit
                                 android:id="@+id/tvCValue"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -155,7 +155,7 @@
                                 android:layout_marginHorizontal="@dimen/activity_margin_large"
                                 android:orientation="horizontal">
 
-                                <com.citics.valuation.customview.TextViewUnit
+                                <citics.sharing.customview.TextViewUnit
                                     android:id="@+id/tvBienDoGiaNhoNhat"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
                                     android:text="@string/gach"
                                     android:textSize="@dimen/text_size_19" />
 
-                                <com.citics.valuation.customview.TextViewUnit
+                                <citics.sharing.customview.TextViewUnit
                                     android:id="@+id/tvBienDoGiaLonNhat"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -250,7 +250,7 @@
                                 android:gravity="center"
                                 android:visibility="visible">
 
-                                <com.citics.valuation.customview.TextViewDrawableSize
+                                <citics.sharing.customview.TextViewDrawableSize
                                     android:id="@+id/tvTimCanHo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -276,7 +276,7 @@
                                 android:layout_marginTop="@dimen/activity_margin_large"
                                 android:text="@string/gia_trug_binh" />
 
-                            <com.citics.valuation.customview.TextViewUnit
+                            <citics.sharing.customview.TextViewUnit
                                 android:id="@+id/tvGiaTrungBinhDuAn"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -316,7 +316,7 @@
                                 android:layout_marginTop="@dimen/dimen_16"
                                 android:text="@string/don_gia_trung_binh" />
 
-                            <com.citics.valuation.customview.TextViewUnit
+                            <citics.sharing.customview.TextViewUnit
                                 android:id="@+id/tvDonGiaTB"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -393,7 +393,7 @@
                         android:background="@color/color_divider"
                         android:visibility="visible" />
 
-                    <com.citics.valuation.customview.ButtonUpdateLayout
+                    <citics.sharing.customview.ButtonUpdateLayout
                         android:id="@+id/btnBottom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

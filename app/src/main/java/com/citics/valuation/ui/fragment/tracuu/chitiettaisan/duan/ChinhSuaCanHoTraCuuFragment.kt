@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import com.citics.cagent.data.model.response.OptionsSuggestionResponse
+import citics.sharing.customview.HeaderLayout
 import com.citics.cagent.data.model.response.tham_dinh.Properties
 import com.citics.cbank.databinding.FragmentEditCanHoTracuuBinding
-import com.citics.valuation.customview.HeaderLayout
-import com.citics.valuation.extension.copyByJson
+import citics.sharing.extension.copyByJson
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.base.BaseChooserFragment
 import dagger.hilt.android.AndroidEntryPoint

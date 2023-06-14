@@ -21,7 +21,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/df_areaChooser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:layout_marginTop="@dimen/activity_margin_large"
                 android:orientation="horizontal">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/soToTF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/df_areaChooser" />
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/soThuaTF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                     app:layout_constraintTop_toTopOf="@id/soToTF" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/df_soNhaTF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/soToTF" />
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/df_tenDuongTF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                 android:layout_marginTop="@dimen/activity_margin_large"
                 android:orientation="horizontal">
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/viDoTF"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/df_tenDuongTF" />
 
-                <com.citics.valuation.customview.CiticsTextField
+                <citics.sharing.customview.CiticsTextField
                     android:id="@+id/kinhDoTF"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                     app:layout_constraintTop_toTopOf="@id/viDoTF" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.citics.valuation.customview.CiticsTextField
+            <citics.sharing.customview.CiticsTextField
                 android:id="@+id/df_ttcmap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

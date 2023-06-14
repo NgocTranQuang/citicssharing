@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.citics.cagent.data.model.response.AssetDetailResponse
 import com.citics.cbank.databinding.FragmentEditDetailLandBinding
-import com.citics.valuation.extension.copyByJson
+import citics.sharing.extension.copyByJson
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.base.BaseChooserFragment
 import dagger.hilt.android.AndroidEntryPoint

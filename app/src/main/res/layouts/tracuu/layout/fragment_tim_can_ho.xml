@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         style="@style/styleHeaderLayout"
         app:header_title="@string/tim_can_ho"
@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.citics.valuation.customview.SearchLayout
+    <citics.sharing.customview.SearchLayout
         android:id="@+id/searchLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

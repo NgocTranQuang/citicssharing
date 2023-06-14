@@ -13,18 +13,13 @@ import androidx.navigation.NavOptions
 import androidx.viewbinding.ViewBinding
 import com.citics.valuation.data.model.response.ErrorResponse
 import com.citics.valuation.data.repository.Resource
-import com.citics.valuation.utils.DialogUtils
-import com.citics.valuation.utils.SERVER_CODE_INVALID_C_POINT_408
-import com.citics.valuation.utils.SERVER_CODE_INVALID_C_POINT_409
-import com.citics.valuation.utils.SERVER_CODE_LOGIN_IN_NEW_DEVICE
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import com.citics.cbank.R
-import com.citics.valuation.customview.HeaderLayout
-import com.citics.valuation.extension.showBalloonPopup
+import citics.sharing.customview.HeaderLayout
+import citics.sharing.extension.showBalloonPopup
 
 abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> V) :
     Fragment() {

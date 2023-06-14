@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             tools:text="2.1" />
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/vBonTangNoi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.citics.valuation.customview.ThongTinLayout
+    <citics.sharing.customview.ThongTinLayout
         android:id="@+id/vChatLuongConLai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                 android:background="@color/color_divider" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/vDaCongNhan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDienTich"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
                 app:thong_tin_layout_title="@string/dien_tich"
                 app:thong_tin_layout_unit="@string/m2" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDonGia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                 android:background="@color/color_divider" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/vPhepChuaHoanCong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,7 +204,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDienTichCPCHC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,7 +214,7 @@
                 app:thong_tin_layout_title="@string/dien_tich"
                 app:thong_tin_layout_unit="@string/m2" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDonGiaCPCHC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -258,7 +258,7 @@
                 android:background="@color/color_divider" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.citics.valuation.customview.ThongTinLayout
+        <citics.sharing.customview.ThongTinLayout
             android:id="@+id/vKhongCoPhep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -296,7 +296,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDienTichKCP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -306,7 +306,7 @@
                 app:thong_tin_layout_title="@string/dien_tich"
                 app:thong_tin_layout_unit="@string/m2" />
 
-            <com.citics.valuation.customview.ThongTinLayout
+            <citics.sharing.customview.ThongTinLayout
                 android:id="@+id/vDonGiaKCP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

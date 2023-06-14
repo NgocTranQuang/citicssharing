@@ -18,7 +18,7 @@
         android:textStyle="bold"
         tools:text="@string/con_trinh_xay_dung" />
 
-    <com.citics.valuation.customview.ThongTinLayout
+    <citics.sharing.customview.ThongTinLayout
         android:id="@+id/vLoaiCongTrinh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         app:thong_tin_layout_icon="@drawable/ic_loai_cong_trinh"
         app:thong_tin_layout_title="@string/loai_cong_trinh" />
 
-    <com.citics.valuation.customview.ThongTinLayout
+    <citics.sharing.customview.ThongTinLayout
         android:id="@+id/vDienTich"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
         app:thong_tin_layout_title="@string/dien_tich"
         app:thong_tin_layout_unit="@string/m2" />
 
-    <com.citics.valuation.customview.ThongTinLayout
+    <citics.sharing.customview.ThongTinLayout
         android:id="@+id/vSoTang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         app:thong_tin_layout_icon="@drawable/ic_so_tang"
         app:thong_tin_layout_title="Số tầng" />
 
-    <com.citics.valuation.customview.ThongTinLayout
+    <citics.sharing.customview.ThongTinLayout
         android:id="@+id/vNamXayDung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         app:thong_tin_layout_prevent_format_number="true"
         app:thong_tin_layout_title="@string/nam_xay_dung" />
 
-    <com.citics.valuation.customview.ThongTinLayout
+    <citics.sharing.customview.ThongTinLayout
         android:id="@+id/vNamSuaChua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

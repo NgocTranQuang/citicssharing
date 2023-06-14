@@ -1,15 +1,12 @@
 package com.citics.valuation.adapter.choice
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources
 import com.citics.cbank.databinding.LayoutRowSingleChoiceBinding
 import com.citics.valuation.adapter.base.BaseAdapter
 import com.citics.valuation.data.model.others.ChooserItem
-import com.citics.valuation.extension.applyCiticsStyle
-import com.google.android.gms.common.util.DataUtils
+import citics.sharing.extension.applyCiticsStyle
 
 
 class SingleChoiceAdapter(

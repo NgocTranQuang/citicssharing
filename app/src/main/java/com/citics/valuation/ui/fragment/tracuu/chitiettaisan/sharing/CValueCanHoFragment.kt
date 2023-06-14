@@ -1,16 +1,13 @@
 package com.citics.valuation.ui.fragment.tracuu.chitiettaisan.sharing
 
-import android.content.DialogInterface
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.citics.cagent.data.model.response.DetailAdjustmentRates
 import com.citics.cbank.R
-import com.citics.valuation.extension.toShow
+import citics.sharing.extension.toShow
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
-import com.citics.valuation.ui.dialog.ConfirmUpdateCValueDialog
 import com.citics.valuation.utils.LoaiTaiSan
-import com.citics.valuation.utils.UIHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

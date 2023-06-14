@@ -5,12 +5,12 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import citics.sharing.customview.companion.ChiTietCanHoLayout
 import com.citics.cagent.data.model.response.AssetDetailResponse
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeCanHo
 import com.citics.valuation.data.model.tai_san_chi_tiet.TypeDetail
 import com.citics.cbank.R
-import com.citics.valuation.customview.companion.ChiTietCanHoLayout
-import com.citics.valuation.extension.setDataColor
+import citics.sharing.extension.setDataColor
 import com.citics.valuation.ui.activity.tracuu.ChiTietTaiSanTraCuuViewModel
 import com.citics.valuation.ui.dialog.NormalDialog
 import com.citics.valuation.ui.fragment.tracuu.chitiettaisan.base.BaseChiTietTaiSanTraCuuFragment

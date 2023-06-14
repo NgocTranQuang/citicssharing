@@ -7,13 +7,13 @@
     android:paddingTop="@dimen/system_status_bar"
     android:paddingBottom="@dimen/system_status_bar">
 
-    <com.citics.valuation.customview.HeaderLayout
+    <citics.sharing.customview.HeaderLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:header_title="@string/them_loai_phong_khac" />
 
-    <com.citics.valuation.customview.CiticsTextField
+    <citics.sharing.customview.CiticsTextField
         android:id="@+id/vTenPhong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         app:label_icon_img="@drawable/ic_star_fill"
         app:label_title="@string/ten_phong" />
 
-    <com.citics.valuation.customview.CiticsTextField
+    <citics.sharing.customview.CiticsTextField
         android:id="@+id/vSoPhong"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -36,7 +36,7 @@
         app:label_icon_img="@drawable/ic_star_fill"
         app:label_title="@string/so_phong" />
 
-    <com.citics.valuation.customview.ButtonUpdateLayout
+    <citics.sharing.customview.ButtonUpdateLayout
         android:id="@+id/btnTiepTuc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
